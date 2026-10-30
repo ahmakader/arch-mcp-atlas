@@ -1,0 +1,24 @@
+name: links
+on:
+  schedule:
+    - cron: "17 5 * * 1"
+  workflow_dispatch:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check every server URL still answers
+        run: |
+          python3 - <<'PY'
+          import json, urllib.request, sys
+          bad = []
+          for s in json.load(open("data/servers.json"))["servers"]:
+              try:
+                  req = urllib.request.Request(s["url"], headers={"User-Agent": "Mozilla/5.0"})
+                  urllib.request.urlopen(req, timeout=30)
+              except Exception as e:
+                  bad.append(f'{s["name"]}: {s["url"]} ({e})')
+          print("\n".join(bad) or "all links OK")
+          sys.exit(1 if bad else 0)
+          PY

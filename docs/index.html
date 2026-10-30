@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arch MCP Atlas · MCP servers for architecture software</title>
+<meta name="description" content="A verified, searchable directory of MCP servers for Revit, 3ds Max, SketchUp, Rhino, AutoCAD, Archicad, Blender and other architecture software.">
+<style>
+:root{--teal:#1F5D56;--teal-l:#2E8B7F;--night:#16302C;--ink:#0A0B0F;--orange:#D3722A;--glow:#F2904C;--cream:#F4EFE8;
+--bg:var(--ink);--panel:rgba(244,239,232,.06);--line:rgba(244,239,232,.16);--text:var(--cream);--muted:rgba(244,239,232,.64)}
+:root[data-theme="light"]{--bg:#F4EFE8;--panel:#fff;--line:rgba(10,11,15,.14);--text:#0A0B0F;--muted:rgba(10,11,15,.62)}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]){--bg:#F4EFE8;--panel:#fff;--line:rgba(10,11,15,.14);--text:#0A0B0F;--muted:rgba(10,11,15,.62)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,'Segoe UI',Roboto,sans-serif}
+header{background:radial-gradient(circle at 0% 40%,rgba(242,144,76,.35),transparent 45%),linear-gradient(160deg,var(--teal),var(--night) 60%,var(--ink));color:var(--cream);padding:56px 16px 44px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+.tag{display:inline-block;border:2px solid var(--orange);border-radius:999px;padding:3px 16px;font-weight:700;letter-spacing:.14em;font-size:12px;color:var(--glow);background:rgba(10,11,15,.5)}
+h1{font-size:clamp(34px,6vw,64px);line-height:1.05;margin:16px 0 10px;letter-spacing:-.02em}
+h1 b{color:var(--orange)}
+header p{max-width:720px;color:rgba(244,239,232,.82);margin:0 0 22px}
+.stats{display:flex;flex-wrap:wrap;gap:12px}
+.stat{background:rgba(10,11,15,.45);border:1px solid rgba(244,239,232,.2);border-radius:14px;padding:10px 18px}
+.stat b{display:block;font-size:26px;color:var(--glow);line-height:1.1}
+.stat span{font-size:13px;color:rgba(244,239,232,.75)}
+.tools{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding:14px 0}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+input[type=search]{flex:1 1 280px;min-width:0;padding:12px 16px;border-radius:12px;border:1px solid var(--line);background:var(--panel);color:var(--text);font:inherit}
+input[type=search]:focus,select:focus,button:focus-visible{outline:3px solid var(--orange);outline-offset:1px}
+select,button.t{padding:11px 12px;border-radius:12px;border:1px solid var(--line);background:var(--panel);color:var(--text);font:inherit;cursor:pointer}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chip{padding:5px 13px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;font:inherit;font-size:14px}
+.chip[aria-pressed=true]{background:var(--orange);border-color:var(--orange);color:var(--ink);font-weight:700}
+#count{color:var(--muted);font-size:14px;margin:18px 0 8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;padding-bottom:60px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.card:hover{border-color:var(--orange)}
+.card h3{margin:0;font-size:18px;line-height:1.25;word-break:break-word}
+.card h3 a{color:var(--text);text-decoration:none}.card h3 a:hover{color:var(--orange);text-decoration:underline}
+.card p{margin:0;color:var(--muted);font-size:14.5px;flex:1}
+.meta{display:flex;flex-wrap:wrap;gap:6px;font-size:12.5px}
+.pill{padding:2px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.pill.official{background:#1f6feb22;border-color:#1f6feb;color:#6aa7ff}
+.pill.company{background:#D3722A22;border-color:var(--orange);color:var(--glow)}
+.st-active{color:#3fb950}.st-slow{color:#d29922}.st-stale{color:#f85149}
+.soft{font-weight:700;font-size:13px;color:var(--glow);letter-spacing:.02em}
+.foot{display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:26px 0 50px;color:var(--muted);font-size:14px}
+footer a{color:var(--orange)}
+.empty{padding:40px;text-align:center;color:var(--muted)}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <span class="tag">ARCH MCP ATLAS</span>
+  <h1>Architecture <b>× MCP</b> servers</h1>
+  <p>MCP servers that let Claude and other AI assistants work inside Revit, 3ds Max, SketchUp, Rhino, AutoCAD, Archicad, Blender and more. Each entry was checked against its repository, vendor page or registry listing.</p>
+  <div class="stats" id="stats"></div>
+</div></header>
+<div class="tools"><div class="wrap">
+  <div class="row">
+    <input id="q" type="search" placeholder="Search by software, name or what it does…" aria-label="Search">
+    <select id="sort" aria-label="Sort"><option value="rank">Sort: category, official first</option><option value="stars">Sort: most stars</option><option value="updated">Sort: recently updated</option><option value="name">Sort: name</option></select>
+    <button class="t" id="theme" type="button" aria-label="Toggle theme">Theme</button>
+  </div>
+  <div class="chips" id="cats"></div>
+  <div class="chips" id="kinds"></div>
+</div></div>
+<main class="wrap">
+  <div id="count"></div>
+  <div class="grid" id="grid"></div>
+</main>
+<footer><div class="wrap" id="foot"></div></footer>
+<script>
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let D,state={q:'',cat:null,kind:null,sort:'rank'};
+const KIND={official:'Official',company:'Company',community:'Community'};
+const monthsOld=d=>{if(!d)return null;const[y,m]=d.split('-').map(Number);const v=D.meta.verified.split('-').map(Number);return (v[0]-y)*12+(v[1]-m)};
+const status=s=>{const a=monthsOld(s.updated);return a===null?['unknown','Update date unknown']:a<=6?['active','Active']:a<=12?['slow','Slow']:['stale','Stale']};
+const stars=n=>n==null?'–':n>=1000?(n/1000).toFixed(1).replace('.0','')+'k ★':n+' ★';
+function render(){
+  const q=state.q.toLowerCase().trim();
+  let list=D.servers.filter(s=>(!state.cat||s.category===state.cat)&&(!state.kind||s.kind===state.kind)&&(!q||[s.name,s.description,s.maintainer,s.category,...(s.software||[]),...(s.tools||[])].join(' ').toLowerCase().includes(q)));
+  const rank={official:0,company:1,community:2};
+  const ci=c=>{const i=D.categories.indexOf(c);return i<0?99:i};
+  const sorts={rank:(a,b)=>ci(a.category)-ci(b.category)||rank[a.kind]-rank[b.kind]||(b.stars||0)-(a.stars||0),stars:(a,b)=>(b.stars||0)-(a.stars||0),updated:(a,b)=>(b.updated||'').localeCompare(a.updated||''),name:(a,b)=>a.name.localeCompare(b.name)};
+  list.sort(sorts[state.sort]);
+  document.getElementById('count').textContent=list.length+' of '+D.servers.length+' servers';
+  document.getElementById('grid').innerHTML=list.length?list.map(s=>{const[st,stl]=status(s);return `<article class="card">
+    <div class="soft">${esc((s.software||[]).join(' · '))}</div>
+    <h3><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a></h3>
+    <p>${esc(s.description)}</p>
+    <div class="meta"><span class="pill ${esc(s.kind)}">${KIND[s.kind]}</span><span class="pill">${esc(s.category)}</span>${s.license?`<span class="pill">${esc(s.license)}</span>`:''}</div>
+    <div class="foot"><span>${esc(s.maintainer)}</span><span><span class="st-${st}">● ${stl}</span> · ${stars(s.stars)} · ${esc(s.updated||'')}</span></div>
+  </article>`}).join(''):'<div class="empty">No servers match. Try a different search or clear the filters.</div>';
+}
+function chips(id,items,key,label){
+  const el=document.getElementById(id);
+  el.innerHTML=items.map(v=>`<button class="chip" type="button" data-v="${esc(v)}" aria-pressed="${state[key]===v}">${esc(label?label(v):v)}</button>`).join('');
+  el.onclick=e=>{const b=e.target.closest('.chip');if(!b)return;state[key]=state[key]===b.dataset.v?null:b.dataset.v;chips(id,items,key,label);render()};
+}
+fetch('data.json').then(r=>r.json()).then(d=>{
+  D=d;const cats=D.categories.filter(c=>D.servers.some(s=>s.category===c));
+    document.getElementById('stats').innerHTML=[[D.servers.length,'servers'],[cats.length,'categories'],[D.servers.filter(s=>s.kind==='official').length,'official'],[D.meta.verified,'last verified']].map(([a,b])=>`<div class="stat"><b>${esc(a)}</b><span>${b}</span></div>`).join('');
+  chips('cats',cats,'cat');chips('kinds',['official','company','community'],'kind',v=>KIND[v]);
+  document.getElementById('foot').innerHTML=`Independent list, not affiliated with any listed vendor. Names and logos belong to their owners. <a href="https://github.com/${esc(D.meta.owner)}/${esc(D.meta.repo)}">Add or fix an entry on GitHub</a>.`;
+  render();
+}).catch(()=>{document.getElementById('grid').innerHTML='<div class="empty">Could not load data.json. Serve this folder over HTTP (for example <code>python3 -m http.server</code>).</div>'});
+document.getElementById('q').oninput=e=>{state.q=e.target.value;render()};
+document.getElementById('sort').onchange=e=>{state.sort=e.target.value;render()};
+document.getElementById('theme').onclick=()=>{const r=document.documentElement;const dark=getComputedStyle(r).getPropertyValue('--bg').trim()===getComputedStyle(r).getPropertyValue('--ink').trim()||getComputedStyle(document.body).backgroundColor==='rgb(10, 11, 15)';r.dataset.theme=dark?'light':'dark'};
+</script>
+</body>
+</html>

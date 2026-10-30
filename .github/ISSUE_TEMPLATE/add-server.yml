@@ -1,0 +1,31 @@
+name: Add or update a server
+description: Suggest a missing MCP server, or correct an entry.
+title: "[server] "
+labels: ["server"]
+body:
+  - type: input
+    id: url
+    attributes:
+      label: Link
+      description: Repo, README or official page that shows it exists and works.
+    validations:
+      required: true
+  - type: input
+    id: software
+    attributes:
+      label: Which software does it control?
+      placeholder: Revit, SketchUp, Rhino…
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Who made it?
+      options: [Official (the software vendor), Company product, Community / individual]
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: What does it do, and did you try it?
+      description: One or two factual sentences. Mention versions you tested if any.
