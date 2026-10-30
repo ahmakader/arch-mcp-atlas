@@ -4,7 +4,7 @@
     python3 scripts/build.py          # rewrite generated files
     python3 scripts/build.py --check  # fail if they are out of date (used in CI)
 """
-import json, sys, datetime, pathlib, re
+import json, sys, datetime, pathlib, re, urllib.parse
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA = json.loads((ROOT / "data" / "servers.json").read_text(encoding="utf-8"))
@@ -78,18 +78,22 @@ TOP_N = 10
 
 
 def software_index():
+    """Coverage grid: software name, number of servers, link to the filtered site view."""
     groups = {}
     for s in SERVERS:
         for sw in s.get("software") or []:
             groups.setdefault(sw, []).append(s)
-    rows = []
+    site = META.get("site", "docs/index.html").rstrip("/")
+    cells = []
     for sw, items in sorted(groups.items(), key=lambda kv: (-len(kv[1]), kv[0].lower())):
-        if len(items) < 3:
+        if len(items) < 3 or sw == "Other":
             continue
-        own = [x for x in items if (x.get("software") or [""])[0] == sw and x["category"] not in ("AI imagery & 3D generation", "Presentation & design tools") or (x.get("software") or [""])[0] == sw]
-        best = sorted(own or items, key=sort_key)[0]
-        rows.append(f"| **{esc(sw)}** | {len(items)} | [{esc(best['name'])}]({best['url']}) {KIND_BADGE[best['kind']].split(' ')[0]} |")
-    return "| Software | Servers | Top pick |\n| :-- | --: | :-- |\n" + "\n".join(rows[:24])
+        cells.append(f"[**{esc(sw)}** · {len(items)}]({site}/?software={urllib.parse.quote(sw)})")
+    cells = cells[:24]
+    while len(cells) % 4:
+        cells.append("")
+    rows = ["| " + " | ".join(cells[i:i + 4]) + " |" for i in range(0, len(cells), 4)]
+    return "| | | | |\n| :-- | :-- | :-- | :-- |\n" + "\n".join(rows)
 
 
 def render_catalog():
@@ -157,7 +161,9 @@ This list collects the ones that matter for architecture and AEC work, with what
 > [!CAUTION]
 > An MCP server can run commands and change your model. Start with read-only questions, work on a **copy** of the project, review what the AI does, and only install servers whose code you trust. Many of these are community projects that run scripts inside your CAD or BIM software.
 
-## By software
+## Coverage by software
+
+Software with the most servers. Each link opens that filter on the [searchable site]({META.get("site", "docs/index.html")}).
 
 {software_index()}
 

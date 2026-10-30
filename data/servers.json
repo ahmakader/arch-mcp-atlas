@@ -3,13 +3,13 @@
   "verified": "2026-10-30",
   "owner": "ahmakader",
   "repo": "arch-mcp-atlas",
-  "author": "Ahmed Kader",
+  "author": "Ahmed Abdelkader Ibrahim",
   "site": "https://ahmakader.github.io/arch-mcp-atlas/"
  },
  "servers": [
   {
    "name": "Autodesk Revit MCP Server (Revit 2027 public MCP, Technical Preview)",
-   "url": "https://blog.autodesk.io/revit-2027-mcp-server-release/",
+   "url": "https://blog.autodesk.io/revit-mcp-server-update/",
    "software": [
     "Revit"
    ],
@@ -18,7 +18,7 @@
    "kind": "official",
    "license": null,
    "language": null,
-   "description": "Autodesk's own add-on that exposes an open Revit 2027 model to MCP clients such as Claude Desktop or Cursor; the April 2026 preview was read-only and a September 2026 update split it into Read, Write and…",
+   "description": "Autodesk's own add-on (Technical Preview) that exposes an open Revit 2027 model to MCP clients such as Claude Desktop or Cursor over local STDIO",
    "requirements": "Windows; Revit 2027 with the 2027.2 Update or later; installed separately from the Extensions list under Revit 2027 in the Autodesk Account; back up projects before using write-capable installers.",
    "tools": [
     "get_running_revit_instances",
@@ -32,7 +32,7 @@
    "stars": null,
    "updated": "2026-09-29",
    "registry": false,
-   "source": "https://blog.autodesk.io/revit-mcp-server-update/"
+   "source": "https://blog.autodesk.io/revit-2027-mcp-server-release/"
   },
   {
    "name": "Autodesk Fusion MCP",
@@ -92,16 +92,21 @@
    "kind": "official",
    "license": null,
    "language": null,
-   "description": "Local MCP server that runs inside AutoCAD or Civil 3D (AutoCAD 2027 era) to query, analyze and modify the open drawing; per a third-party review, the only supported client is Autodesk Assistant and AutoCAD…",
+   "description": "Autodesk's local MCP server (Tech Preview / public beta) that runs inside AutoCAD or Civil 3D (AutoCAD 2027 era, Windows) so AI assistants can query, analyze, navigate and modify objects in the open drawing, check…",
    "requirements": "Windows only; AutoCAD or Civil 3D with Autodesk Assistant (external clients such as Claude not documented as supported).",
    "tools": [
-    "updateAutoCADObjects (Civil 3D only)",
+    "discoverAutoCADTypes",
+    "queryAutoCADObjects",
+    "aggregateAutoCADObjects",
+    "manipulateDrawingCanvas",
+    "checkAutoCADObjects",
+    "updateAutoCADObjects (Civil 3D only per Autodesk overview)",
     "civil3dQueryModifyStyles (Civil 3D only)"
    ],
    "stars": null,
    "updated": null,
    "registry": false,
-   "source": "https://www.meltflexai.com/blog/autocad-mcp"
+   "source": "https://help.autodesk.com/view/ADSKMCP/ENU/"
   },
   {
    "name": "APS MCP Server (aps-mcp-server-nodejs)",
@@ -160,7 +165,7 @@
    "requirements": "Node.js 18+ and the revit-mcp-plugin / command set installed in Revit.",
    "tools": [],
    "stars": 475,
-   "updated": null,
+   "updated": "2026-02-25",
    "registry": false,
    "source": "https://github.com/mcp-servers-for-revit/revit-mcp"
   },
@@ -179,7 +184,7 @@
    "requirements": "Windows; Revit with pyRevit extension installed; consent/pairing via MCP > Bridge > Connect in Revit; stdio transport recommended.",
    "tools": [],
    "stars": 220,
-   "updated": null,
+   "updated": "2026-10-14",
    "registry": false,
    "source": "https://github.com/mcp-servers-for-revit/mcp-server-for-revit-python"
   },
@@ -256,7 +261,7 @@
   },
   {
    "name": "Autodesk-Revit-MCP-Server / AEC Model Bridge",
-   "url": "https://github.com/Sam-AEC/Autodesk-Revit-MCP-Server",
+   "url": "https://github.com/Sam-AEC/aec-model-bridge",
    "software": [
     "Revit"
    ],
@@ -271,7 +276,7 @@
    "stars": 90,
    "updated": "2026-10-28",
    "registry": true,
-   "source": "https://github.com/Sam-AEC/Autodesk-Revit-MCP-Server"
+   "source": "https://github.com/Sam-AEC/aec-model-bridge"
   },
   {
    "name": "Revit Converter MCP (Labs Future)",
@@ -322,7 +327,7 @@
    "category": "BIM authoring",
    "maintainer": "shuotao",
    "kind": "community",
-   "license": null,
+   "license": "MIT",
    "language": "C#",
    "description": "Open-source MCP server plus C# Revit add-in; README states 239 MCP tools backed by 90 BIM SOPs (building code, quantity take-off, compliance checks). No license file found.",
    "requirements": "Windows; Revit 2022-2026; build and deploy the C# add-in; WebSocket port 8964.",
@@ -359,11 +364,11 @@
    ],
    "category": "BIM authoring",
    "maintainer": "AECO MCPs (Shady Hefilla, independent)",
-   "kind": "company",
-   "license": "Proprietary (free to use)",
+   "kind": "community",
+   "license": "Free to use (license terms not stated on the product page)",
    "language": null,
    "description": "Free add-in that lets AI assistants read and edit the open Revit model: query elements, schedules and warnings, create/edit elements, families, sheets, QA checks and C# scripting, with single-step undo.",
-   "requirements": "Windows 10/11; Revit 2023-2027 (2023/2024 need .NET 8 Desktop Runtime); sign-in with Microsoft, Google or GitHub.",
+   "requirements": "Windows 10/11; Revit 2023-2027 (2023/2024 need .NET 8 Desktop Runtime); one-time sign-in with Microsoft, Google or GitHub; optional cloud access for ChatGPT/claude.ai requires a paid plan.",
    "tools": [
     "query elements/parameters/schedules",
     "create & edit elements",
@@ -651,8 +656,8 @@
    ],
    "category": "BIM authoring",
    "maintainer": "AECO MCPs",
-   "kind": "company",
-   "license": "Proprietary (free to use)",
+   "kind": "community",
+   "license": "Free to use (license terms not stated on the product page)",
    "language": null,
    "description": "Free plug-in for Navisworks Manage: model tree and properties, sets/viewpoints, Clash Detective tests, coordination QA reports, TimeLiner/quantities and NWD/DWF exports.",
    "requirements": "Windows; Navisworks Manage 2025-2027 (not Freedom); sign-in required.",
@@ -873,7 +878,7 @@
    "requirements": "AutoCAD (Windows); see README release notes (1.2.0-beta).",
    "tools": [],
    "stars": 0,
-   "updated": null,
+   "updated": "2026-10-29",
    "registry": true,
    "source": "https://github.com/capskov/cad-agent-foundation"
   },
@@ -936,7 +941,7 @@
   },
   {
    "name": "AutoCAD_MCP (ahmetcemkaraca, archived)",
-   "url": "https://github.com/ahmetcemkaraca/AutoCAD_MCP",
+   "url": "https://github.com/ahmetcemkaraca/AutoCAD_MCP_archive",
    "software": [
     "AutoCAD"
    ],
@@ -957,7 +962,7 @@
    "stars": 31,
    "updated": "2026-10-09",
    "registry": false,
-   "source": "https://github.com/ahmetcemkaraca/AutoCAD_MCP"
+   "source": "https://github.com/ahmetcemkaraca/AutoCAD_MCP_archive"
   },
   {
    "name": "autocad-mcp-server (vigneshpbmenon)",
@@ -1649,12 +1654,12 @@
    "category": "3D modeling & rendering",
    "maintainer": "reer-ide",
    "kind": "company",
-   "license": null,
+   "license": "MIT",
    "language": null,
    "description": "REER-published open MCP server connecting Rhino (and partial Grasshopper support) to Claude via a socket bridge.",
    "requirements": "Rhino; Python script inside Rhino.",
    "tools": [],
-   "stars": null,
+   "stars": 29,
    "updated": "2026-04-05",
    "registry": false,
    "source": "https://github.com/reer-ide/rhino_mcp"
@@ -1669,12 +1674,12 @@
    "category": "3D modeling & rendering",
    "maintainer": "sholtomaud",
    "kind": "community",
-   "license": null,
+   "license": "MIT",
    "language": null,
    "description": "Socket-based MCP server connecting Rhino and Grasshopper to Claude, with optional AI image rendering via a Replicate API key.",
    "requirements": "Rhino with in-Rhino script; last updated April 2025.",
    "tools": [],
-   "stars": null,
+   "stars": 0,
    "updated": "2025-04-08",
    "registry": false,
    "source": "https://github.com/sholtomaud/rhino-mcp"
@@ -1689,12 +1694,12 @@
    "category": "3D modeling & rendering",
    "maintainer": "SerjoschDuering",
    "kind": "community",
-   "license": null,
+   "license": "MIT",
    "language": null,
    "description": "Rhino/Grasshopper MCP server with the same README as the sholtomaud project (socket bridge, optional Replicate rendering).",
    "requirements": "Rhino with in-Rhino script; last updated April 2025.",
    "tools": [],
-   "stars": null,
+   "stars": 65,
    "updated": "2025-04-08",
    "registry": false,
    "source": "https://github.com/SerjoschDuering/rhino-mcp"
@@ -1774,7 +1779,7 @@
    "requirements": "Rhino with bridge plugin.",
    "tools": [],
    "stars": 1,
-   "updated": null,
+   "updated": "2026-09-20",
    "registry": false,
    "source": "https://github.com/Aaradhya-Dev-Tamrakar/rhino-mcp"
   },
@@ -1812,7 +1817,7 @@
    "description": "Layer on top of jingcheng-chen/rhinomcp that reads scenes as a structured spatial graph and computes geometric performance reports.",
    "requirements": "Requires the rhinomcp stack; README is in Chinese.",
    "tools": [],
-   "stars": null,
+   "stars": 0,
    "updated": "2026-08-20",
    "registry": false,
    "source": "https://github.com/emmaruyiyang/rhino-gh-mcp"
@@ -1846,13 +1851,13 @@
    "category": "3D modeling & rendering",
    "maintainer": "fernandomaytorena",
    "kind": "community",
-   "license": null,
+   "license": "MIT",
    "language": null,
    "description": "MCP server connecting Rhino3D to Claude for AI-assisted modelling and analysis.",
    "requirements": "Rhino; see README.",
    "tools": [],
    "stars": 13,
-   "updated": null,
+   "updated": "2025-03-15",
    "registry": false,
    "source": "https://github.com/fernandomaytorena/RhinoMCP"
   },
@@ -1866,13 +1871,13 @@
    "category": "3D modeling & rendering",
    "maintainer": "sodam-ai",
    "kind": "community",
-   "license": null,
+   "license": "Apache-2.0",
    "language": null,
    "description": "Local Windows MCP tool that generates and verifies architectural .3dm models from JSON specs without a Rhino licence, with Blender rendering.",
    "requirements": "Windows; Korean-language README.",
    "tools": [],
    "stars": 4,
-   "updated": null,
+   "updated": "2026-09-25",
    "registry": false,
    "source": "https://github.com/sodam-ai/SoDam-Rhino-MCP-Codex"
   },
@@ -1905,13 +1910,13 @@
    "category": "3D modeling & rendering",
    "maintainer": "AmemiyaLai",
    "kind": "community",
-   "license": null,
+   "license": "MIT",
    "language": null,
    "description": "Bridging server that links Grasshopper and Cursor over MCP for natural-language control of components.",
    "requirements": "Grasshopper; see README.",
    "tools": [],
-   "stars": null,
-   "updated": null,
+   "stars": 4,
+   "updated": "2026-10-05",
    "registry": false,
    "source": "https://github.com/AmemiyaLai/grasshopper-mcp-workflow"
   },
@@ -1930,30 +1935,9 @@
    "requirements": "Python scraper step to build docs; Korean README.",
    "tools": [],
    "stars": 2,
-   "updated": null,
+   "updated": "2025-11-15",
    "registry": false,
    "source": "https://github.com/voidbox-ai/rhinocommon-mcp"
-  },
-  {
-   "name": "AEC Model Bridge",
-   "url": "https://github.com/Sam-AEC/aec-model-bridge",
-   "software": [
-    "Revit",
-    "Rhino",
-    "Navisworks"
-   ],
-   "category": "BIM authoring",
-   "maintainer": "Sam-AEC",
-   "kind": "community",
-   "license": "GPL-3.0",
-   "language": null,
-   "description": "Open-source MCP server for reading and editing BIM models with human approval on every change; Glama listing says it orchestrates Revit, Rhino, Navisworks and Power BI.",
-   "requirements": "Desktop apps installed; GPL-3.0.",
-   "tools": [],
-   "stars": 90,
-   "updated": null,
-   "registry": false,
-   "source": "https://github.com/Sam-AEC/aec-model-bridge"
   },
   {
    "name": "SketchupMCP (mhyrr)",
@@ -2002,7 +1986,7 @@
    "category": "3D modeling & rendering",
    "maintainer": "Son-The-SUN",
    "kind": "community",
-   "license": null,
+   "license": "MIT",
    "language": null,
    "description": "Repository for the same sketchup-mcp2 Python MCP server plus Ruby extension bridge.",
    "requirements": "SketchUp; Python.",
@@ -2085,7 +2069,7 @@
    "category": "3D modeling & rendering",
    "maintainer": "lewisyusong",
    "kind": "community",
-   "license": null,
+   "license": "MIT",
    "language": "Python + Ruby",
    "description": "Chinese-language SketchUp MCP that reads selections, edits geometry, sets materials, exports and runs controlled Ruby over a local TCP plugin (127.0.0.1:9876).",
    "requirements": "SketchUp plugin .rbz v1.6.0 plus Python server.",
@@ -2104,12 +2088,12 @@
    "category": "3D modeling & rendering",
    "maintainer": "forceki",
    "kind": "community",
-   "license": null,
+   "license": "MIT",
    "language": null,
    "description": "Fork of mhyrr/sketchup-mcp that can serve MCP over HTTP so a client on another machine can drive SketchUp; the README notes it has no authentication.",
    "requirements": "SketchUp with extension.",
    "tools": [],
-   "stars": null,
+   "stars": 1,
    "updated": "2026-10-29",
    "registry": false,
    "source": "https://github.com/forceki/sketchup-mcp-remote"
@@ -2123,12 +2107,12 @@
    "category": "3D modeling & rendering",
    "maintainer": "Tarkiin",
    "kind": "community",
-   "license": null,
+   "license": "MIT",
    "language": null,
    "description": "Spanish-language SketchUp MCP server (stdio to HTTP :8080) for Claude, Cursor and Gemini to build 3D models programmatically.",
    "requirements": "SketchUp extension.",
    "tools": [],
-   "stars": null,
+   "stars": 14,
    "updated": "2026-07-29",
    "registry": false,
    "source": "https://github.com/Tarkiin/SketchUp-MCP"
@@ -2147,7 +2131,7 @@
    "description": "Copy of the SketchupMCP README and code for connecting SketchUp to Claude.",
    "requirements": "SketchUp extension.",
    "tools": [],
-   "stars": null,
+   "stars": 0,
    "updated": "2025-04-25",
    "registry": false,
    "source": "https://github.com/Atomnaphat/mcp_sketchup"
@@ -2186,7 +2170,7 @@
    "requirements": "SketchUp.",
    "tools": [],
    "stars": 1,
-   "updated": null,
+   "updated": "2026-09-13",
    "registry": false,
    "source": "https://github.com/3d-mcp/sketchup-mcp"
   },
@@ -2275,7 +2259,7 @@
    "category": "3D modeling & rendering",
    "maintainer": "hueflowstudio",
    "kind": "company",
-   "license": null,
+   "license": "MIT",
    "language": null,
    "description": "Korean-localised SketchUp MCP server packaged by Hueflow Studio for interior-design and AI teaching.",
    "requirements": "SketchUp 2024-2026.",
@@ -2318,7 +2302,7 @@
    "description": "Indonesian-language SketchUp MCP for Claude Desktop on Windows that can turn floor plans into walls, openings and slabs.",
    "requirements": "Windows; SketchUp.",
    "tools": [],
-   "stars": null,
+   "stars": 0,
    "updated": "2026-10-01",
    "registry": false,
    "source": "https://github.com/yonnayy/sketchup-mcp-windows"
@@ -2332,12 +2316,12 @@
    "category": "3D modeling & rendering",
    "maintainer": "Ringophilia",
    "kind": "community",
-   "license": null,
+   "license": "MIT",
    "language": null,
    "description": "Chinese-language local bridge for querying and editing SketchUp models with an authenticated, undoable channel.",
    "requirements": "SketchUp desktop.",
    "tools": [],
-   "stars": null,
+   "stars": 1,
    "updated": "2026-10-27",
    "registry": false,
    "source": "https://github.com/Ringophilia/Ringo-Sketchup-MCP"
@@ -2395,7 +2379,7 @@
    "requirements": "Windows, SketchUp 2023, Codex.",
    "tools": [],
    "stars": 0,
-   "updated": null,
+   "updated": "2026-10-21",
    "registry": false,
    "source": "https://github.com/wc970321-collab/sketchup-codex-bridge"
   },
@@ -2408,12 +2392,12 @@
    "category": "3D modeling & rendering",
    "maintainer": "Prasadpodaparthi",
    "kind": "community",
-   "license": null,
+   "license": "MIT",
    "language": null,
    "description": "Copy of the sketchup-mcp2 server and Ruby extension.",
    "requirements": "SketchUp.",
    "tools": [],
-   "stars": null,
+   "stars": 0,
    "updated": "2026-09-14",
    "registry": false,
    "source": "https://github.com/Prasadpodaparthi/bunnu-sketchup-mcp2"
@@ -2586,12 +2570,12 @@
    "category": "CAD / drafting",
    "maintainer": "seraphinernst4",
    "kind": "community",
-   "license": null,
+   "license": "MIT",
    "language": null,
    "description": "German-language MCP that draws and verifies precise 2D architectural geometry in an open Vectorworks file.",
    "requirements": "Vectorworks.",
    "tools": [],
-   "stars": null,
+   "stars": 0,
    "updated": "2026-10-29",
    "registry": false,
    "source": "https://github.com/seraphinernst4/vectorworks-2d-mcp"
@@ -2611,7 +2595,7 @@
    "requirements": "Windows; Vectorworks 2024/2025; README says 10 MCP tools (repo description says 20).",
    "tools": [],
    "stars": 1,
-   "updated": null,
+   "updated": "2026-10-23",
    "registry": false,
    "source": "https://github.com/BhaveshY/vectorworks-mcp"
   },
@@ -2675,22 +2659,22 @@
   },
   {
    "name": "FreeCAD Robust MCP Server",
-   "url": "https://github.com/spkane/freecad-robust-mcp-and-more",
+   "url": "https://github.com/spkane/freecad-addon-robust-mcp-server",
    "software": [
     "FreeCAD"
    ],
    "category": "3D modeling & rendering",
    "maintainer": "spkane",
    "kind": "community",
-   "license": null,
+   "license": "Apache-2.0",
    "language": "Python",
    "description": "MCP server plus bridge workbench for AI-assisted FreeCAD modelling, macro and workbench development with several connection modes.",
    "requirements": "FreeCAD; PyPI freecad-robust-mcp.",
    "tools": [],
    "stars": 261,
-   "updated": "2026-10-29",
+   "updated": "2026-10-30",
    "registry": false,
-   "source": "https://github.com/spkane/freecad-robust-mcp-and-more"
+   "source": "https://github.com/spkane/freecad-addon-robust-mcp-server"
   },
   {
    "name": "freecad-mcp (blwfish)",
@@ -2707,7 +2691,7 @@
    "requirements": "FreeCAD.",
    "tools": [],
    "stars": 62,
-   "updated": null,
+   "updated": "2026-10-29",
    "registry": true,
    "source": "https://github.com/blwfish/freecad-mcp"
   },
@@ -2782,7 +2766,7 @@
    "description": "MCP server for driving a live FreeCAD desktop session with 3D view screenshots.",
    "requirements": "FreeCAD desktop.",
    "tools": [],
-   "stars": null,
+   "stars": 1,
    "updated": "2026-07-31",
    "registry": false,
    "source": "https://github.com/ahelja/FreeCAD-MCP"
@@ -2837,10 +2821,10 @@
    "license": "GPL-3.0",
    "language": null,
    "description": "Bridge between AI agents and Tekla Structures for selection, component insertion, property management and modelling, with read-only mode.",
-   "requirements": "Windows; tested on Tekla 2022 and 2026 per search snippet.",
+   "requirements": "Windows; Tekla Structures (check the README for tested versions)",
    "tools": [],
    "stars": 58,
-   "updated": null,
+   "updated": "2026-10-23",
    "registry": false,
    "source": "https://github.com/teknovizier/tekla_mcp_server"
   },
@@ -2853,12 +2837,12 @@
    "category": "BIM authoring",
    "maintainer": "tempalg1n",
    "kind": "community",
-   "license": null,
+   "license": "MIT",
    "language": null,
    "description": "MCP server to read, analyse and, after preview, edit an open Tekla model and its drawings.",
    "requirements": "Windows; README says run on live Tekla 2021 and 2023 models; early development v0.9.0.",
    "tools": [],
-   "stars": null,
+   "stars": 7,
    "updated": "2026-10-19",
    "registry": false,
    "source": "https://github.com/tempalg1n/tekla-mcp-server"
@@ -2872,13 +2856,13 @@
    "category": "BIM authoring",
    "maintainer": "YuriyKirillov",
    "kind": "community",
-   "license": null,
+   "license": "GPLv3",
    "language": "Python",
    "description": "MCP server for selecting elements, inserting components and automating Tekla modelling via pythonnet.",
    "requirements": "Tekla 2023; Python 3.11+.",
    "tools": [],
    "stars": 13,
-   "updated": null,
+   "updated": "2026-02-18",
    "registry": false,
    "source": "https://github.com/YuriyKirillov/TeklaMCPServer"
   },
@@ -2930,34 +2914,6 @@
    "updated": "2026-10-18",
    "registry": true,
    "source": "https://github.com/Moha2005269/etabs-mcp"
-  },
-  {
-   "name": "allplan-mcp-bridge",
-   "url": "https://glama.ai/mcp/servers/andrej-reeg/allplan-mcp-bridge",
-   "software": [
-    "Allplan"
-   ],
-   "category": "BIM authoring",
-   "maintainer": "andrej-reeg",
-   "kind": "community",
-   "license": null,
-   "language": "Python",
-   "description": "MCP server exposing Allplan BIM API for geometry, attributes, IFC import/export and layers inside Allplan undo history.",
-   "requirements": "Allplan 2026 tested; Windows 10/11; Python 3.12+ and uv. GitHub repo returned 404 when checked; verified via Glama page.",
-   "tools": [
-    "create_wall",
-    "create_slab",
-    "create_column",
-    "create_beam",
-    "define_grid",
-    "import_ifc",
-    "export_ifc",
-    "set_layer_visibility"
-   ],
-   "stars": null,
-   "updated": "2026-06-22",
-   "registry": false,
-   "source": "https://glama.ai/mcp/servers/andrej-reeg/allplan-mcp-bridge"
   },
   {
    "name": "@lisp MCP Server",
@@ -3016,7 +2972,7 @@
    "description": "MCP server controlling BricsCAD through COM, specialised for effluent treatment plant layouts.",
    "requirements": "Windows; BricsCAD.",
    "tools": [],
-   "stars": null,
+   "stars": 1,
    "updated": "2026-08-06",
    "registry": false,
    "source": "https://github.com/sathish136/bricscad-mcp"
@@ -3037,7 +2993,7 @@
    "requirements": "BricsCAD on Linux reference adapter.",
    "tools": [],
    "stars": 3,
-   "updated": null,
+   "updated": "2026-08-16",
    "registry": true,
    "source": "https://github.com/Psalmustrack/lambdacad-mcp"
   },
@@ -3050,12 +3006,12 @@
    "category": "CAD / drafting",
    "maintainer": "Nihalmannath",
    "kind": "community",
-   "license": null,
+   "license": "Apache-2.0",
    "language": null,
    "description": "MCP server offering spatial-topology and architectural-ontology workflows for CAD drawings.",
    "requirements": "See README.",
    "tools": [],
-   "stars": null,
+   "stars": 1,
    "updated": "2026-09-04",
    "registry": false,
    "source": "https://github.com/Nihalmannath/TopoSpatial-CAD-MCP"
@@ -3115,13 +3071,13 @@
    "category": "CAD / drafting",
    "maintainer": "AICodeForgedev",
    "kind": "company",
-   "license": null,
+   "license": "Apache-2.0",
    "language": null,
    "description": "Free Rust 2D CAD app that opens and saves DWG/DXF and exposes an MCP interface for AI agents; source-available (FSL-1.1).",
    "requirements": "Windows, Mac, Linux.",
    "tools": [],
    "stars": 2,
-   "updated": null,
+   "updated": "2026-10-21",
    "registry": true,
    "source": "https://github.com/AICodeForgedev/cadaddy"
   },
@@ -3135,7 +3091,7 @@
    "category": "CAD / drafting",
    "maintainer": "thebossnow",
    "kind": "community",
-   "license": null,
+   "license": "MIT",
    "language": "Python",
    "description": "Headless DXF generation via ezdxf with LibreCAD preview for site plans and architectural drafting.",
    "requirements": "No AutoCAD needed; Linux/Mac/Win; uv.",
@@ -3160,7 +3116,7 @@
    "requirements": "Local.",
    "tools": [],
    "stars": 0,
-   "updated": null,
+   "updated": "2026-09-06",
    "registry": false,
    "source": "https://github.com/OmniZenRaj/dxf-mcp"
   },
@@ -3173,12 +3129,12 @@
    "category": "CAD / drafting",
    "maintainer": "xhj-cloud",
    "kind": "community",
-   "license": null,
+   "license": "MIT",
    "language": null,
    "description": "Lightweight DXF MCP that creates, inspects and exports 2D drawings (PNG/PDF) without a CAD GUI.",
    "requirements": "Cross-platform.",
    "tools": [],
-   "stars": null,
+   "stars": 0,
    "updated": "2026-10-26",
    "registry": false,
    "source": "https://github.com/xhj-cloud/dxf-cad-mcp"
@@ -3199,7 +3155,7 @@
    "requirements": "MIT.",
    "tools": [],
    "stars": 6,
-   "updated": null,
+   "updated": "2026-10-23",
    "registry": false,
    "source": "https://github.com/frontsail-ai/aspicio"
   },
@@ -3262,7 +3218,7 @@
    "requirements": "Node.",
    "tools": [],
    "stars": 26,
-   "updated": null,
+   "updated": "2026-10-30",
    "registry": false,
    "source": "https://github.com/ChanMeng666/archlang"
   },
@@ -3275,7 +3231,7 @@
    "category": "Other",
    "maintainer": "leandrodaf",
    "kind": "community",
-   "license": null,
+   "license": "Apache-2.0",
    "language": "Rust",
    "description": "Open-source Rust floor-plan and home design editor with built-in MCP server so agents draw walls and furnish rooms.",
    "requirements": "Browser or desktop.",
@@ -3320,7 +3276,7 @@
    "requirements": "Onshape account.",
    "tools": [],
    "stars": 4,
-   "updated": null,
+   "updated": "2026-10-28",
    "registry": true,
    "source": "https://github.com/gpambrozio/onshape-mcp"
   },
@@ -3333,7 +3289,7 @@
    "category": "3D modeling & rendering",
    "maintainer": "hedless",
    "kind": "community",
-   "license": null,
+   "license": "MIT",
    "language": "Python",
    "description": "Onshape REST MCP; README lists 45 core tools.",
    "requirements": "Onshape API keys.",
@@ -3352,13 +3308,13 @@
    "category": "3D modeling & rendering",
    "maintainer": "altendky",
    "kind": "community",
-   "license": null,
+   "license": "MIT",
    "language": null,
    "description": "Early-development local Onshape MCP using OAuth.",
    "requirements": "Local; OAuth client.",
    "tools": [],
    "stars": 20,
-   "updated": null,
+   "updated": "2026-10-20",
    "registry": false,
    "source": "https://github.com/altendky/onshape-mcp"
   },
@@ -3390,12 +3346,12 @@
    "category": "3D modeling & rendering",
    "maintainer": "Checkmate321",
    "kind": "community",
-   "license": null,
+   "license": "MIT",
    "language": null,
    "description": "Local Onshape MCP with constrained sketches, solid features, Variable Studios and configurations.",
    "requirements": "Onshape.",
    "tools": [],
-   "stars": null,
+   "stars": 0,
    "updated": "2026-10-18",
    "registry": false,
    "source": "https://github.com/Checkmate321/Onshape-MCP"
@@ -3415,7 +3371,7 @@
    "requirements": "Onshape.",
    "tools": [],
    "stars": 1,
-   "updated": null,
+   "updated": "2026-06-25",
    "registry": false,
    "source": "https://github.com/saltyeg/cadkit-mcp"
   },
@@ -3434,7 +3390,7 @@
    "requirements": "Windows; SolidWorks.",
    "tools": [],
    "stars": 19,
-   "updated": null,
+   "updated": "2026-10-29",
    "registry": true,
    "source": "https://github.com/hjbaard/SolidWorks-MCP"
   },
@@ -3471,7 +3427,7 @@
    "description": "Python COM MCP for SolidWorks; README states 158 unconditional tools.",
    "requirements": "Windows.",
    "tools": [],
-   "stars": null,
+   "stars": 0,
    "updated": "2026-10-15",
    "registry": false,
    "source": "https://github.com/h4child/mcp-solidworks"
@@ -3523,19 +3479,19 @@
    "category": "3D modeling & rendering",
    "maintainer": "NejcDvorsek",
    "kind": "community",
-   "license": null,
+   "license": "MIT",
    "language": null,
    "description": "MCP letting an agent design parts, assemblies and drawings in SolidWorks and self-verify.",
    "requirements": "Windows.",
    "tools": [],
-   "stars": null,
+   "stars": 0,
    "updated": "2026-10-29",
    "registry": false,
    "source": "https://github.com/NejcDvorsek/sw-mcp"
   },
   {
    "name": "solidworks-api-mcp",
-   "url": "https://github.com/ZCAD-Products/solidworks-api-mcp",
+   "url": "https://github.com/kilwizac/solidworks-api-mcp",
    "software": [
     "SolidWorks API docs"
    ],
@@ -3550,11 +3506,11 @@
    "stars": 9,
    "updated": "2026-10-12",
    "registry": false,
-   "source": "https://github.com/ZCAD-Products/solidworks-api-mcp"
+   "source": "https://github.com/kilwizac/solidworks-api-mcp"
   },
   {
    "name": "Zoo MCP",
-   "url": "https://github.com/KittyCAD/zoo-mcp",
+   "url": "https://github.com/KittyCAD/mcp",
    "software": [
     "Zoo CAD API"
    ],
@@ -3567,9 +3523,9 @@
    "requirements": "ZOO_API_TOKEN; uv.",
    "tools": [],
    "stars": 11,
-   "updated": null,
+   "updated": "2026-10-29",
    "registry": true,
-   "source": "https://github.com/KittyCAD/zoo-mcp"
+   "source": "https://github.com/KittyCAD/mcp"
   },
   {
    "name": "OpenSCAD MCP Server",
@@ -3689,7 +3645,7 @@
    "license": null,
    "language": null,
    "description": "Archicad 30 built-in beta MCP server that lets compatible desktop AI tools (Claude Desktop, Cursor, ChatGPT Desktop, VS Code) read and manage BIM elements in open projects via stdio.",
-   "requirements": "Archicad 30 with Collaborate or Max subscription; connect via Options > Desktop AI Tool Connection dialog.",
+   "requirements": "Archicad 30 with Archicad Collaborate or Archicad Max; a desktop AI tool that supports local MCP servers (stdio); set up via Options > Desktop AI Tool Connection (copy command/args into the AI tool). Listed under Graphisoft's 'AI Assistant (Beta)' help section.",
    "tools": [],
    "stars": null,
    "updated": null,
@@ -3747,7 +3703,7 @@
   },
   {
    "name": "bim.house MCP",
-   "url": "https://bim.house",
+   "url": "https://bim.house/docs/mcp",
    "software": [
     "IFC",
     "DXF"
@@ -3757,9 +3713,28 @@
    "kind": "company",
    "license": null,
    "language": null,
-   "description": "Site states external AI can use MCP for building-material search, property creation and building-code checks; exports IFC4/DXF/STL; details sparse.",
-   "requirements": "Install via claude mcp add; see bim.house/docs/mcp (not opened).",
-   "tools": [],
+   "description": "Hosted streamable-http MCP server for AI agents (e.g. Claude) to search a building-material catalog, create a house (bim.json) with a viewer link, run Japanese building-code (houki) checks, get rough material…",
+   "requirements": "MCP client with streamable-http (docs show claude mcp add --transport http bim-house https://bim.house/mcp); read tools and create_house need no API key (rate-limited); chat/catalog-write tools need an API key from /console; chat uses paid credits.",
+   "tools": [
+    "whoami",
+    "chat",
+    "search_catalog",
+    "get_product",
+    "create_product",
+    "update_product",
+    "list_mine",
+    "retire_product",
+    "list_houses",
+    "get_house_bim",
+    "create_house",
+    "set_visibility",
+    "houki_check",
+    "material_quote",
+    "list_land_listings",
+    "get_land_listing",
+    "probe_land",
+    "build_on_land"
+   ],
    "stars": null,
    "updated": null,
    "registry": true,
@@ -3777,7 +3752,7 @@
    "license": null,
    "language": null,
    "description": "Official Blender MCP server and companion add-on that give an LLM a natural-language interface to Blender's Python API, docs and scene; the page warns it runs LLM-generated code with no safeguards.",
-   "requirements": "Blender 5.1+, the MCP add-on, an MCP-capable LLM client; MCP server from .mcpb bundle or source",
+   "requirements": "Blender 5.1+ with the Blender Lab MCP add-on (v1.0.3 linked); an MCP-capable LLM client; MCP server from a .mcpb bundle or from source (projects.blender.org/lab/blender_mcp). Experimental: executes LLM-generated code in Blender with no guards.",
    "tools": [],
    "stars": null,
    "updated": null,
@@ -3810,7 +3785,7 @@
   },
   {
    "name": "blenderwright (formerly blend-ai)",
-   "url": "https://github.com/jabberwock/blend-ai",
+   "url": "https://github.com/HoldMyBeer-gg/blenderwright",
    "software": [
     "Blender"
    ],
@@ -3834,7 +3809,7 @@
    "stars": 182,
    "updated": "2026-10-28",
    "registry": false,
-   "source": "https://github.com/jabberwock/blend-ai"
+   "source": "https://github.com/HoldMyBeer-gg/blenderwright"
   },
   {
    "name": "Blender MCP AI",
@@ -3984,7 +3959,7 @@
   },
   {
    "name": "ViperMesh for Blender",
-   "url": "https://github.com/Ker102/vipermesh-blender",
+   "url": "https://github.com/OpenRootdev/vipermesh-blender",
    "software": [
     "Blender"
    ],
@@ -3999,7 +3974,7 @@
    "stars": 2,
    "updated": "2026-10-30",
    "registry": true,
-   "source": "https://github.com/Ker102/vipermesh-blender"
+   "source": "https://github.com/OpenRootdev/vipermesh-blender"
   },
   {
    "name": "Frugal Blender MCP",
@@ -4099,13 +4074,31 @@
    "kind": "company",
    "license": null,
    "language": null,
-   "description": "Hosted remote MCP endpoint listed in the official registry for controlling Blender from AI (modeling, geometry nodes, materials, animation, rendering per its registry description).",
-   "requirements": "Remote MCP at https://mcp.blenderbridge.com/mcp; registry does not state client-side requirements",
-   "tools": [],
+   "description": "MCP bridge (registry-listed, OAuth endpoint https://mcp.blenderbridge.com/mcp) that lets an AI drive Blender on the user's own computer through the Blender Bridge desktop app: the AI writes Blender Python, checks…",
+   "requirements": "Windows 10/11 with Blender 4.2+; Blender Bridge desktop app running on the same computer; Blender Bridge account (confirmed email, 7-day free trial, paid plans after); your own AI client; macOS/Linux in development.",
+   "tools": [
+    "get_scene_state",
+    "take_screenshot",
+    "get_blender_info",
+    "execute_blender_code",
+    "get_blender_operation_status",
+    "cancel_blender_operation",
+    "scene_checkpoints",
+    "undo_last_action",
+    "lookup_blender_api",
+    "search_blender_manual",
+    "get_blender_recipe",
+    "find_free_assets",
+    "set_reference_image",
+    "compare_reference_render",
+    "render_project_image",
+    "save_blend_file",
+    "export_model"
+   ],
    "stars": null,
    "updated": null,
    "registry": true,
-   "source": "https://registry.modelcontextprotocol.io/v0/servers?search=blender"
+   "source": "https://blenderbridge.com/"
   },
   {
    "name": "EngineWire / Unreal Engine MCP",
@@ -4154,13 +4147,13 @@
    "category": "3D modeling & rendering",
    "maintainer": "Flopperam (acquired by Aura)",
    "kind": "company",
-   "license": null,
+   "license": "MIT",
    "language": null,
    "description": "Unreal Editor MCP with a hosted version and an open-source local Python version (50+ tools across 9 domains per README); README says the project is now owned by Aura.",
    "requirements": "Unreal Engine; local Python server or hosted agent.flopperam.com/mcp",
    "tools": [],
    "stars": 1115,
-   "updated": null,
+   "updated": "2026-06-26",
    "registry": false,
    "source": "https://github.com/flopperam/unreal-engine-mcp"
   },
@@ -4221,7 +4214,7 @@
    "requirements": "Unreal Engine 5 plugin, MCP client",
    "tools": [],
    "stars": 39,
-   "updated": null,
+   "updated": "2026-08-06",
    "registry": true,
    "source": "https://github.com/aadeshrao123/Unreal-MCP"
   },
@@ -4236,8 +4229,8 @@
    "kind": "official",
    "license": null,
    "language": null,
-   "description": "Unity Editor acts as an MCP server (relay binary plus editor bridge) exposing scene, asset, script and console tools; the manual page states it is now deprecated in favour of the Unity CLI.",
-   "requirements": "Unity Editor with the Unity AI Assistant package; configured under Project Settings > AI > Unity MCP Server",
+   "description": "Unity Editor acts as an MCP server (relay binary plus editor bridge) exposing scene, asset, script and console tools; DEPRECATED by Unity in favour of the Unity CLI (`unity mcp`), see Unity's migration page.",
+   "requirements": "Unity Editor running with the Unity AI Assistant package (com.unity.ai.assistant); configured under Edit > Project Settings > AI > Unity MCP Server; relay binary installed at ~/.unity/relay/; MCP client such as Claude Code or Cursor.",
    "tools": [],
    "stars": null,
    "updated": null,
@@ -4373,7 +4366,7 @@
   },
   {
    "name": "Cinema 4D built-in MCP server (Maxon)",
-   "url": "https://digitalproduction.com/2026/10/01/cinema-4d-2026-4-mcp/",
+   "url": "https://support.maxon.net/hc/en-us/articles/30880484903452-Cinema-4D-2026-4-0-September-30-2026",
    "software": [
     "Cinema 4D"
    ],
@@ -4383,7 +4376,7 @@
    "license": null,
    "language": null,
    "description": "Maxon's MCP server built into Cinema 4D 2026.4+, off by default, token-protected, with selectable tool groups, Python-execution controls and undo-grouped actions (per press coverage).",
-   "requirements": "Cinema 4D 2026.4 or later on Windows/macOS; enable MCP in Preferences",
+   "requirements": "Cinema 4D 2026.4 or later (full version, Windows/macOS); MCP is off by default and enabled in Preferences; protected by an MCP adapter access token; officially supported clients: Claude Desktop and ChatGPT Desktop (others unsupported); not available in Lite, Team Render or command-line rendering.",
    "tools": [],
    "stars": null,
    "updated": null,
@@ -4502,7 +4495,7 @@
   },
   {
    "name": "Rhino/Grasshopper MCP (rhino-gh-mcp)",
-   "url": "https://github.com/xunliuDesign/rhino-gh-mcp",
+   "url": "https://github.com/GenEnv/rhino-gh-mcp",
    "software": [
     "Rhino 8",
     "Grasshopper"
@@ -4518,11 +4511,11 @@
    "stars": 8,
    "updated": "2026-07-17",
    "registry": false,
-   "source": "https://github.com/xunliuDesign/rhino-gh-mcp"
+   "source": "https://github.com/GenEnv/rhino-gh-mcp"
   },
   {
    "name": "Adobe for Creativity (official remote MCP)",
-   "url": "https://www.usecarly.com/blog/adobe-mcp/",
+   "url": "https://blog.adobe.com/en/publish/2026/04/28/adobe-for-creativity-connector",
    "software": [
     "Photoshop",
     "Illustrator",
@@ -4530,20 +4523,21 @@
     "Lightroom",
     "Premiere",
     "Express",
-    "Firefly"
+    "Firefly",
+    "Adobe Stock"
    ],
    "category": "Presentation & design tools",
    "maintainer": "Adobe",
    "kind": "official",
    "license": null,
    "language": null,
-   "description": "Adobe-hosted remote MCP connector at adobe-creativity.adobe.io/mcp spanning Creative Cloud apps and Firefly (details from a third-party write-up; Adobe pages not reachable).",
-   "requirements": "Adobe account for full tool set; MCP client with remote/OAuth support",
+   "description": "Adobe-built 'Adobe for creativity' connector for Claude (launched 2026-04-28, 50+ tools across Photoshop, Illustrator, InDesign, Lightroom, Premiere, Express, Firefly and Stock)",
+   "requirements": "Claude account; signing in with an Adobe account unlocks higher usage limits, more tools and saved work; MCP client with remote/OAuth support for direct use.",
    "tools": [],
    "stars": null,
    "updated": null,
    "registry": false,
-   "source": "https://www.usecarly.com/blog/adobe-mcp/"
+   "source": "https://blog.adobe.com/en/publish/2026/04/28/adobe-for-creativity-connector"
   },
   {
    "name": "adb-mcp (Photoshop and Premiere)",
@@ -4580,7 +4574,7 @@
    "requirements": "Adobe Photoshop; npx @alisaitteke/photoshop-mcp",
    "tools": [],
    "stars": 771,
-   "updated": null,
+   "updated": "2026-10-20",
    "registry": true,
    "source": "https://github.com/alisaitteke/photoshop-mcp"
   },
@@ -4909,7 +4903,7 @@
   },
   {
    "name": "Tripo MCP (official)",
-   "url": "https://github.com/VAST-AI-Research/tripo-mcp",
+   "url": "https://github.com/Tripo-Developer/tripo-mcp",
    "software": [
     "Tripo",
     "Blender"
@@ -4925,7 +4919,7 @@
    "stars": 224,
    "updated": "2025-04-14",
    "registry": false,
-   "source": "https://github.com/VAST-AI-Research/tripo-mcp"
+   "source": "https://github.com/Tripo-Developer/tripo-mcp"
   },
   {
    "name": "Tripo3D MCP Server (ebrob)",
@@ -5059,7 +5053,7 @@
    "requirements": "ComfyUI install; Node",
    "tools": [],
    "stars": 880,
-   "updated": null,
+   "updated": "2026-10-26",
    "registry": true,
    "source": "https://github.com/artokun/comfyui-mcp"
   },
@@ -5177,7 +5171,7 @@
    "license": "LGPL-3.0-or-later",
    "language": "Python",
    "description": "MCP server in the IfcOpenShell monorepo that wraps ifcquery and ifcedit and keeps an IFC model in memory across calls for querying, validating, clash checking, quantifying and editing.",
-   "requirements": "pip install ifcopenshell-mcp[mcp]; Python >=3.11; mcp>=2; run with the ifcmcp command (stdio)",
+   "requirements": "pip install ifcopenshell-mcp[mcp] (needs ifcopenshell, ifcquery, ifcedit; mcp>=1.0,<2 extra; ifc_render needs pyvista); no Python minimum declared on PyPI; run with the ifcmcp command (stdio).",
    "tools": [
     "ifc_summary",
     "ifc_tree",
@@ -5189,7 +5183,7 @@
     "ifc_edit"
    ],
    "stars": 2900,
-   "updated": "2026-10-30",
+   "updated": "2026-09-29",
    "registry": false,
    "source": "https://pypi.org/project/ifcopenshell-mcp/"
   },
@@ -5700,7 +5694,7 @@
     "create project"
    ],
    "stars": 0,
-   "updated": null,
+   "updated": "2026-08-09",
    "registry": false,
    "source": "https://github.com/Daviidro/speckle-mcp"
   },
@@ -5766,7 +5760,7 @@
    "license": "MIT",
    "language": "TypeScript",
    "description": "Community MCP server that parses Procore's OpenAPI spec into a catalog and exposes seven meta-tools to discover and call any Procore REST endpoint.",
-   "requirements": "Node.js; Procore developer credentials; Procore OpenAPI spec obtained separately (per search result, check README)",
+   "requirements": "Node.js; Procore developer credentials; Procore OpenAPI spec obtained separately (check the README)",
    "tools": [
     "procore_discover_categories",
     "procore_discover_endpoints",
@@ -5969,7 +5963,7 @@
    "stars": null,
    "updated": "2026-07-24",
    "registry": false,
-   "source": "https://help.revizto.com/hc/en-us/articles/16924308080271-Connecting-AI-tool-to-Revizto-MCP-server"
+   "source": "https://revizto.com/resources/blog/introducing-mcp-server"
   },
   {
    "name": "Bluebeam Revu MCP server",
@@ -6218,7 +6212,7 @@
   },
   {
    "name": "lean-planning-mcp (project-mcp)",
-   "url": "https://github.com/jeffmodeler/project-mcp",
+   "url": "https://github.com/jeffersonbim/lean-planning-mcp",
    "software": [
     "Microsoft Project",
     "Primavera P6",
@@ -6235,7 +6229,7 @@
    "stars": 9,
    "updated": "2026-07-13",
    "registry": false,
-   "source": "https://github.com/jeffmodeler/project-mcp"
+   "source": "https://github.com/jeffersonbim/lean-planning-mcp"
   },
   {
    "name": "pyp6xer-mcp",
@@ -6503,7 +6497,7 @@
    "license": null,
    "language": "Python",
    "description": "Early-build QGIS MCP server with a live path to a plugin in a running QGIS session and a headless qgis_process path; spec is complete, README says early build.",
-   "requirements": "QGIS 4.2+ (per search result)",
+   "requirements": "QGIS (check the README for the supported version)",
    "tools": [],
    "stars": 0,
    "updated": "2026-10-12",
@@ -6512,7 +6506,7 @@
   },
   {
    "name": "QGIS2OllamaMCP",
-   "url": "https://github.com/anitagraser/qgis_mcp",
+   "url": "https://github.com/anitagraser/QGIS2OllamaMCP",
    "software": [
     "QGIS",
     "Ollama"
@@ -6528,11 +6522,11 @@
    "stars": 7,
    "updated": "2026-01-03",
    "registry": false,
-   "source": "https://github.com/anitagraser/qgis_mcp"
+   "source": "https://github.com/anitagraser/QGIS2OllamaMCP"
   },
   {
    "name": "QgisStreamMCP (QgisRemoteMCP)",
-   "url": "https://github.com/nic01asFr/QgisStreamMCP",
+   "url": "https://github.com/nic01asFr/QgisRemoteMCP",
    "software": [
     "QGIS Desktop in Docker",
     "noVNC"
@@ -6551,7 +6545,7 @@
    "stars": 11,
    "updated": "2026-10-03",
    "registry": false,
-   "source": "https://github.com/nic01asFr/QgisStreamMCP"
+   "source": "https://github.com/nic01asFr/QgisRemoteMCP"
   },
   {
    "name": "gis-agent-bridges",
@@ -6707,8 +6701,8 @@
    "tools": [
     "ArcGIS content search"
    ],
-   "stars": null,
-   "updated": "2025-10-16",
+   "stars": 2,
+   "updated": "2025-10-08",
    "registry": true,
    "source": "https://pypi.org/project/arcgis-mcp-server/"
   },
@@ -6897,7 +6891,7 @@
    "license": null,
    "language": null,
    "description": "Hosted MCP server over Regrid's US and Canada parcel data with docs search, schema exploration, counts and live parcel retrieval.",
-   "requirements": "Regrid API token; endpoint support.regrid.com/mcp; live retrieval billed per record",
+   "requirements": "Regrid API token (needed for live parcel retrieval; docs/schema/count need none); endpoint https://support.regrid.com/mcp; live retrieval billed per record; Regrid asks that Model Training/Data Sharing be disabled in your AI account before using its data.",
    "tools": [
     "documentation search",
     "schema exploration",
@@ -7095,7 +7089,7 @@
     "RSECTION 1"
    ],
    "category": "Structural & energy analysis",
-   "maintainer": "Dlubal (PyPI user dlubal_team9)",
+   "maintainer": "Dlubal (per package README; PyPI lists no author)",
    "kind": "official",
    "license": null,
    "language": "Python",
@@ -7109,9 +7103,3710 @@
     "health_check"
    ],
    "stars": null,
+   "updated": "2026-10-30",
+   "registry": false,
+   "source": "https://pypi.org/pypi/dlubal-mcp/json"
+  },
+  {
+   "name": "mcp-servers-for-revit (LuDattilo fork)",
+   "url": "https://github.com/LuDattilo/revit-mcp-server",
+   "software": [
+    "Revit"
+   ],
+   "category": "BIM authoring",
+   "maintainer": "LuDattilo",
+   "kind": "community",
+   "license": "MIT",
+   "language": "C# / TypeScript",
+   "description": "Fork of the revit-mcp project with a much larger tool set (README states 138 tools) plus an optional in-Revit Claude chat panel; targets Revit 2023-2027.",
+   "requirements": "Windows, Revit 2023-2027, Node.js 18+; optional Anthropic API key for chat panel",
+   "tools": [],
+   "stars": 82,
+   "updated": "2026-04-09",
+   "registry": false,
+   "source": "https://github.com/LuDattilo/revit-mcp-server"
+  },
+  {
+   "name": "revit-mcp (Antigravity bridge)",
+   "url": "https://github.com/AndreyStartsev/revit-mcp",
+   "software": [
+    "Revit"
+   ],
+   "category": "BIM authoring",
+   "maintainer": "AndreyStartsev",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Standalone MCP bridge to Revit built for Google Antigravity and also usable from Claude Desktop, Cursor, Cline and Windsurf; Python server with a .NET 8 Revit add-in.",
+   "requirements": "Windows, Revit 2023-2027, Python",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-10-09",
+   "registry": false,
+   "source": "https://github.com/AndreyStartsev/revit-mcp"
+  },
+  {
+   "name": "revit-mcp-automation",
+   "url": "https://github.com/ArchitectureWorld/revit-mcp-automation",
+   "software": [
+    "Revit"
+   ],
+   "category": "BIM authoring",
+   "maintainer": "ArchitectureWorld",
+   "kind": "community",
+   "license": "MIT",
+   "language": "JavaScript / PowerShell",
+   "description": "Local Windows automation layer that launches an isolated Revit 2020 instance on demand, handles common dialogs and resumes the original model operation; reuses mcp-servers-for-revit tools (31 tools pe",
+   "requirements": "Windows x64, Revit 2020, Node.js",
+   "tools": [],
+   "stars": 0,
    "updated": "2026-10-29",
    "registry": false,
-   "source": "https://pypi.org/project/dlubal-mcp/"
+   "source": "https://github.com/ArchitectureWorld/revit-mcp-automation"
+  },
+  {
+   "name": "revit-mcp-stdio",
+   "url": "https://github.com/DavidChin0/revit-mcp-stdio",
+   "software": [
+    "Revit",
+    "pyRevit"
+   ],
+   "category": "BIM authoring",
+   "maintainer": "DavidChin0",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "pyRevit-based Revit MCP server with a stdio bridge over a Windows named pipe (plus HTTP fallback); README states 48 tools covering design, editing, analysis, clash detection and MEP.",
+   "requirements": "Windows, Revit 2024-2027, pyRevit, uv/Python",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-08-02",
+   "registry": false,
+   "source": "https://github.com/DavidChin0/revit-mcp-stdio"
+  },
+  {
+   "name": "EraCore Revit MCP",
+   "url": "https://github.com/soewal19/eracore-revit-mcp",
+   "software": [
+    "Revit",
+    "pyRevit"
+   ],
+   "category": "BIM authoring",
+   "maintainer": "soewal19",
+   "kind": "community",
+   "license": null,
+   "language": "Python",
+   "description": "Hexagonal-architecture MCP server exposing 7 typed Revit tools (model info, element listing, wall creation, batch parameter updates, schedule export) via pyRevit, with a fake mode for testing.",
+   "requirements": "Revit 2024-2027 via pyRevit (Windows), Python 3.12+; fake mode runs anywhere",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-08-12",
+   "registry": false,
+   "source": "https://github.com/soewal19/eracore-revit-mcp"
+  },
+  {
+   "name": "revit-tunnel-mcp",
+   "url": "https://github.com/xiuchuan666/revit-tunnel-mcp",
+   "software": [
+    "Revit",
+    "pyRevit"
+   ],
+   "category": "BIM authoring",
+   "maintainer": "xiuchuan666",
+   "kind": "community",
+   "license": null,
+   "language": "Python / JavaScript",
+   "description": "Specialised MCP for previewing, creating and verifying shield-tunnel segment rings in Revit 2025, with each segment placed as its own family instance inside a transaction group.",
+   "requirements": "Windows, Revit 2025, pyRevit Routes, Node.js",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-08-27",
+   "registry": false,
+   "source": "https://github.com/xiuchuan666/revit-tunnel-mcp"
+  },
+  {
+   "name": "pyRevit Foundry MCP",
+   "url": "https://github.com/OnePowerUser88/pyRevitFoundryMCP",
+   "software": [
+    "pyRevit",
+    "Revit"
+   ],
+   "category": "BIM authoring",
+   "maintainer": "OnePowerUser88",
+   "kind": "community",
+   "license": "GPL-3.0",
+   "language": "Python",
+   "description": "MCP server for developing and maintaining pyRevit extensions through static analysis: bundle inventory, bundle.yaml generation, import audit, duplicate detection and dry-run patches.",
+   "requirements": "Python; no Revit runtime required",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-02-14",
+   "registry": false,
+   "source": "https://github.com/OnePowerUser88/pyRevitFoundryMCP"
+  },
+  {
+   "name": "MCP Revit Families",
+   "url": "https://github.com/yllld/MCP-Revit-Families",
+   "software": [
+    "Revit",
+    "pyRevit"
+   ],
+   "category": "BIM authoring",
+   "maintainer": "yllld",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Local MCP server that works in an open Revit 2021 family (RFA) via pyRevit, planning changes, creating geometry and filling confirmed equipment parameters; README calls it a limited prototype.",
+   "requirements": "Windows, Revit 2021, pyRevit, Python",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-09-29",
+   "registry": false,
+   "source": "https://github.com/yllld/MCP-Revit-Families"
+  },
+  {
+   "name": "revit_mcp_dotnet_template",
+   "url": "https://github.com/PiggyAndrew/revit_mcp_dotnet_template",
+   "software": [
+    "Revit"
+   ],
+   "category": "BIM authoring",
+   "maintainer": "PiggyAndrew",
+   "kind": "community",
+   "license": "MIT",
+   "language": "C#",
+   "description": ".NET Core MCP server plus a Revit plugin template that bridges AI clients to Revit.",
+   "requirements": "Windows, Revit, .NET",
+   "tools": [],
+   "stars": 2,
+   "updated": "2025-11-06",
+   "registry": false,
+   "source": "https://github.com/PiggyAndrew/revit_mcp_dotnet_template"
+  },
+  {
+   "name": "revit-mcp (hungpixi)",
+   "url": "https://github.com/hungpixi/revit-mcp",
+   "software": [
+    "Revit",
+    "Dynamo"
+   ],
+   "category": "BIM authoring",
+   "maintainer": "hungpixi",
+   "kind": "community",
+   "license": "MIT",
+   "language": "C# / TypeScript",
+   "description": "Node.js MCP server with a native C# bridge connecting AI assistants to Revit and Dynamo for 2D-to-3D BIM modeling and model inspection.",
+   "requirements": "Windows, Revit 2024+, Node.js, .NET",
+   "tools": [],
+   "stars": 1,
+   "updated": "2026-09-10",
+   "registry": false,
+   "source": "https://github.com/hungpixi/revit-mcp"
+  },
+  {
+   "name": "AutodeskDynamo_MCP",
+   "url": "https://github.com/ChimingLu/AutodeskDynamo_MCP",
+   "software": [
+    "Dynamo",
+    "Revit"
+   ],
+   "category": "BIM authoring",
+   "maintainer": "ChimingLu",
+   "kind": "community",
+   "license": "Apache-2.0",
+   "language": "Python / C#",
+   "description": "MCP integration that lets an AI drive Dynamo directly, with a node recipe registry, reusable node patterns, Dynamo Player input/output support and deployment scripts for Revit 2020-2027.",
+   "requirements": "Windows, Dynamo for Revit 2020-2027, Python",
+   "tools": [
+    "get_node_recipe",
+    "get_node_pattern",
+    "save_node_pattern",
+    "capture_node_pattern"
+   ],
+   "stars": 12,
+   "updated": "2026-10-20",
+   "registry": false,
+   "source": "https://github.com/ChimingLu/AutodeskDynamo_MCP"
+  },
+  {
+   "name": "autocad-mcp (piping & pipe supports)",
+   "url": "https://github.com/C48H74/autocad-mcp",
+   "software": [
+    "AutoCAD",
+    "AutoCAD Plant 3D"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "C48H74",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "MCP server for AutoCAD and Plant 3D with a live COM engine or a headless ezdxf engine; README states 50 tools aimed at piping and pipe-support drawings, live-tested on Plant 3D 2021 only.",
+   "requirements": "Windows + AutoCAD/Plant 3D for COM mode; headless DXF mode needs only Python",
+   "tools": [],
+   "stars": 5,
+   "updated": "2026-10-05",
+   "registry": false,
+   "source": "https://github.com/C48H74/autocad-mcp"
+  },
+  {
+   "name": "autocad-validation-mcp",
+   "url": "https://github.com/agtmwebtoon/autocad-validation-mcp",
+   "software": [
+    "AutoCAD",
+    "AutoCAD LT"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "agtmwebtoon",
+   "kind": "community",
+   "license": null,
+   "language": "Python / AutoLISP",
+   "description": "AutoCAD and AutoCAD LT MCP server (LISP file-IPC or headless ezdxf) with a pre-execution geometry/dependency/collision validation layer and P&ID symbol support; derived from other autocad-mcp servers.",
+   "requirements": "AutoCAD / LT or headless ezdxf; Python",
+   "tools": [
+    "drawing",
+    "layer",
+    "entity",
+    "block",
+    "annotation",
+    "pid",
+    "view"
+   ],
+   "stars": 0,
+   "updated": "2026-06-22",
+   "registry": false,
+   "source": "https://github.com/agtmwebtoon/autocad-validation-mcp"
+  },
+  {
+   "name": "CDT-AutoCAD",
+   "url": "https://github.com/SlncTrZ/CDT-AutoCAD",
+   "software": [
+    "AutoCAD"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "SlncTrZ",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python / C#",
+   "description": "Generic AutoCAD execution provider for MCP clients with state verification and recovery; README states 87 public tools, accepted natively on AutoCAD 2027 and a separate headless DXF lane.",
+   "requirements": "Windows x64, AutoCAD 2027 (native); Python via uvx",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-10-23",
+   "registry": false,
+   "source": "https://github.com/SlncTrZ/CDT-AutoCAD"
+  },
+  {
+   "name": "autocad-mcp (bisingwaj)",
+   "url": "https://github.com/bisingwaj/autocad-mcp",
+   "software": [
+    "AutoCAD"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "Jeremie Bisingwa",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "French-documented AutoCAD MCP server that returns rendered drawing images for self-correction, batches whole plans into one undo step, and includes a cross-platform DXF engine that works without AutoC",
+   "requirements": "AutoCAD (Windows COM) or DXF engine on macOS/Linux; Python",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-09-22",
+   "registry": false,
+   "source": "https://github.com/bisingwaj/autocad-mcp"
+  },
+  {
+   "name": "autocad-mcp (dxlary)",
+   "url": "https://github.com/dxlary/autocad-mcp",
+   "software": [
+    "AutoCAD"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "dxlary",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Dependency-light MCP server (standard library plus pywin32) driving a running AutoCAD through COM for office automation, built for the WorkBuddy client.",
+   "requirements": "Windows, full AutoCAD 2018-2026 (not LT), Python 3.10+, pywin32",
+   "tools": [],
+   "stars": 1,
+   "updated": "2026-10-06",
+   "registry": false,
+   "source": "https://github.com/dxlary/autocad-mcp"
+  },
+  {
+   "name": "autocad-mcp (gabrielbsandim)",
+   "url": "https://github.com/gabrielbsandim/autocad-mcp",
+   "software": [
+    "AutoCAD",
+    "BricsCAD",
+    "ZWCAD",
+    "GstarCAD"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "gabrielbsandim",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Local MCP server that connects Claude Desktop to an open AutoCAD (or BricsCAD/ZWCAD/GstarCAD) via COM, or edits DXF/DWG files directly on Mac and AutoCAD LT.",
+   "requirements": "Windows for live CAD (full AutoCAD); DXF mode elsewhere; DWG needs ODA File Converter",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-10-20",
+   "registry": false,
+   "source": "https://github.com/gabrielbsandim/autocad-mcp"
+  },
+  {
+   "name": "AutoCAD-Control-Engineering",
+   "url": "https://github.com/gujiu502/AutoCAD-Control-Engineering",
+   "software": [
+    "AutoCAD"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "gujiu502",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python / C#",
+   "description": "MCP host with a native .NET plugin extension for transactional AutoCAD control, plus reusable examples for generating and verifying electrical drawings.",
+   "requirements": "Windows, AutoCAD, Git, uv, Python 3.12+, .NET SDK 8+",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-10-03",
+   "registry": false,
+   "source": "https://github.com/gujiu502/AutoCAD-Control-Engineering"
+  },
+  {
+   "name": "AutoCAD-mcp (liqi82)",
+   "url": "https://github.com/liqi82/autocad-mcp",
+   "software": [
+    "AutoCAD"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "liqi82",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "COM-based MCP server for 2D AutoCAD drafting (draw, dimension, layers, blocks, mechanical title blocks/BOM); README says 54 commands were verified against a live drawing.",
+   "requirements": "Windows, AutoCAD (2014 and compatible), Python",
+   "tools": [
+    "connect",
+    "capabilities",
+    "list_documents",
+    "draw_line",
+    "draw_circle",
+    "draw_polyline",
+    "draw_rect",
+    "add_text"
+   ],
+   "stars": 2,
+   "updated": "2026-09-10",
+   "registry": false,
+   "source": "https://github.com/liqi82/autocad-mcp"
+  },
+  {
+   "name": "autocad-mcp (YQArch)",
+   "url": "https://github.com/xstaar/autocad-mcp",
+   "software": [
+    "AutoCAD",
+    "YQArch"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "xstaar",
+   "kind": "community",
+   "license": null,
+   "language": "TypeScript / JavaScript",
+   "description": "MCP server for the YQArch architectural plugin exposing 684 architectural commands through 55 tools (walls, doors, windows, stairs, dimensions, hatching) to Claude.",
+   "requirements": "AutoCAD with the YQArch plugin; Claude",
+   "tools": [],
+   "stars": 8,
+   "updated": "2026-04-12",
+   "registry": false,
+   "source": "https://github.com/xstaar/autocad-mcp"
+  },
+  {
+   "name": "mcp-autocad-server",
+   "url": "https://github.com/chichicaste/mcp-autocad-server",
+   "software": [
+    "AutoCAD"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "chichicaste",
+   "kind": "community",
+   "license": null,
+   "language": "Python",
+   "description": "Early AutoCAD MCP server for natural-language drawing, layer management and element search; README warns it is not actively maintained and only basic functionality exists.",
+   "requirements": "AutoCAD (Windows), Python",
+   "tools": [],
+   "stars": 0,
+   "updated": "2025-10-24",
+   "registry": false,
+   "source": "https://github.com/chichicaste/mcp-autocad-server"
+  },
+  {
+   "name": "civil3d-mcp (DaniGhosy)",
+   "url": "https://github.com/DaniGhosy/civil3d-mcp-civil3d-mcp",
+   "software": [
+    "Civil 3D"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "DaniGhosy",
+   "kind": "community",
+   "license": "MIT",
+   "language": "C# / TypeScript",
+   "description": "Work-in-progress Civil 3D MCP: TypeScript stdio server talking over TCP/JSON-RPC to a .NET 8 Civil 3D plugin covering surfaces, alignments, points and corridors.",
+   "requirements": "Windows, Civil 3D with .NET 8 plugin, Node.js",
+   "tools": [],
+   "stars": 3,
+   "updated": "2026-10-04",
+   "registry": false,
+   "source": "https://github.com/DaniGhosy/civil3d-mcp-civil3d-mcp"
+  },
+  {
+   "name": "mcp-to-c3d",
+   "url": "https://github.com/SantosSjba/mcp-to-c3d",
+   "software": [
+    "Civil 3D"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "SantosSjba",
+   "kind": "community",
+   "license": "MIT",
+   "language": "C# / TypeScript",
+   "description": "Civil 3D MCP using a code-execution design: a few meta-tools let the AI write C# that runs inside Civil 3D through a Roslyn engine, guided by a skills library.",
+   "requirements": "Windows, Civil 3D, Node.js, .NET",
+   "tools": [
+    "civil3d_health",
+    "civil3d_status",
+    "civil3d_execute"
+   ],
+   "stars": 2,
+   "updated": "2026-06-24",
+   "registry": false,
+   "source": "https://github.com/SantosSjba/mcp-to-c3d"
+  },
+  {
+   "name": "civil3d-mcp (Python COM)",
+   "url": "https://github.com/antonhofstader/Civil3D-mcp-python-COM",
+   "software": [
+    "Civil 3D"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "antonhofstader",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "FastMCP server that drives a running Civil 3D through Windows COM plus pythonnet, with no companion plugin; labelled research and not an Autodesk product.",
+   "requirements": "Windows, Civil 3D running, Python 3.11",
+   "tools": [],
+   "stars": 10,
+   "updated": "2026-04-08",
+   "registry": false,
+   "source": "https://github.com/antonhofstader/Civil3D-mcp-python-COM"
+  },
+  {
+   "name": "civil3d2021-mcp",
+   "url": "https://github.com/orcosto-lab/civil3d2021-mcp",
+   "software": [
+    "Civil 3D"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "orcosto-lab",
+   "kind": "community",
+   "license": null,
+   "language": "Python",
+   "description": "MCP server operating Civil 3D (surfaces, alignments, COGO points, layers, profiles, sections) over COM/pywin32; tested on Civil 3D 2021.",
+   "requirements": "Windows, Civil 3D 2021, Python 3.11, pywin32",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-10-08",
+   "registry": false,
+   "source": "https://github.com/orcosto-lab/civil3d2021-mcp"
+  },
+  {
+   "name": "Civil3D-mcp (Sacred-G)",
+   "url": "https://github.com/Sacred-G/Civil3D-mcp",
+   "software": [
+    "Civil 3D"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "Sacred-G",
+   "kind": "community",
+   "license": "MIT",
+   "language": "TypeScript / C#",
+   "description": "Node.js MCP server plus native Civil 3D plugin connecting AI clients to a live drawing, with workflow automation for grading, hydrology, plan production and QC; origin of several Civil3D-mcp forks.",
+   "requirements": "Windows, Civil 3D (README mentions 2026), Node.js",
+   "tools": [],
+   "stars": 57,
+   "updated": "2026-08-16",
+   "registry": false,
+   "source": "https://github.com/Sacred-G/Civil3D-mcp"
+  },
+  {
+   "name": "recap-mcp",
+   "url": "https://github.com/xuantinhnbs-rgb/recap-mcp",
+   "software": [
+    "ReCap",
+    "Civil 3D"
+   ],
+   "category": "GIS & site analysis",
+   "maintainer": "xuantinhnbs-rgb",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "MCP server for Autodesk ReCap: reads .rcp projects, runs the ReCap engine headless, analyses LAS/LAZ and measures deviation between scans and BIM models for Scan-to-BIM.",
+   "requirements": "Windows, Autodesk ReCap, Python",
+   "tools": [],
+   "stars": 1,
+   "updated": "2026-09-19",
+   "registry": false,
+   "source": "https://github.com/xuantinhnbs-rgb/recap-mcp"
+  },
+  {
+   "name": "automatizacion-mcp-navisworks",
+   "url": "https://github.com/Joseadobbato13/automatizacion-mcp-navisworks",
+   "software": [
+    "Navisworks"
+   ],
+   "category": "Construction management",
+   "maintainer": "Joseadobbato13",
+   "kind": "community",
+   "license": null,
+   "language": "C# / Python",
+   "description": "Spanish-language MCP server and C# plugin controlling Navisworks Manage 2025/2026: federated-model inspection, search, selection sets, clash detection and 4D TimeLiner planning.",
+   "requirements": "Windows, Navisworks Manage 2025/2026",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-10-24",
+   "registry": false,
+   "source": "https://github.com/Joseadobbato13/automatizacion-mcp-navisworks"
+  },
+  {
+   "name": "Navisworks_MCP (Aitology)",
+   "url": "https://github.com/Aitology/Navisworks_MCP",
+   "software": [
+    "Navisworks"
+   ],
+   "category": "Construction management",
+   "maintainer": "Aitology",
+   "kind": "community",
+   "license": null,
+   "language": "C# / Python",
+   "description": "Two-part bridge (.NET add-in with local HTTP server plus Python MCP server) for clash detection, clash grouping, selection/search sets, viewpoints and color overrides; README cites 30+ operations.",
+   "requirements": "Windows, Navisworks Manage or Simulate (2025-2027 per listings), Python",
+   "tools": [],
+   "stars": 17,
+   "updated": "2026-05-13",
+   "registry": false,
+   "source": "https://github.com/Aitology/Navisworks_MCP"
+  },
+  {
+   "name": "navisworks-mcp (dismas5)",
+   "url": "https://github.com/dismas5/navisworks-mcp",
+   "software": [
+    "Navisworks"
+   ],
+   "category": "Construction management",
+   "maintainer": "dismas5",
+   "kind": "community",
+   "license": "MIT",
+   "language": "C# / JavaScript",
+   "description": "Independent MCP server and Navisworks 2025 plug-in with a 95-tool compatibility catalog; README notes tests pass but live Autodesk behavior is not fully verified.",
+   "requirements": "Windows, Navisworks Manage/Simulate 2025, Node.js",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-10-26",
+   "registry": false,
+   "source": "https://github.com/dismas5/navisworks-mcp"
+  },
+  {
+   "name": "MCP-Add-in Navisworks Manage 2026 (PoC)",
+   "url": "https://github.com/kikki/MCP-Add-in-Autodesk_Navisworks_Manage_2026",
+   "software": [
+    "Navisworks"
+   ],
+   "category": "Construction management",
+   "maintainer": "kikki",
+   "kind": "community",
+   "license": "MIT",
+   "language": "C#",
+   "description": "Proof-of-concept MCP add-in evaluating how an MCP interface can be built for Navisworks Manage 2026, demonstrated with Claude; basis for later Navisworks forks.",
+   "requirements": "Windows, Navisworks Manage 2026",
+   "tools": [],
+   "stars": 16,
+   "updated": "2025-09-22",
+   "registry": false,
+   "source": "https://github.com/kikki/MCP-Add-in-Autodesk_Navisworks_Manage_2026"
+  },
+  {
+   "name": "3dsmax-mcp-LxX",
+   "url": "https://github.com/LxXStudio2025/3dsmax-mcp-LxX",
+   "software": [
+    "3ds Max"
+   ],
+   "category": "3D modeling & rendering",
+   "maintainer": "LxXStudio2025",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python / MAXScript",
+   "description": "MCP server plus CLI for a running 3ds Max (2016 onward, tested on 2016 and 2025) using a pure-MAXScript bridge with no pymxs or PySide dependency.",
+   "requirements": "Windows, 3ds Max 2016+, Python 3.10+",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-10-29",
+   "registry": false,
+   "source": "https://github.com/LxXStudio2025/3dsmax-mcp-LxX"
+  },
+  {
+   "name": "3dsmax-mcp (Geddart)",
+   "url": "https://github.com/Geddart/3dsmax-mcp",
+   "software": [
+    "3ds Max"
+   ],
+   "category": "3D modeling & rendering",
+   "maintainer": "Geddart",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python / C++",
+   "description": "Fork of cl0nazepamm/3dsmax-mcp adding a native C++ GUP-plugin bridge (76 handlers per README), multi-view capture and controller/wiring tools.",
+   "requirements": "Windows, 3ds Max, uv/Python",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-04-17",
+   "registry": false,
+   "source": "https://github.com/Geddart/3dsmax-mcp"
+  },
+  {
+   "name": "MAX_MCP",
+   "url": "https://github.com/sinushawa/MAX_MCP",
+   "software": [
+    "3ds Max"
+   ],
+   "category": "3D modeling & rendering",
+   "maintainer": "sinushawa",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python / C++",
+   "description": "Personal fork of cl0nazepamm/3dsmax-mcp adding a per-module tool filter with an in-Max settings window, a MAXScript docs search tool and a V-Ray 7 reference.",
+   "requirements": "Windows, 3ds Max, Python",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-09-12",
+   "registry": false,
+   "source": "https://github.com/sinushawa/MAX_MCP"
+  },
+  {
+   "name": "max-mcp (Kafkavari)",
+   "url": "https://github.com/Kafkavari/max-mcp",
+   "software": [
+    "3ds Max"
+   ],
+   "category": "3D modeling & rendering",
+   "maintainer": "Kafkavari",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python / MAXScript",
+   "description": "MCP server for a live 3ds Max session where every request is logged, each scene change is a named undo record and the AI can undo only its own steps; runs MAXScript or pymxs.",
+   "requirements": "Windows, 3ds Max, Python",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-10-27",
+   "registry": false,
+   "source": "https://github.com/Kafkavari/max-mcp"
+  },
+  {
+   "name": "Codex_MCP_3DSMAX",
+   "url": "https://github.com/Zhangyoupeng1996/Codex_MCP_3DSMAX",
+   "software": [
+    "3ds Max"
+   ],
+   "category": "3D modeling & rendering",
+   "maintainer": "Zhangyoupeng1996",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python / C++",
+   "description": "3ds Max MCP with installer for Cursor, Claude, Codex and Gemini; README states 115 tools (79 in the core profile) and a native bridge for 2023-2027.",
+   "requirements": "Windows, 3ds Max 2023-2027, Python",
+   "tools": [],
+   "stars": 1,
+   "updated": "2026-06-01",
+   "registry": false,
+   "source": "https://github.com/Zhangyoupeng1996/Codex_MCP_3DSMAX"
+  },
+  {
+   "name": "Autodesk Unified MCP Gateway",
+   "url": "https://github.com/Aaradhya-Dev-Tamrakar/autodesk-mcp",
+   "software": [
+    "Autodesk (multi-product)"
+   ],
+   "category": "Other",
+   "maintainer": "Aaradhya-Dev-Tamrakar",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Zero-dependency stdio gateway that discovers and bridges AI assistants to running Autodesk desktop products, avoiding fixed-port collisions across sessions.",
+   "requirements": "Windows, Autodesk desktop products, Python",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-09-20",
+   "registry": false,
+   "source": "https://github.com/Aaradhya-Dev-Tamrakar/autodesk-mcp"
+  },
+  {
+   "name": "autodesk-cad-mcp-agent",
+   "url": "https://github.com/MAvinash24/autodesk-cad-mcp-agent",
+   "software": [
+    "Fusion",
+    "Inventor",
+    "Revit",
+    "APS"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "MAvinash24",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python / C++",
+   "description": "FastAPI microservice combining a C++ geometry evaluator with an MCP JSON-RPC interface and a RAG knowledge engine over Autodesk API docs.",
+   "requirements": "Python, C++ build toolchain",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-09-09",
+   "registry": false,
+   "source": "https://github.com/MAvinash24/autodesk-cad-mcp-agent"
+  },
+  {
+   "name": "Contech-AI",
+   "url": "https://github.com/entech-labs/Contech-AI",
+   "software": [
+    "Autodesk Construction Cloud"
+   ],
+   "category": "Construction management",
+   "maintainer": "EnTech Labs",
+   "kind": "company",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Read-only Claude Desktop connector (local acc_mcp.py) that answers questions about ACC RFIs, issues, submittals, cost, members and documents using the user's Autodesk login.",
+   "requirements": "Claude Desktop, Autodesk ACC account, Python",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-09-25",
+   "registry": false,
+   "source": "https://github.com/entech-labs/Contech-AI"
+  },
+  {
+   "name": "aps-mcp-auth-examples",
+   "url": "https://github.com/autodesk-platform-services/aps-mcp-auth-examples",
+   "software": [
+    "APS",
+    "Autodesk Construction Cloud"
+   ],
+   "category": "Cloud / APIs",
+   "maintainer": "Autodesk Platform Services",
+   "kind": "official",
+   "license": "MIT",
+   "language": "TypeScript / Python",
+   "description": "Reference MCP servers for Autodesk Platform Services showing 2LO, 3LO, PKCE and Secure Service Account auth, with STDIO or HTTP client authentication targeting the 2026-07-28 MCP spec.",
+   "requirements": "APS app credentials, Node.js / Python",
+   "tools": [],
+   "stars": 9,
+   "updated": "2026-09-25",
+   "registry": false,
+   "source": "https://github.com/autodesk-platform-services/aps-mcp-auth-examples"
+  },
+  {
+   "name": "aps-aecdm-plant3D-mcp-python",
+   "url": "https://github.com/autodesk-platform-services/aps-aecdm-plant3D-mcp-python",
+   "software": [
+    "Plant 3D",
+    "APS"
+   ],
+   "category": "Cloud / APIs",
+   "maintainer": "Autodesk Platform Services",
+   "kind": "official",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Read-only Python MCP server exposing Plant 3D design data through the AEC Data Model GraphQL API: hubs, projects, elements, properties, ProcessPower schema and relationships.",
+   "requirements": "APS credentials, Python",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-10-15",
+   "registry": false,
+   "source": "https://github.com/autodesk-platform-services/aps-aecdm-plant3D-mcp-python"
+  },
+  {
+   "name": "aps-aecdm-mcp-dotnet",
+   "url": "https://github.com/autodesk-platform-services/aps-aecdm-mcp-dotnet",
+   "software": [
+    "APS",
+    "AEC Data Model"
+   ],
+   "category": "Cloud / APIs",
+   "maintainer": "Autodesk Platform Services",
+   "kind": "official",
+   "license": "MIT",
+   "language": "C#",
+   "description": ".NET MCP server sample connecting Claude Desktop to the AEC Data Model API and the APS Viewer.",
+   "requirements": "APS credentials, .NET, Claude Desktop",
+   "tools": [],
+   "stars": 40,
+   "updated": "2026-03-19",
+   "registry": false,
+   "source": "https://github.com/autodesk-platform-services/aps-aecdm-mcp-dotnet"
+  },
+  {
+   "name": "aps-mcp-server-python",
+   "url": "https://github.com/autodesk-platform-services/aps-mcp-server-python",
+   "software": [
+    "APS"
+   ],
+   "category": "Cloud / APIs",
+   "maintainer": "Autodesk Platform Services",
+   "kind": "official",
+   "license": null,
+   "language": "Python",
+   "description": "Three minimal FastMCP servers demonstrating 2-legged, Secure Service Account and 3-legged auth for calling APS Data Management and OSS APIs.",
+   "requirements": "APS app credentials, Python, uv",
+   "tools": [],
+   "stars": 4,
+   "updated": "2026-03-17",
+   "registry": false,
+   "source": "https://github.com/autodesk-platform-services/aps-mcp-server-python"
+  },
+  {
+   "name": "aps-sample-mcp-server-revit-automation",
+   "url": "https://github.com/autodesk-platform-services/aps-sample-mcp-server-revit-automation",
+   "software": [
+    "Revit",
+    "APS"
+   ],
+   "category": "Cloud / APIs",
+   "maintainer": "Autodesk Platform Services",
+   "kind": "official",
+   "license": "MIT",
+   "language": "C#",
+   "description": "Sample remote HTTP MCP server that automates Revit through the APS Automation API using Secure Service Account auth; README calls it an exploratory vibe-coded proof of concept.",
+   "requirements": "APS credentials, .NET; companion AppBundle repo",
+   "tools": [],
+   "stars": 10,
+   "updated": "2026-03-09",
+   "registry": false,
+   "source": "https://github.com/autodesk-platform-services/aps-sample-mcp-server-revit-automation"
+  },
+  {
+   "name": "Autodesk-Maya-MCP",
+   "url": "https://github.com/AYDJI/Autodesk-Maya-MCP",
+   "software": [
+    "Maya"
+   ],
+   "category": "3D modeling & rendering",
+   "maintainer": "AYDJI",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Maya MCP server with 30+ tools using Maya's built-in command port, needing no separate plugin.",
+   "requirements": "Maya with command port open, Python",
+   "tools": [],
+   "stars": 1,
+   "updated": "2026-02-13",
+   "registry": false,
+   "source": "https://github.com/AYDJI/Autodesk-Maya-MCP"
+  },
+  {
+   "name": "maya-mcp (YomenStyle)",
+   "url": "https://github.com/YomenStyle/maya-mcp",
+   "software": [
+    "Maya"
+   ],
+   "category": "3D modeling & rendering",
+   "maintainer": "YomenStyle",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Maya 2022+ MCP built around arbitrary Python execution, self-exploration and viewport capture, split into a PC-side server and a stdlib-only in-Maya bridge, with Unreal pipeline helpers.",
+   "requirements": "Maya 2022+, Python 3.10+",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-08-04",
+   "registry": false,
+   "source": "https://github.com/YomenStyle/maya-mcp"
+  },
+  {
+   "name": "maya-mcp (Sarielyj)",
+   "url": "https://github.com/Sarielyj/maya-mcp",
+   "software": [
+    "Maya"
+   ],
+   "category": "3D modeling & rendering",
+   "maintainer": "Sarielyj",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Hybrid Maya MCP with semantic scene/material/animation/render tools, execute_python/execute_mel escape hatches and read-only resources; stdio or Streamable HTTP.",
+   "requirements": "Maya 2022-2025, Python 3.10+",
+   "tools": [
+    "execute_python",
+    "execute_mel"
+   ],
+   "stars": 1,
+   "updated": "2026-09-12",
+   "registry": false,
+   "source": "https://github.com/Sarielyj/maya-mcp"
+  },
+  {
+   "name": "MayaMCP (dcoes)",
+   "url": "https://github.com/dcoes/MayaMCP",
+   "software": [
+    "Maya"
+   ],
+   "category": "3D modeling & rendering",
+   "maintainer": "dcoes",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Minimal early-stage Maya MCP server (v0.2.0) for Claude Desktop, tested on Maya 2023 and 2025; last commit May 2025.",
+   "requirements": "Maya 2023/2025, Python",
+   "tools": [],
+   "stars": 1,
+   "updated": "2025-05-12",
+   "registry": false,
+   "source": "https://github.com/dcoes/MayaMCP"
+  },
+  {
+   "name": "maya-mcp (science-animated)",
+   "url": "https://github.com/science-animated/maya-mcp",
+   "software": [
+    "Maya"
+   ],
+   "category": "3D modeling & rendering",
+   "maintainer": "science-animated",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "MCP server that sends Python expressions to Maya's built-in commandPort on TCP 9877, needing no plugin.",
+   "requirements": "Maya with commandPort, Python",
+   "tools": [],
+   "stars": 2,
+   "updated": "2026-10-18",
+   "registry": false,
+   "source": "https://github.com/science-animated/maya-mcp"
+  },
+  {
+   "name": "MayaMCP (isuzu-shiranui)",
+   "url": "https://github.com/isuzu-shiranui/MayaMCP",
+   "software": [
+    "Maya"
+   ],
+   "category": "3D modeling & rendering",
+   "maintainer": "isuzu-shiranui",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python / C#",
+   "description": "Maya serves MCP itself over Streamable HTTP with only execute_python and execute_mel tools, plus a NativeAOT command-line client.",
+   "requirements": "Maya 2022+ (tested 2023); Windows x64 prebuilt binary",
+   "tools": [
+    "execute_python",
+    "execute_mel"
+   ],
+   "stars": 0,
+   "updated": "2026-09-15",
+   "registry": false,
+   "source": "https://github.com/isuzu-shiranui/MayaMCP"
+  },
+  {
+   "name": "automaya-mcp",
+   "url": "https://github.com/CallMeParams/automaya-mcp",
+   "software": [
+    "Maya"
+   ],
+   "category": "3D modeling & rendering",
+   "maintainer": "CallMeParams",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Maya 2024 MCP with 258 typed tools per README, an in-Maya console, asset libraries, AI 3D generation and a change stream for driving Unreal.",
+   "requirements": "Maya 2024, Python",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-09-24",
+   "registry": false,
+   "source": "https://github.com/CallMeParams/automaya-mcp"
+  },
+  {
+   "name": "maya-mcp (wang1510583)",
+   "url": "https://github.com/wang1510583/maya-mcp",
+   "software": [
+    "Maya"
+   ],
+   "category": "3D modeling & rendering",
+   "maintainer": "wang1510583",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Chinese-language MCP bridge for Maya based on the Maya Agent 1.3.1 extension, with 10 direct tools, a 120-tool registry and custom body rigging.",
+   "requirements": "Maya, Python",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-10-29",
+   "registry": false,
+   "source": "https://github.com/wang1510583/maya-mcp"
+  },
+  {
+   "name": "autodesk-inventor-mcp (xtylerai2026-oss)",
+   "url": "https://github.com/xtylerai2026-oss/autodesk-inventor-mcp",
+   "software": [
+    "Inventor"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "xtylerai2026-oss",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Alpha MCP server for parametric part modeling, assemblies and inspection in Inventor, developed against Inventor 2027.",
+   "requirements": "Windows, Inventor 2027, Python",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-08-06",
+   "registry": false,
+   "source": "https://github.com/xtylerai2026-oss/autodesk-inventor-mcp"
+  },
+  {
+   "name": "inventor-mcp (NeonGlay)",
+   "url": "https://github.com/NeonGlay/inventor-mcp",
+   "software": [
+    "Inventor"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "NeonGlay",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "MCP server wrapping Inventor's COM API with millimeter-based high-level tools for parametric parts and sheet metal; original of the cenitu continuation, no activity since June 2026.",
+   "requirements": "Windows, Inventor 2026, Python",
+   "tools": [],
+   "stars": 50,
+   "updated": "2026-06-10",
+   "registry": false,
+   "source": "https://github.com/NeonGlay/inventor-mcp"
+  },
+  {
+   "name": "inventor-mcp (allen2123231)",
+   "url": "https://github.com/allen2123231/inventor-mcp",
+   "software": [
+    "Inventor"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "allen2123231",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Inventor MCP with 36 tools (README) for parametric parts, sketches, holes and sheet metal plus modeling skills and API notes; Traditional Chinese docs.",
+   "requirements": "Windows, Inventor, Python",
+   "tools": [
+    "connect",
+    "status",
+    "create_part",
+    "save_document",
+    "export_document",
+    "create_sketch",
+    "draw_rectangle",
+    "extrude"
+   ],
+   "stars": 0,
+   "updated": "2026-09-16",
+   "registry": false,
+   "source": "https://github.com/allen2123231/inventor-mcp"
+  },
+  {
+   "name": "inventor-mcp (hsavas)",
+   "url": "https://github.com/hsavas/inventor-mcp",
+   "software": [
+    "Inventor"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "hsavas",
+   "kind": "community",
+   "license": null,
+   "language": "Python",
+   "description": "COM-automation MCP server for Inventor covering sketches, part features, assemblies, drawings and document control.",
+   "requirements": "Windows, Inventor, Python",
+   "tools": [],
+   "stars": 7,
+   "updated": "2026-10-20",
+   "registry": false,
+   "source": "https://github.com/hsavas/inventor-mcp"
+  },
+  {
+   "name": "inventor-mcp-server (cenitu)",
+   "url": "https://github.com/cenitu/inventor-mcp-server",
+   "software": [
+    "Inventor"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "cenitu",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Maintained continuation of NeonGlay/inventor-mcp with MCP SDK 2.x support, Inventor 2027 and assembly features.",
+   "requirements": "Windows, Inventor 2027, Python",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-10-27",
+   "registry": true,
+   "source": "https://github.com/cenitu/inventor-mcp-server"
+  },
+  {
+   "name": "ipt-mcp",
+   "url": "https://github.com/bimwright/ipt-mcp",
+   "software": [
+    "Inventor"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "bimwright",
+   "kind": "community",
+   "license": "Apache-2.0",
+   "language": "C#",
+   "description": "Apache-2.0 MCP gateway for Inventor 2022-2027 covering parts, sketches, features, parameters, iProperties and export via a per-version in-process add-in.",
+   "requirements": "Windows, Inventor 2022-2027, .NET",
+   "tools": [],
+   "stars": 17,
+   "updated": "2026-10-05",
+   "registry": false,
+   "source": "https://github.com/bimwright/ipt-mcp"
+  },
+  {
+   "name": "dwg-mcp",
+   "url": "https://github.com/bimwright/dwg-mcp",
+   "software": [
+    "AutoCAD"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "bimwright",
+   "kind": "community",
+   "license": "Apache-2.0",
+   "language": "C#",
+   "description": "MCP gateway for AutoCAD 2022-2027 with text reading, spatial clustering, drawing translation rewriting and code execution.",
+   "requirements": "Windows, AutoCAD 2022-2027, .NET",
+   "tools": [],
+   "stars": 22,
+   "updated": "2026-10-30",
+   "registry": false,
+   "source": "https://github.com/bimwright/dwg-mcp"
+  },
+  {
+   "name": "nwd-mcp",
+   "url": "https://github.com/bimwright/nwd-mcp",
+   "software": [
+    "Navisworks"
+   ],
+   "category": "Construction management",
+   "maintainer": "bimwright",
+   "kind": "community",
+   "license": "Apache-2.0",
+   "language": "C#",
+   "description": "MCP gateway for Navisworks Manage 2022-2027 to query, inspect, navigate and script desktop sessions via a .NET 8 server and in-process plugin; Freedom/Simulate unsupported.",
+   "requirements": "Windows, Navisworks Manage 2022-2027, .NET 8",
+   "tools": [],
+   "stars": 8,
+   "updated": "2026-10-10",
+   "registry": false,
+   "source": "https://github.com/bimwright/nwd-mcp"
+  },
+  {
+   "name": "Fusion-MCP-Server (Joelalbon)",
+   "url": "https://github.com/Joelalbon/Fusion-MCP-Server",
+   "software": [
+    "Fusion"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "Joelalbon",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Client-server remote control for Fusion 360 with a Python MCP server, JSON socket communication and a Fusion add-in; last commit June 2025.",
+   "requirements": "Fusion 360, Python",
+   "tools": [],
+   "stars": 41,
+   "updated": "2025-06-12",
+   "registry": false,
+   "source": "https://github.com/Joelalbon/Fusion-MCP-Server"
+  },
+  {
+   "name": "Ghost-MCP-Fusion360",
+   "url": "https://github.com/thecuriousrohan/Ghost-MCP-Fusion360",
+   "software": [
+    "Fusion"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "thecuriousrohan",
+   "kind": "community",
+   "license": null,
+   "language": "Python",
+   "description": "Zero-trust Fusion 360 MCP server requiring native human approval of each session and exposing the Fusion API for CAD generation and visual verification.",
+   "requirements": "Fusion 360, Python",
+   "tools": [],
+   "stars": 2,
+   "updated": "2026-09-18",
+   "registry": false,
+   "source": "https://github.com/thecuriousrohan/Ghost-MCP-Fusion360"
+  },
+  {
+   "name": "fusion-360-mcp-server (perkovicluka)",
+   "url": "https://github.com/perkovicluka/fusion-360-mcp-server",
+   "software": [
+    "Fusion"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "perkovicluka",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "FastMCP server (stdio/HTTP) plus a Fusion Python add-in listening on local TCP to link MCP clients to Fusion 360.",
+   "requirements": "Fusion 360, Python",
+   "tools": [],
+   "stars": 0,
+   "updated": "2025-12-05",
+   "registry": false,
+   "source": "https://github.com/perkovicluka/fusion-360-mcp-server"
+  },
+  {
+   "name": "fusion360-mcp-server (mycelia1)",
+   "url": "https://github.com/mycelia1/fusion360-mcp-server",
+   "software": [
+    "Fusion"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "mycelia1",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Fusion 360 MCP built on the latest MCP SDK that turns tool calls into Fusion Python scripts; README lists 13+ tools.",
+   "requirements": "Fusion 360, Python",
+   "tools": [],
+   "stars": 6,
+   "updated": "2025-07-23",
+   "registry": false,
+   "source": "https://github.com/mycelia1/fusion360-mcp-server"
+  },
+  {
+   "name": "autodesk-fusion-mcp (frankhommers)",
+   "url": "https://github.com/frankhommers/autodesk-fusion-mcp",
+   "software": [
+    "Fusion"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "frankhommers",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "MCP server that runs inside Fusion as an add-in and serves Streamable HTTP directly, with no external dependencies or bridge process.",
+   "requirements": "Fusion add-in, Python (bundled)",
+   "tools": [],
+   "stars": 34,
+   "updated": "2026-09-26",
+   "registry": false,
+   "source": "https://github.com/frankhommers/autodesk-fusion-mcp"
+  },
+  {
+   "name": "fusion-mcp (prim-design)",
+   "url": "https://github.com/prim-design/fusion-mcp",
+   "software": [
+    "Fusion"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "prim-design",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Open-source stdio MCP server with a TCP Fusion 360 add-in; README mentions an execute_python escape hatch.",
+   "requirements": "Fusion 360, Python, uv",
+   "tools": [],
+   "stars": 4,
+   "updated": "2026-03-23",
+   "registry": false,
+   "source": "https://github.com/prim-design/fusion-mcp"
+  },
+  {
+   "name": "Fusion-Native-MCP",
+   "url": "https://github.com/Dawn-Of-Justice/Fusion-Native-MCP",
+   "software": [
+    "Fusion"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "Dawn-Of-Justice",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Client for Fusion's native MCP endpoint with 39 tools (README) covering modeling, assemblies, CAM toolpaths and a persistent operation journal; Windows live-tested.",
+   "requirements": "Fusion desktop with native MCP, Python 3.11+",
+   "tools": [],
+   "stars": 1,
+   "updated": "2026-09-10",
+   "registry": false,
+   "source": "https://github.com/Dawn-Of-Justice/Fusion-Native-MCP"
+  },
+  {
+   "name": "fusion360-mcp (hellstein-dev)",
+   "url": "https://github.com/hellstein-dev/fusion360-mcp",
+   "software": [
+    "Fusion"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "hellstein-dev",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Stdio MCP server plus a token-protected localhost Fusion add-in that runs requests on Fusion's main thread.",
+   "requirements": "Fusion 360, Python",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-10-24",
+   "registry": false,
+   "source": "https://github.com/hellstein-dev/fusion360-mcp"
+  },
+  {
+   "name": "fusion-reconstruct-mcp",
+   "url": "https://github.com/ab7646/fusion-reconstruct-mcp",
+   "software": [
+    "Fusion"
+   ],
+   "category": "3D modeling & rendering",
+   "maintainer": "ab7646",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "MCP server and Fusion add-in that rebuilds STL/3MF meshes or reference photos as parametric Fusion features driven by an LLM.",
+   "requirements": "Fusion 360, Python",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-08-20",
+   "registry": false,
+   "source": "https://github.com/ab7646/fusion-reconstruct-mcp"
+  },
+  {
+   "name": "fusion-mcp (shiguri-01)",
+   "url": "https://github.com/shiguri-01/fusion-mcp",
+   "software": [
+    "Fusion"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "shiguri-01",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Japanese-documented Fusion MCP with an add-in; exposes Python execution in Fusion, viewport screenshot and user-parameter tools.",
+   "requirements": "Fusion, Python",
+   "tools": [
+    "execute_code",
+    "get_viewport_screenshot",
+    "list_user_parameters",
+    "set_parameter",
+    "health"
+   ],
+   "stars": 4,
+   "updated": "2026-04-01",
+   "registry": false,
+   "source": "https://github.com/shiguri-01/fusion-mcp"
+  },
+  {
+   "name": "RevitMCPGraphQL",
+   "url": "https://github.com/GraphBIM/RevitMCPGraphQL",
+   "software": [
+    "Revit"
+   ],
+   "category": "BIM authoring",
+   "maintainer": "GraphBIM",
+   "kind": "community",
+   "license": null,
+   "language": "C# / Python",
+   "description": "In-Revit GraphQL server for read and write operations with a Python client, built at a weekend hackathon as a GraphQL take on Revit MCP.",
+   "requirements": "Windows, Revit, Python",
+   "tools": [],
+   "stars": 20,
+   "updated": "2026-07-02",
+   "registry": false,
+   "source": "https://github.com/GraphBIM/RevitMCPGraphQL"
+  },
+  {
+   "name": "revit-mcp-toolkit",
+   "url": "https://github.com/okuno-dsi/revit-mcp-toolkit",
+   "software": [
+    "Revit"
+   ],
+   "category": "BIM authoring",
+   "maintainer": "okuno-dsi",
+   "kind": "community",
+   "license": "Apache-2.0",
+   "language": "C# / PowerShell",
+   "description": "Japanese-language MCP-compatible toolkit (server plus add-in) for Revit automation over JSON-RPC, aimed at Japanese practice; not affiliated with Autodesk.",
+   "requirements": "Windows, licensed Revit",
+   "tools": [],
+   "stars": 7,
+   "updated": "2026-09-13",
+   "registry": false,
+   "source": "https://github.com/okuno-dsi/revit-mcp-toolkit"
+  },
+  {
+   "name": "forma-mcp",
+   "url": "https://github.com/nhantruong96/forma-mcp",
+   "software": [
+    "Autodesk Construction Cloud",
+    "Autodesk Forma"
+   ],
+   "category": "Construction management",
+   "maintainer": "nhantruong96",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "MCP server for managing an ISO 19650 / TCVN 14177 Common Data Environment on ACC: projects, folder trees, permissions, files, naming compliance and the Content Catalog; formerly acc-mcp.",
+   "requirements": "Claude Desktop, ACC account, Python",
+   "tools": [],
+   "stars": 1,
+   "updated": "2026-10-22",
+   "registry": false,
+   "source": "https://github.com/nhantruong96/forma-mcp"
+  },
+  {
+   "name": "BURAK-BIM",
+   "url": "https://github.com/BURAKAFRIDI92/BURAK-BIM",
+   "software": [
+    "Revit",
+    "AutoCAD",
+    "Civil 3D",
+    "Navisworks",
+    "Inventor",
+    "ReCap"
+   ],
+   "category": "BIM authoring",
+   "maintainer": "BURAKAFRIDI92",
+   "kind": "community",
+   "license": "Apache-2.0",
+   "language": "C#",
+   "description": "Single MCP connector covering the Autodesk AEC stack (Revit, AutoCAD, Civil 3D, Plant 3D, Navisworks, Inventor, ReCap, Robot) versions 2022-2027 using locally compiled bridges.",
+   "requirements": "Windows, Autodesk desktop apps 2022-2027",
+   "tools": [],
+   "stars": 2,
+   "updated": "2026-10-25",
+   "registry": false,
+   "source": "https://github.com/BURAKAFRIDI92/BURAK-BIM"
+  },
+  {
+   "name": "autodesk-forma-mcp-apac-trial",
+   "url": "https://github.com/yueyinglong-cmd/autodesk-forma-mcp-apac-trial",
+   "software": [
+    "Autodesk Construction Cloud",
+    "Autodesk Forma"
+   ],
+   "category": "Construction management",
+   "maintainer": "yueyinglong-cmd",
+   "kind": "community",
+   "license": "MIT",
+   "language": "JavaScript",
+   "description": "MCP server for Claude Code against ACC/Forma APIs; README states 408 tools across 22 modules (issues, RFIs, submittals, cost, sheets, takeoff and more).",
+   "requirements": "Claude Code, ACC account, Node.js",
+   "tools": [],
+   "stars": 4,
+   "updated": "2026-04-26",
+   "registry": false,
+   "source": "https://github.com/yueyinglong-cmd/autodesk-forma-mcp-apac-trial"
+  },
+  {
+   "name": "RhinoMCP (mustafaisildakcom)",
+   "url": "https://github.com/mustafaisildakcom/rhino-mcp",
+   "software": [
+    "Rhino",
+    "Grasshopper"
+   ],
+   "category": "3D modeling & rendering",
+   "maintainer": "mustafaisildakcom",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Blender-MCP-inspired socket bridge letting Claude drive Rhino and Grasshopper, with optional Replicate-based AI rendering of images.",
+   "requirements": "Rhino, Python, MCP client; optional replicate.com API key",
+   "tools": [],
+   "stars": 1,
+   "updated": "2025-04-08",
+   "registry": false,
+   "source": "https://github.com/mustafaisildakcom/rhino-mcp"
+  },
+  {
+   "name": "Honeybee-MCP",
+   "url": "https://github.com/LoftyTao/Honeybee-MCP",
+   "software": [
+    "Honeybee",
+    "Ladybug Tools",
+    "Grasshopper"
+   ],
+   "category": "Structural & energy analysis",
+   "maintainer": "LoftyTao",
+   "kind": "community",
+   "license": "GPL-3.0",
+   "language": "Python",
+   "description": "FastMCP server exposing the Ladybug Tools/Honeybee building-energy modeling ecosystem; loads HBJSON or Grasshopper shared-memory models and edits, queries and simulates them.",
+   "requirements": "Python, Honeybee/Ladybug Tools libraries; MCP-capable IDE or client",
+   "tools": [
+    "load_model",
+    "save_model",
+    "query"
+   ],
+   "stars": 17,
+   "updated": "2026-03-10",
+   "registry": false,
+   "source": "https://github.com/LoftyTao/Honeybee-MCP"
+  },
+  {
+   "name": "Ladybug Tools MCP",
+   "url": "https://github.com/LoftyTao/ladybug-tools-mcp",
+   "software": [
+    "Ladybug Tools",
+    "Honeybee"
+   ],
+   "category": "Structural & energy analysis",
+   "maintainer": "LoftyTao",
+   "kind": "community",
+   "license": "GPL-3.0",
+   "language": "Python",
+   "description": "FastMCP service that lets agents perform Ladybug Tools modeling, editing, querying, simulation and data visualization without a CAD interface, with a web view mode.",
+   "requirements": "Python, Ladybug Tools libraries; MCP client such as Codex",
+   "tools": [],
+   "stars": 12,
+   "updated": "2026-09-24",
+   "registry": false,
+   "source": "https://github.com/LoftyTao/ladybug-tools-mcp"
+  },
+  {
+   "name": "mcp-floorplans",
+   "url": "https://github.com/Simoagadir95/mcp-floorplans",
+   "software": [
+    "Floor plans"
+   ],
+   "category": "Other",
+   "maintainer": "Simoagadir95",
+   "kind": "community",
+   "license": null,
+   "language": "Python",
+   "description": "Early MVP MCP server that deterministically generates three workspace layout variants from a space brief, with metrics and zone adjacency analysis.",
+   "requirements": "Python",
+   "tools": [
+    "generate_space_layouts",
+    "analyze_zone_adjacencies"
+   ],
+   "stars": 0,
+   "updated": "2026-08-08",
+   "registry": false,
+   "source": "https://github.com/Simoagadir95/mcp-floorplans"
+  },
+  {
+   "name": "mcp-archviz",
+   "url": "https://github.com/Simoagadir95/mcp-archviz",
+   "software": [
+    "3D architectural visualization"
+   ],
+   "category": "3D modeling & rendering",
+   "maintainer": "Simoagadir95",
+   "kind": "community",
+   "license": null,
+   "language": "Python",
+   "description": "MVP companion to mcp-floorplans for 3D visualization of layouts; its README says the provider is a stub returning placeholder URLs with no real rendering.",
+   "requirements": "Python",
+   "tools": [
+    "generate_3d_model",
+    "render_perspective",
+    "export_model"
+   ],
+   "stars": 0,
+   "updated": "2026-08-06",
+   "registry": false,
+   "source": "https://github.com/Simoagadir95/mcp-archviz"
+  },
+  {
+   "name": "MicroStation V8i MCP Server",
+   "url": "https://github.com/ZaZuy/microstation-mcp",
+   "software": [
+    "MicroStation V8i"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "ZaZuy",
+   "kind": "community",
+   "license": null,
+   "language": "Python",
+   "description": "Bridge between AI assistants and Bentley MicroStation V8i exposing 133 CAD tools via a native MDL named-pipe mode with COM fallback, plus resources and prompts.",
+   "requirements": "Windows, MicroStation V8i (SELECTseries), Python; stdio or SSE transport",
+   "tools": [],
+   "stars": 3,
+   "updated": "2026-10-13",
+   "registry": false,
+   "source": "https://github.com/ZaZuy/microstation-mcp"
+  },
+  {
+   "name": "Bentley MCP Adapter (unofficial)",
+   "url": "https://github.com/OrvenBentleySystems/unofficial-bentley-mcp-adapter-of",
+   "software": [
+    "MicroStation",
+    "STAAD.Pro",
+    "PLAXIS"
+   ],
+   "category": "Other",
+   "maintainer": "OrvenBentleySystems",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Unofficial adapter that discovers local Bentley installs, emits MCP client config and runs connectivity checks for MicroStation, STAAD.Pro and PLAXIS MCP servers.",
+   "requirements": "Windows with Bentley apps installed; Python",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-09-07",
+   "registry": false,
+   "source": "https://github.com/OrvenBentleySystems/unofficial-bentley-mcp-adapter-of"
+  },
+  {
+   "name": "OpenSTAAD MCP Server (DP065U)",
+   "url": "https://github.com/DP065U/STAAD-MCP",
+   "software": [
+    "STAAD.Pro"
+   ],
+   "category": "Structural & energy analysis",
+   "maintainer": "DP065U",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "MCP server for Bentley STAAD.Pro via OpenSTAAD to define load cases, extract data and set properties; README says it was introduced under Bentley infrastructure AI co-innovation.",
+   "requirements": "Windows, STAAD.Pro, Python",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-06-17",
+   "registry": false,
+   "source": "https://github.com/DP065U/STAAD-MCP"
+  },
+  {
+   "name": "Trimble Connect MCP",
+   "url": "https://github.com/nhantruong96/trimble-connect-mcp",
+   "software": [
+    "Trimble Connect"
+   ],
+   "category": "Cloud / APIs",
+   "maintainer": "nhantruong96",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Local stdio MCP server for Trimble Connect (Core API v2): projects, folders, files, versions, members, groups and permissions, with an opt-in write mode.",
+   "requirements": "Python 3.10+, uv, Trimble ID and registered Trimble application; README states 40 tools",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-08-04",
+   "registry": false,
+   "source": "https://github.com/nhantruong96/trimble-connect-mcp"
+  },
+  {
+   "name": "TrimbleX9-mcp",
+   "url": "https://github.com/northidaholabs/TrimbleX9-mcp",
+   "software": [
+    "Trimble X9"
+   ],
+   "category": "Other",
+   "maintainer": "northidaholabs",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Clean-room MCP server for the Trimble X9 terrestrial laser scanner local API: status, projects, scans, point-cloud downloads, with opt-in scan starting.",
+   "requirements": "Trimble X9 scanner (USB or Wi-Fi) or bridge service; Python",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-10-28",
+   "registry": false,
+   "source": "https://github.com/northidaholabs/TrimbleX9-mcp"
+  },
+  {
+   "name": "Tekla API MCP",
+   "url": "https://github.com/pawellisowski/tekla-api-mcp",
+   "software": [
+    "Tekla Structures"
+   ],
+   "category": "Structural & energy analysis",
+   "maintainer": "pawellisowski",
+   "kind": "community",
+   "license": "MIT",
+   "language": "TypeScript",
+   "description": "Documentation-lookup MCP server giving Claude searchable Tekla Open API docs and 50+ examples from the TSOpenAPIExamples repository; does not control a live model.",
+   "requirements": "Node.js (npm package tekla-api-mcp)",
+   "tools": [],
+   "stars": 3,
+   "updated": "2025-09-18",
+   "registry": false,
+   "source": "https://github.com/pawellisowski/tekla-api-mcp"
+  },
+  {
+   "name": "ZWCAD MCP Server (Jerri-Z)",
+   "url": "https://github.com/Jerri-Z/ZWCAD-MCP",
+   "software": [
+    "ZWCAD",
+    "ZWCAD Mechanical"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "Jerri-Z",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "ZWCAD automation MCP server with 26 platform tools plus ZWCAD Mechanical tools for drawing, dimensions, layers, blocks and document management.",
+   "requirements": "Windows, ZWCAD, Python",
+   "tools": [
+    "zwcad_draw_entity",
+    "zwcad_draw_batch",
+    "zwcad_draw_3d_solid",
+    "zwcad_add_annotation",
+    "zwcad_add_dimension",
+    "zwcad_insert_block",
+    "zwcad_manage_style",
+    "zwcad_diagnose"
+   ],
+   "stars": 0,
+   "updated": "2026-09-09",
+   "registry": false,
+   "source": "https://github.com/Jerri-Z/ZWCAD-MCP"
+  },
+  {
+   "name": "ZWCAD MCP (yanyoo2000)",
+   "url": "https://github.com/yanyoo2000/ZWCAD-MCP",
+   "software": [
+    "ZWCAD",
+    "ZWCAD Mechanical"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "yanyoo2000",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "MCP service driving ZWCAD and ZWCAD Mechanical through Windows COM via a Node launcher; README states 40 tools covering drawing, annotation, layers, title blocks and BOM.",
+   "requirements": "Windows 10/11, ZWCAD with an open DWG, Python 3.10+, Node.js 18+",
+   "tools": [
+    "zwcad_diagnose",
+    "zwcad_wait_ready"
+   ],
+   "stars": 0,
+   "updated": "2026-10-30",
+   "registry": false,
+   "source": "https://github.com/yanyoo2000/ZWCAD-MCP"
+  },
+  {
+   "name": "ZWCAD-MCP (dalingo81)",
+   "url": "https://github.com/dalingo81/ZWCAD-MCP",
+   "software": [
+    "ZWCAD",
+    "DXF"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "dalingo81",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "ZWCAD MCP server adapted from puran-water/autocad-mcp with a File-IPC AutoLISP backend and a headless ezdxf backend that runs without CAD on any OS.",
+   "requirements": "Python; Windows plus ZWCAD 2020+ for live mode, any OS for ezdxf mode",
+   "tools": [],
+   "stars": 4,
+   "updated": "2026-07-24",
+   "registry": false,
+   "source": "https://github.com/dalingo81/ZWCAD-MCP"
+  },
+  {
+   "name": "ZWCAD MCP KR",
+   "url": "https://github.com/gkdlwmzkdls-sys/zwcad-mcp-kr",
+   "software": [
+    "ZWCAD"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "gkdlwmzkdls-sys",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Fork of dalingo81/ZWCAD-MCP for Korean Windows, installable as a Claude Code plugin, to read and edit ZWCAD drawings (layers, entities, text, lines, blocks).",
+   "requirements": "Windows, ZWCAD 2020+ with AutoLISP, Python 3.10+",
+   "tools": [],
+   "stars": 1,
+   "updated": "2026-09-23",
+   "registry": false,
+   "source": "https://github.com/gkdlwmzkdls-sys/zwcad-mcp-kr"
+  },
+  {
+   "name": "DrawMCP",
+   "url": "https://github.com/hj2018118/DrawMCP",
+   "software": [
+    "AutoCAD",
+    "ZWCAD",
+    "FreeCAD"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "hj2018118",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "HTTP MCP server plus AutoCAD, ZWCAD and FreeCAD plugins and a desktop chat GUI to read, draw, edit and export CAD drawings across the three applications.",
+   "requirements": "Windows, Python 3.12/3.13, one of AutoCAD/ZWCAD/FreeCAD with the bundled plugin",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-10-26",
+   "registry": false,
+   "source": "https://github.com/hj2018118/DrawMCP"
+  },
+  {
+   "name": "kenchiku-mcp",
+   "url": "https://github.com/Sora-bluesky/kenchiku-mcp",
+   "software": [
+    "ZWCAD"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "Sora-bluesky",
+   "kind": "community",
+   "license": "Apache-2.0",
+   "language": "Python",
+   "description": "Architectural-workflow fork of multiCAD-mcp for ZWCAD that adds non-uniform block scaling (for example door and window blocks) and stderr-safe logging.",
+   "requirements": "Windows, ZWCAD, Python",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-04-13",
+   "registry": false,
+   "source": "https://github.com/Sora-bluesky/kenchiku-mcp"
+  },
+  {
+   "name": "CAD-MCP (piexl)",
+   "url": "https://github.com/piexl/CAD-MCP",
+   "software": [
+    "AutoCAD",
+    "GstarCAD",
+    "ZWCAD"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "piexl",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Natural-language CAD control server for AutoCAD, GstarCAD and ZWCAD: lines, circles, arcs, polylines, text, hatches, dimensions, layers and DWG saving.",
+   "requirements": "Windows, one supported CAD application, Python",
+   "tools": [],
+   "stars": 2,
+   "updated": "2026-02-01",
+   "registry": false,
+   "source": "https://github.com/piexl/CAD-MCP"
+  },
+  {
+   "name": "ARES Onshape Local",
+   "url": "https://github.com/ARES-23247/ares-onshape-local",
+   "software": [
+    "Onshape"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "ARES-23247",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Local MCP tools and skills for native Onshape CAD that prepare feature JSON and track recipes while the agent executes via a signed-in browser session, avoiding API-call allowance.",
+   "requirements": "Python, Onshape account with signed-in session; stdio MCP client",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-10-09",
+   "registry": false,
+   "source": "https://github.com/ARES-23247/ares-onshape-local"
+  },
+  {
+   "name": "onshape-mcp-codex",
+   "url": "https://github.com/dsh18235538266-crypto/onshape-mcp-codex",
+   "software": [
+    "Onshape"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "dsh18235538266-crypto",
+   "kind": "community",
+   "license": null,
+   "language": "Python",
+   "description": "Codex-targeted fork of jarvis-onshape-mcp exposing about 69 tools for sketches, features, assemblies, variable studios, FeatureScript, rendering and STEP/STL/glTF export.",
+   "requirements": "Python, Onshape API key, OpenAI Codex (stdio MCP)",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-09-07",
+   "registry": false,
+   "source": "https://github.com/dsh18235538266-crypto/onshape-mcp-codex"
+  },
+  {
+   "name": "Onshape MCP (gilfoyle19)",
+   "url": "https://github.com/gilfoyle19/onshapemcp",
+   "software": [
+    "Onshape"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "gilfoyle19",
+   "kind": "community",
+   "license": null,
+   "language": "Python",
+   "description": "Onshape MCP server for parametric sketching, extrudes, fillets, chamfers, feature trees, variable tables and gear creation.",
+   "requirements": "Python 3.10+, Onshape API keys; configured for Gemini CLI",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-03-13",
+   "registry": false,
+   "source": "https://github.com/gilfoyle19/onshapemcp"
+  },
+  {
+   "name": "sweethome3d-mcp",
+   "url": "https://github.com/consultantstanleymn/sweethome3d-mcp",
+   "software": [
+    "Sweet Home 3D"
+   ],
+   "category": "Other",
+   "maintainer": "consultantstanleymn",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Local stdio MCP server that creates and edits Sweet Home 3D .sh3d files on disk (walls, rooms, furniture, dimensions) without a running Sweet Home 3D instance.",
+   "requirements": "Python; verified against Sweet Home 3D 7.9.303.0",
+   "tools": [],
+   "stars": 1,
+   "updated": "2026-08-31",
+   "registry": false,
+   "source": "https://github.com/consultantstanleymn/sweethome3d-mcp"
+  },
+  {
+   "name": "FreeCAD MCP Plugin (ATOI-Ming)",
+   "url": "https://github.com/ATOI-Ming/FreeCAD-MCP",
+   "software": [
+    "FreeCAD"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "ATOI-Ming",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "FreeCAD plugin with server, GUI control panel and CLI client automating model creation, macro execution and view management for MCP clients like Claude and Cursor.",
+   "requirements": "FreeCAD, Python",
+   "tools": [],
+   "stars": 102,
+   "updated": "2026-06-17",
+   "registry": false,
+   "source": "https://github.com/ATOI-Ming/FreeCAD-MCP"
+  },
+  {
+   "name": "freecad-mcp-pro",
+   "url": "https://github.com/GadatheGod/freecad-mcp-pro",
+   "software": [
+    "FreeCAD"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "GadatheGod",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "FreeCAD MCP server for parametric 3D parts, CalculiX FEM analysis, view screenshots, parts library inserts, custom Python and remote connections.",
+   "requirements": "FreeCAD, Python",
+   "tools": [],
+   "stars": 2,
+   "updated": "2026-07-25",
+   "registry": false,
+   "source": "https://github.com/GadatheGod/freecad-mcp-pro"
+  },
+  {
+   "name": "freecad-mcp (Coben-3d)",
+   "url": "https://github.com/Coben-3d/freecad-mcp",
+   "software": [
+    "FreeCAD"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "Coben-3d",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Basic FreeCAD MCP server that creates primitive solids and exports STEP, STL and OBJ for Claude Desktop.",
+   "requirements": "Python 3.10+, FreeCAD at /Applications/FreeCAD.app (macOS), Claude Desktop",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-02-05",
+   "registry": false,
+   "source": "https://github.com/Coben-3d/freecad-mcp"
+  },
+  {
+   "name": "MCP-FreeCAD",
+   "url": "https://github.com/jango-blockchained/mcp-freecad",
+   "software": [
+    "FreeCAD"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "jango-blockchained",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "FreeCAD integration offering multiple connection methods and specialized tool providers, with support for several AI provider models.",
+   "requirements": "FreeCAD, Python",
+   "tools": [],
+   "stars": 27,
+   "updated": "2025-11-06",
+   "registry": false,
+   "source": "https://github.com/jango-blockchained/mcp-freecad"
+  },
+  {
+   "name": "yonosoft freecad-mcp",
+   "url": "https://github.com/yonosoft/freecad-mcp",
+   "software": [
+    "FreeCAD"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "yonosoft",
+   "kind": "community",
+   "license": "LGPL-2.1",
+   "language": "Python",
+   "description": "Experimental FreeCAD MCP exposing explicit CAD operations (not arbitrary Python) aimed at parametric, constrained and auditable AI-generated models; self-described as unfinished.",
+   "requirements": "FreeCAD, Python",
+   "tools": [],
+   "stars": 1,
+   "updated": "2026-08-30",
+   "registry": false,
+   "source": "https://github.com/yonosoft/freecad-mcp"
+  },
+  {
+   "name": "HZPlan",
+   "url": "https://smithery.ai/servers/goncharov-artemv/hzplan",
+   "software": [
+    "Floor plans"
+   ],
+   "category": "Other",
+   "maintainer": "goncharov-artemv",
+   "kind": "community",
+   "license": null,
+   "language": null,
+   "description": "Hosted remote MCP turning photos, measurements or descriptions into editable 2D floor plans with rooms and objects, viewable in 3D.",
+   "requirements": "Remote HTTP MCP (Smithery)",
+   "tools": [
+    "create_plan",
+    "list_plans",
+    "split_floor_plan",
+    "convert_floor_to_plan",
+    "rescale_storey"
+   ],
+   "stars": null,
+   "updated": null,
+   "registry": false,
+   "source": "https://smithery.ai/servers/goncharov-artemv/hzplan"
+  },
+  {
+   "name": "Roomproof",
+   "url": "https://smithery.ai/servers/diegrueneleiter/roomproof",
+   "software": [
+    "Floor plans"
+   ],
+   "category": "Other",
+   "maintainer": "diegrueneleiter",
+   "kind": "community",
+   "license": null,
+   "language": null,
+   "description": "Hosted remote MCP for room planning to scale: places furniture, checks collisions, walkways and door swings, and returns a 1:50 plan link and PDF.",
+   "requirements": "Remote HTTP MCP (Smithery); some tools free to try",
+   "tools": [
+    "create_room",
+    "place_furniture",
+    "set_door",
+    "check_plan",
+    "show_plan",
+    "move_furniture"
+   ],
+   "stars": null,
+   "updated": null,
+   "registry": false,
+   "source": "https://smithery.ai/servers/diegrueneleiter/roomproof"
+  },
+  {
+   "name": "Luw.ai",
+   "url": "https://smithery.ai/servers/luw-ai/luw",
+   "software": [
+    "Luw.ai"
+   ],
+   "category": "AI imagery & 3D generation",
+   "maintainer": "luw-ai",
+   "kind": "company",
+   "license": null,
+   "language": null,
+   "description": "Official hosted MCP for an AI design studio: interior, exterior and landscape redesign from photos and sketch-to-render for architects and designers.",
+   "requirements": "Remote HTTP MCP (Smithery)",
+   "tools": [
+    "luw_interior_design",
+    "luw_exterior_design",
+    "luw_sketch_to_render",
+    "luw_render",
+    "luw_landscape_design"
+   ],
+   "stars": null,
+   "updated": null,
+   "registry": false,
+   "source": "https://smithery.ai/servers/luw-ai/luw"
+  },
+  {
+   "name": "ARCAT Building Products",
+   "url": "https://smithery.ai/servers/arcat/building-product-bim-cad-specs",
+   "software": [
+    "ARCAT"
+   ],
+   "category": "Cloud / APIs",
+   "maintainer": "arcat",
+   "kind": "company",
+   "license": null,
+   "language": null,
+   "description": "Hosted MCP for the ARCAT building-product database (500+ manufacturers) with BIM/CAD/spec product and CSI section search.",
+   "requirements": "Remote HTTP MCP; ARCAT API key",
+   "tools": [
+    "search_products",
+    "search_manufacturers",
+    "get_manufacturer",
+    "browse_csi_sections"
+   ],
+   "stars": null,
+   "updated": null,
+   "registry": false,
+   "source": "https://smithery.ai/servers/arcat/building-product-bim-cad-specs"
+  },
+  {
+   "name": "blender-open-mcp (dhakalnirajan)",
+   "url": "https://github.com/dhakalnirajan/blender-open-mcp",
+   "software": [
+    "Blender"
+   ],
+   "category": "3D modeling & rendering",
+   "maintainer": "dhakalnirajan",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Local-first MCP server controlling a live Blender session through an add-on, with a switchable LLM backend (Ollama, LM Studio, llama.cpp, OpenAI-compatible) and PolyHaven tools.",
+   "requirements": "Python 3.10+; Blender with the addon.py add-on running a TCP server on port 9876; optional local or hosted LLM",
+   "tools": [
+    "blender_ai_prompt",
+    "blender_get_llm_provider",
+    "blender_set_llm_provider",
+    "blender_list_llm_models"
+   ],
+   "stars": 121,
+   "updated": "2026-10-27",
+   "registry": false,
+   "source": "https://github.com/dhakalnirajan/blender-open-mcp"
+  },
+  {
+   "name": "blender-mcp (pranav-deshmukh)",
+   "url": "https://github.com/pranav-deshmukh/blender-mcp",
+   "software": [
+    "Blender"
+   ],
+   "category": "3D modeling & rendering",
+   "maintainer": "pranav-deshmukh",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Plug-and-play MCP server that lets an LLM drive Blender in real time via JSON commands over TCP, with full scene and object control.",
+   "requirements": "Python; Blender add-on connected over TCP (see README install steps)",
+   "tools": [],
+   "stars": 98,
+   "updated": "2025-08-06",
+   "registry": false,
+   "source": "https://github.com/pranav-deshmukh/blender-mcp"
+  },
+  {
+   "name": "Blender MCP VXAI",
+   "url": "https://github.com/VxASI/blender-mcp-vxai",
+   "software": [
+    "Blender"
+   ],
+   "category": "3D modeling & rendering",
+   "maintainer": "VxASI",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Blender MCP variant distributed via uvx that lets MCP clients create and modify 3D scenes in Blender from natural language, with a matching add-on.",
+   "requirements": "Python 3.8+; matching Blender add-on from the repository; uvx",
+   "tools": [],
+   "stars": 300,
+   "updated": "2025-03-21",
+   "registry": false,
+   "source": "https://github.com/VxASI/blender-mcp-vxai"
+  },
+  {
+   "name": "blender-mcp (zorak1103)",
+   "url": "https://github.com/zorak1103/blender-mcp",
+   "software": [
+    "Blender"
+   ],
+   "category": "3D modeling & rendering",
+   "maintainer": "zorak1103",
+   "kind": "community",
+   "license": "GPL-3.0",
+   "language": "Python",
+   "description": "MCP server for creating scenes, manipulating objects, assigning materials and configuring shader nodes in Blender, with CI and tagged releases.",
+   "requirements": "Blender 4.0+ running in GUI mode (not headless); Python",
+   "tools": [],
+   "stars": 2,
+   "updated": "2026-10-20",
+   "registry": false,
+   "source": "https://github.com/zorak1103/blender-mcp"
+  },
+  {
+   "name": "ellmos Blender Use MCP",
+   "url": "https://github.com/ellmos-ai/ellmos-blender-use-mcp",
+   "software": [
+    "Blender"
+   ],
+   "category": "3D modeling & rendering",
+   "maintainer": "ellmos-ai",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Node.js",
+   "description": "Local-first MCP server for headless Blender asset QA: runs background scripts and verifies that exported FBX files reimport cleanly; no add-on or TCP port needed.",
+   "requirements": "Node.js; Blender installed locally (headless)",
+   "tools": [
+    "blender_verify_fbx_reimport",
+    "blender_verify_visual",
+    "blender_run_script",
+    "blender_locate"
+   ],
+   "stars": 2,
+   "updated": "2026-10-02",
+   "registry": true,
+   "source": "https://github.com/ellmos-ai/ellmos-blender-use-mcp"
+  },
+  {
+   "name": "JANCTION Render",
+   "url": "https://github.com/JasmyLab-JANCTION/janction-render",
+   "software": [
+    "Blender",
+    "glTF",
+    "USD"
+   ],
+   "category": "3D modeling & rendering",
+   "maintainer": "JasmyLab / JANCTION",
+   "kind": "company",
+   "license": "MIT",
+   "language": null,
+   "description": "Cloud GPU render farm for Blender scenes and glTF/FBX/USD/STL files exposed as an MCP server and HTTP API; returns previews, frames or MP4 plus a lighting/framing verdict.",
+   "requirements": "JANCTION API key (a temporary key is issued on first use); no local Blender or GPU needed",
+   "tools": [],
+   "stars": 1,
+   "updated": "2026-10-30",
+   "registry": true,
+   "source": "https://github.com/JasmyLab-JANCTION/janction-render"
+  },
+  {
+   "name": "Blender-MCP (Aayushdubey101)",
+   "url": "https://github.com/Aayushdubey101/Blender-MCP",
+   "software": [
+    "Blender"
+   ],
+   "category": "3D modeling & rendering",
+   "maintainer": "Aayushdubey101",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Pydantic-validated, plugin-extensible Blender MCP server with Docker support, CI on Python 3.10-3.12 and a Blender add-on.",
+   "requirements": "Python 3.10+; Blender add-on; optional Docker",
+   "tools": [
+    "blender_ping",
+    "blender_get_scene_info",
+    "blender_list_objects",
+    "blender_get_object_info",
+    "blender_get_viewport_screenshot",
+    "blender_create_primitive",
+    "blender_transform_object",
+    "blender_set_material"
+   ],
+   "stars": 0,
+   "updated": "2026-07-19",
+   "registry": false,
+   "source": "https://github.com/Aayushdubey101/Blender-MCP"
+  },
+  {
+   "name": "Cinema4D MCP (ttiimmaacc)",
+   "url": "https://github.com/ttiimmaacc/cinema4d-mcp",
+   "software": [
+    "Cinema 4D"
+   ],
+   "category": "3D modeling & rendering",
+   "maintainer": "ttiimmaacc",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Cinema 4D plugin and MCP server for prompt-driven creation of objects, materials, lighting, cameras, MoGraph, physics and renders, with an agent skill.",
+   "requirements": "Python 3.10+; Cinema 4D with the socket plugin",
+   "tools": [
+    "get_scene_info",
+    "list_objects",
+    "group_objects",
+    "execute_python",
+    "save_scene",
+    "load_scene",
+    "set_keyframe",
+    "add_primitive"
+   ],
+   "stars": 134,
+   "updated": "2026-03-07",
+   "registry": false,
+   "source": "https://github.com/ttiimmaacc/cinema4d-mcp"
+  },
+  {
+   "name": "mcp-c4d-2025",
+   "url": "https://github.com/YihonW/mcp-c4d-2025",
+   "software": [
+    "Cinema 4D",
+    "Redshift"
+   ],
+   "category": "3D modeling & rendering",
+   "maintainer": "YihonW",
+   "kind": "community",
+   "license": "MIT",
+   "language": "TypeScript",
+   "description": "Fork of mcp-cinema4d targeting Cinema 4D 2025.3.2, adding compatibility fixes plus guarded Redshift, animation, F-Curve and sequence-render workflows.",
+   "requirements": "Windows; Node.js 24+; Cinema 4D 2025 with the bridge plugin",
+   "tools": [],
+   "stars": 2,
+   "updated": "2026-09-06",
+   "registry": false,
+   "source": "https://github.com/YihonW/mcp-c4d-2025"
+  },
+  {
+   "name": "Houdini MCP (oculairmedia)",
+   "url": "https://github.com/oculairmedia/houdini-mcp",
+   "software": [
+    "Houdini"
+   ],
+   "category": "3D modeling & rendering",
+   "maintainer": "oculairmedia",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "FastMCP server controlling SideFX Houdini over hrpyc, with tools for scene, node creation, parameters and queries, aimed at Claude, Cursor and Letta agents.",
+   "requirements": "Python; Houdini with hrpyc on port 18811; pip install -r requirements.txt",
+   "tools": [
+    "get_scene_info",
+    "serialize_scene",
+    "new_scene",
+    "save_scene",
+    "load_scene",
+    "create_node",
+    "delete_node",
+    "get_node_info"
+   ],
+   "stars": 84,
+   "updated": "2026-09-27",
+   "registry": false,
+   "source": "https://github.com/oculairmedia/houdini-mcp"
+  },
+  {
+   "name": "dcc-mcp-substance3d-designer",
+   "url": "https://github.com/dcc-mcp/dcc-mcp-substance3d-designer",
+   "software": [
+    "Substance 3D Designer"
+   ],
+   "category": "3D modeling & rendering",
+   "maintainer": "dcc-mcp",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Substance 3D Designer adapter in the DCC-MCP family for authoring procedural material graphs from AI agents.",
+   "requirements": "Python; Substance 3D Designer",
+   "tools": [],
+   "stars": 5,
+   "updated": "2026-10-17",
+   "registry": false,
+   "source": "https://github.com/dcc-mcp/dcc-mcp-substance3d-designer"
+  },
+  {
+   "name": "dcc-mcp-substance3d-painter",
+   "url": "https://github.com/dcc-mcp/dcc-mcp-substance3d-painter",
+   "software": [
+    "Substance 3D Painter"
+   ],
+   "category": "3D modeling & rendering",
+   "maintainer": "dcc-mcp",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Substance 3D Painter adapter in the DCC-MCP family for inspecting and editing texturing projects from AI agents.",
+   "requirements": "Python; Substance 3D Painter",
+   "tools": [],
+   "stars": 1,
+   "updated": "2026-10-17",
+   "registry": false,
+   "source": "https://github.com/dcc-mcp/dcc-mcp-substance3d-painter"
+  },
+  {
+   "name": "AnkleBreaker Unity MCP",
+   "url": "https://github.com/AnkleBreaker-Studio/unity-mcp-server",
+   "software": [
+    "Unity"
+   ],
+   "category": "3D modeling & rendering",
+   "maintainer": "AnkleBreaker Studio",
+   "kind": "company",
+   "license": "AnkleBreaker Open License v1.0",
+   "language": "Node.js",
+   "description": "Unity MCP server and editor plugin for scene authoring, tests and builds; README cites 80 exposed tools plus advanced on-demand tools.",
+   "requirements": "Node.js 18+; Unity 2021.3.18+ with the companion plugin",
+   "tools": [],
+   "stars": 531,
+   "updated": "2026-10-23",
+   "registry": false,
+   "source": "https://github.com/AnkleBreaker-Studio/unity-mcp-server"
+  },
+  {
+   "name": "Unity AI Bridge",
+   "url": "https://github.com/butterlatte-zhang/unity-ai-bridge",
+   "software": [
+    "Unity"
+   ],
+   "category": "3D modeling & rendering",
+   "maintainer": "butterlatte-zhang",
+   "kind": "community",
+   "license": "Apache-2.0",
+   "language": "Python",
+   "description": "Remote-controls the Unity Editor from AI IDEs through file-based IPC with a pure-stdlib Python MCP server and a C# Unity package; README lists 65 tools.",
+   "requirements": "Unity 2022.3+; Python 3 stdlib only (no pip or Node)",
+   "tools": [],
+   "stars": 23,
+   "updated": "2026-03-25",
+   "registry": true,
+   "source": "https://github.com/butterlatte-zhang/unity-ai-bridge"
+  },
+  {
+   "name": "unreal-mcp (runeape-sats)",
+   "url": "https://github.com/runeape-sats/unreal-mcp",
+   "software": [
+    "Unreal Engine"
+   ],
+   "category": "3D modeling & rendering",
+   "maintainer": "runeape-sats",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Pure-Python MCP server for Unreal Engine 5.3 via the Remote Control API: arrange assets, inspect actors, call arbitrary Remote Control functions and save levels.",
+   "requirements": "Python 3.10+; Unreal Engine 5.3 with Remote Control API enabled",
+   "tools": [
+    "list_level_actors",
+    "get_selected_actors",
+    "select_actors",
+    "save_current_level",
+    "remote_call",
+    "get_object_property",
+    "set_object_property"
+   ],
+   "stars": 47,
+   "updated": "2026-03-31",
+   "registry": false,
+   "source": "https://github.com/runeape-sats/unreal-mcp"
+  },
+  {
+   "name": "UEAgent",
+   "url": "https://github.com/CarlxsMG/UEAgent",
+   "software": [
+    "Unreal Engine"
+   ],
+   "category": "3D modeling & rendering",
+   "maintainer": "CarlxsMG",
+   "kind": "community",
+   "license": "MIT",
+   "language": null,
+   "description": "Unreal Engine 5.7/5.8 editor plugin that serves MCP over Streamable HTTP from inside the editor; README claims 1,500+ tools for Blueprints, levels, lighting and more.",
+   "requirements": "Unreal Engine 5.7 or 5.8; plugin installed in the project",
+   "tools": [],
+   "stars": 1,
+   "updated": "2026-10-27",
+   "registry": true,
+   "source": "https://github.com/CarlxsMG/UEAgent"
+  },
+  {
+   "name": "openusd-mcp",
+   "url": "https://github.com/daslabhq/openusd-mcp",
+   "software": [
+    "OpenUSD"
+   ],
+   "category": "3D modeling & rendering",
+   "maintainer": "daslabhq",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "MCP server for reading, inspecting and manipulating OpenUSD scenes (.usda/.usdc/.usdz), with a live demo viewer.",
+   "requirements": "Python 3.9+; usd-core",
+   "tools": [
+    "usd_inspect",
+    "usd_get_prim",
+    "usd_get_materials",
+    "usd_get_transforms",
+    "usd_list_variants",
+    "usd_set_variant",
+    "usd_export_mesh",
+    "usd_scene_stats"
+   ],
+   "stars": 10,
+   "updated": "2026-02-14",
+   "registry": false,
+   "source": "https://github.com/daslabhq/openusd-mcp"
+  },
+  {
+   "name": "plateau-creative-mcp",
+   "url": "https://github.com/pixelx-jp/plateau-creative-mcp",
+   "software": [
+    "Project PLATEAU",
+    "glTF",
+    "Blender"
+   ],
+   "category": "GIS & site analysis",
+   "maintainer": "pixelx-jp (YodoLabs)",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Node.js / TypeScript",
+   "description": "MCP server turning Japan Project PLATEAU 3D city data into scene-editing tools and glTF/GLB export, with optional Blender rendering.",
+   "requirements": "Node.js; PLATEAU city data (CC BY 4.0); optional Overpass URL and Blender",
+   "tools": [
+    "download_area",
+    "load_area",
+    "filter_buildings",
+    "delete_buildings",
+    "extrude_buildings",
+    "compose_scene",
+    "export_glb",
+    "render_via_blender"
+   ],
+   "stars": 33,
+   "updated": "2026-05-31",
+   "registry": true,
+   "source": "https://github.com/pixelx-jp/plateau-creative-mcp"
+  },
+  {
+   "name": "cesium-mcp",
+   "url": "https://github.com/gaopengbin/cesium-mcp",
+   "software": [
+    "CesiumJS",
+    "3D Tiles"
+   ],
+   "category": "GIS & site analysis",
+   "maintainer": "gaopengbin",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Node.js / TypeScript",
+   "description": "Protocol-agnostic CesiumJS control runtime for MCP, WebMCP and function calling: camera flights, GeoJSON and 3D Tiles layers, markers and spatial analysis on a 3D globe.",
+   "requirements": "Node.js; CesiumJS app or browser; usage statistics on by default (CESIUM_TELEMETRY_DISABLED=1 to disable)",
+   "tools": [],
+   "stars": 149,
+   "updated": "2026-10-22",
+   "registry": true,
+   "source": "https://github.com/gaopengbin/cesium-mcp"
+  },
+  {
+   "name": "dcc-mcp-photoshop",
+   "url": "https://github.com/dcc-mcp/dcc-mcp-photoshop",
+   "software": [
+    "Adobe Photoshop"
+   ],
+   "category": "Presentation & design tools",
+   "maintainer": "dcc-mcp",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Photoshop adapter in the DCC-MCP catalog: Python bridge to a UXP plugin with one-click installer for editing documents, layers and exports.",
+   "requirements": "Adobe Photoshop 2022+; Python",
+   "tools": [
+    "get_document_info",
+    "list_documents",
+    "open_document",
+    "list_layers",
+    "close_document",
+    "create_document",
+    "export_document",
+    "save_document"
+   ],
+   "stars": 14,
+   "updated": "2026-10-18",
+   "registry": false,
+   "source": "https://github.com/dcc-mcp/dcc-mcp-photoshop"
+  },
+  {
+   "name": "Photoshop-MCP-Server (StarBoze)",
+   "url": "https://github.com/StarBoze/Photoshop-MCP-Server",
+   "software": [
+    "Adobe Photoshop"
+   ],
+   "category": "Presentation & design tools",
+   "maintainer": "StarBoze",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "FastAPI-based MCP server controlling Photoshop on macOS (AppleScript or UXP) and Windows (PowerShell); README is in Japanese.",
+   "requirements": "Python 3.11+; Adobe Photoshop 2023+",
+   "tools": [],
+   "stars": 13,
+   "updated": "2025-05-04",
+   "registry": false,
+   "source": "https://github.com/StarBoze/Photoshop-MCP-Server"
+  },
+  {
+   "name": "PsMCP for Photoshop",
+   "url": "https://github.com/Chandrahas455/PsMCP-MCP-Server-for-Photoshop",
+   "software": [
+    "Adobe Photoshop"
+   ],
+   "category": "Presentation & design tools",
+   "maintainer": "Chandrahas455",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "MCP server for Photoshop with a Gradio client (Gemini) included for driving it interactively.",
+   "requirements": "Python; Adobe Photoshop; pip install -r requirements.txt",
+   "tools": [],
+   "stars": 10,
+   "updated": "2025-07-30",
+   "registry": false,
+   "source": "https://github.com/Chandrahas455/PsMCP-MCP-Server-for-Photoshop"
+  },
+  {
+   "name": "Editmamei",
+   "url": "https://github.com/editmamei/editmamei",
+   "software": [
+    "Adobe Photoshop"
+   ],
+   "category": "Presentation & design tools",
+   "maintainer": "editmamei",
+   "kind": "community",
+   "license": "Functional Source License 1.1 (MIT future license)",
+   "language": "TypeScript",
+   "description": "Independent MCP server that plans and runs natural-language photo edits in desktop Photoshop using native tools (orchestration, not generation).",
+   "requirements": "Photoshop 2026 (v27.x); Windows 10/11 or macOS 13+; Node.js 22+ (or .mcpb extension)",
+   "tools": [],
+   "stars": 16,
+   "updated": "2026-10-25",
+   "registry": true,
+   "source": "https://github.com/editmamei/editmamei"
+  },
+  {
+   "name": "illustrator-mcp (krVatsal)",
+   "url": "https://github.com/krVatsal/illustrator-mcp",
+   "software": [
+    "Adobe Illustrator"
+   ],
+   "category": "Presentation & design tools",
+   "maintainer": "krVatsal",
+   "kind": "community",
+   "license": null,
+   "language": "Python",
+   "description": "MCP server that sends ExtendScript to Adobe Illustrator (COM on Windows, AppleScript on macOS) so agents can draw vector graphics from prompts.",
+   "requirements": "Python 3.12+; Adobe Illustrator on Windows or macOS",
+   "tools": [],
+   "stars": 170,
+   "updated": "2026-07-04",
+   "registry": false,
+   "source": "https://github.com/krVatsal/illustrator-mcp"
+  },
+  {
+   "name": "illustrator-mcp (gherardo200-glitch)",
+   "url": "https://github.com/gherardo200-glitch/illustrator-mcp",
+   "software": [
+    "Adobe Illustrator"
+   ],
+   "category": "Presentation & design tools",
+   "maintainer": "gherardo200-glitch",
+   "kind": "community",
+   "license": "MIT",
+   "language": "TypeScript",
+   "description": "MCP server that drives an already-open Illustrator document (29 tools per README) via AppleScript or COM, including a run_script escape hatch.",
+   "requirements": "Node.js 18+; Adobe Illustrator on the same machine (macOS or Windows)",
+   "tools": [
+    "run_script"
+   ],
+   "stars": 8,
+   "updated": "2026-10-15",
+   "registry": false,
+   "source": "https://github.com/gherardo200-glitch/illustrator-mcp"
+  },
+  {
+   "name": "Illustrator_MCP (jinkeda)",
+   "url": "https://github.com/jinkeda/Illustrator_MCP",
+   "software": [
+    "Adobe Illustrator"
+   ],
+   "category": "Presentation & design tools",
+   "maintainer": "jinkeda",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "MCP server controlling Illustrator through a CEP panel: structured artwork edits, ExtendScript, previews, PNG/JPG export and SVG path import.",
+   "requirements": "Python 3.10+; Illustrator on Windows or macOS; Node/Vite 6 to build the panel",
+   "tools": [
+    "illustrator_document",
+    "illustrator_observe",
+    "illustrator_get_document",
+    "illustrator_execute_task",
+    "illustrator_execute_script",
+    "illustrator_place_file",
+    "illustrator_path_boolean",
+    "illustrator_export_document"
+   ],
+   "stars": 7,
+   "updated": "2026-10-08",
+   "registry": false,
+   "source": "https://github.com/jinkeda/Illustrator_MCP"
+  },
+  {
+   "name": "indesign-uxp-server",
+   "url": "https://github.com/theloniuser/indesign-uxp-server",
+   "software": [
+    "Adobe InDesign"
+   ],
+   "category": "Presentation & design tools",
+   "maintainer": "theloniuser",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Node.js",
+   "description": "UXP-plugin based InDesign MCP server (about 130 tools per README), rewritten from the AppleScript-based indesign-mcp-server; works on macOS and Windows.",
+   "requirements": "Adobe InDesign 2024+; Node.js",
+   "tools": [],
+   "stars": 108,
+   "updated": "2026-10-28",
+   "registry": false,
+   "source": "https://github.com/theloniuser/indesign-uxp-server"
+  },
+  {
+   "name": "indesign-mcp-server (lucdesign)",
+   "url": "https://github.com/lucdesign/indesign-mcp-server",
+   "software": [
+    "Adobe InDesign"
+   ],
+   "category": "Presentation & design tools",
+   "maintainer": "lucdesign",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Node.js",
+   "description": "InDesign automation MCP server with 51+ tools for documents, pages, text, styles and export (AppleScript based).",
+   "requirements": "macOS; Node.js 18+; Adobe InDesign",
+   "tools": [
+    "get_document_info",
+    "create_document",
+    "open_document",
+    "save_document",
+    "close_document",
+    "add_page",
+    "delete_page",
+    "create_text_frame"
+   ],
+   "stars": 60,
+   "updated": "2026-09-01",
+   "registry": false,
+   "source": "https://github.com/lucdesign/indesign-mcp-server"
+  },
+  {
+   "name": "figma-use",
+   "url": "https://github.com/dannote/figma-use",
+   "software": [
+    "Figma"
+   ],
+   "category": "Presentation & design tools",
+   "maintainer": "dannote",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Node.js / TypeScript",
+   "description": "CLI and MCP server (90+ tools per README) giving agents read/write control of Figma: create frames, set layout, styles and export; README warns Figma 126+ needs daemon pipe mode.",
+   "requirements": "Figma desktop; Node/Bun; see MCP.md",
+   "tools": [],
+   "stars": 614,
+   "updated": "2026-07-03",
+   "registry": false,
+   "source": "https://github.com/dannote/figma-use"
+  },
+  {
+   "name": "figmanage",
+   "url": "https://github.com/dannykeane/figmanage",
+   "software": [
+    "Figma"
+   ],
+   "category": "Presentation & design tools",
+   "maintainer": "dannykeane",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Node.js / TypeScript",
+   "description": "Local MCP server and CLI for managing a Figma workspace: find files, organize projects, review access and manage teams and seats.",
+   "requirements": "Node.js 18+; Figma access token",
+   "tools": [],
+   "stars": 8,
+   "updated": "2026-10-12",
+   "registry": true,
+   "source": "https://github.com/dannykeane/figmanage"
+  },
+  {
+   "name": "Office-PowerPoint-MCP-Server",
+   "url": "https://github.com/GongRzhe/Office-PowerPoint-MCP-Server",
+   "software": [
+    "Microsoft PowerPoint"
+   ],
+   "category": "Presentation & design tools",
+   "maintainer": "GongRzhe",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "python-pptx based MCP server with 32 tools (per README) for creating and editing .pptx decks with slide-layout templates, images and charts.",
+   "requirements": "Python 3.6+ (python-pptx)",
+   "tools": [],
+   "stars": 1900,
+   "updated": "2025-12-31",
+   "registry": false,
+   "source": "https://github.com/GongRzhe/Office-PowerPoint-MCP-Server"
+  },
+  {
+   "name": "PowerPointMcp",
+   "url": "https://github.com/sbroenne/mcp-server-powerpoint",
+   "software": [
+    "Microsoft PowerPoint"
+   ],
+   "category": "Presentation & design tools",
+   "maintainer": "sbroenne",
+   "kind": "community",
+   "license": "MIT",
+   "language": "C# / .NET",
+   "description": "MCP server and CLI that automate real desktop Microsoft PowerPoint, also shipped as a VS Code extension.",
+   "requirements": "Windows; Microsoft PowerPoint 2016+; .NET",
+   "tools": [],
+   "stars": 38,
+   "updated": "2026-10-24",
+   "registry": true,
+   "source": "https://github.com/sbroenne/mcp-server-powerpoint"
+  },
+  {
+   "name": "Comfy MCP",
+   "url": "https://github.com/Comfy-Org/comfy-mcp",
+   "software": [
+    "ComfyUI"
+   ],
+   "category": "AI imagery & 3D generation",
+   "maintainer": "Comfy-Org",
+   "kind": "official",
+   "license": "AGPL-3.0-or-later or commercial (dual)",
+   "language": "Python",
+   "description": "Official MCP server built on comfy-cli for driving a local ComfyUI from AI agents; README also documents a hosted Comfy Cloud MCP.",
+   "requirements": "Python 3.10-3.14; local ComfyUI; COMFY_API_KEY for cloud features",
+   "tools": [],
+   "stars": 314,
+   "updated": "2026-10-20",
+   "registry": false,
+   "source": "https://github.com/Comfy-Org/comfy-mcp"
+  },
+  {
+   "name": "Pixelle-MCP",
+   "url": "https://github.com/ATH-MaaS/Pixelle-MCP",
+   "software": [
+    "ComfyUI"
+   ],
+   "category": "AI imagery & 3D generation",
+   "maintainer": "AIDC-AI",
+   "kind": "company",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Omnimodal AIGC framework that converts ComfyUI workflows into MCP tools, supporting local ComfyUI or cloud ComfyUI via RunningHub.",
+   "requirements": "Python; local ComfyUI or RunningHub account",
+   "tools": [],
+   "stars": 1100,
+   "updated": "2025-12-17",
+   "registry": false,
+   "source": "https://github.com/AIDC-AI/Pixelle-MCP"
+  },
+  {
+   "name": "Comfy Pilot",
+   "url": "https://github.com/ConstantineB6/comfy-pilot",
+   "software": [
+    "ComfyUI"
+   ],
+   "category": "AI imagery & 3D generation",
+   "maintainer": "ConstantineB6",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "ComfyUI extension plus MCP server giving Claude Code the ability to view, edit and run workflows, with an embedded terminal in the UI.",
+   "requirements": "Python 3.8+; ComfyUI",
+   "tools": [
+    "get_workflow",
+    "summarize_workflow",
+    "get_node_types",
+    "get_node_info",
+    "get_status",
+    "edit_graph",
+    "view_image",
+    "search_custom_nodes"
+   ],
+   "stars": 234,
+   "updated": "2026-02-16",
+   "registry": false,
+   "source": "https://github.com/ConstantineB6/comfy-pilot"
+  },
+  {
+   "name": "Meshy AI MCP Server (pasie15)",
+   "url": "https://github.com/pasie15/meshy-ai-mcp-server",
+   "software": [
+    "Meshy"
+   ],
+   "category": "AI imagery & 3D generation",
+   "maintainer": "pasie15",
+   "kind": "community",
+   "license": null,
+   "language": "Node.js / TypeScript",
+   "description": "MCP server wrapping the Meshy API for text-to-3D, image-to-3D, multi-image-to-3D and retexture.",
+   "requirements": "Node.js; Meshy API key",
+   "tools": [],
+   "stars": 43,
+   "updated": "2026-08-18",
+   "registry": false,
+   "source": "https://github.com/pasie15/meshy-ai-mcp-server"
+  },
+  {
+   "name": "trident-mcp",
+   "url": "https://github.com/mordor-forge/trident-mcp",
+   "software": [
+    "Tripo 3D"
+   ],
+   "category": "AI imagery & 3D generation",
+   "maintainer": "mordor-forge",
+   "kind": "community",
+   "license": "Apache-2.0",
+   "language": "Go",
+   "description": "Unofficial Go MCP server for the Tripo 3D API v3: text/image/multiview to mesh, texturing, retopology, rigging, animation, conversion and Gaussian splats; outputs saved as files.",
+   "requirements": "TRIPO_API_KEY; Go binary over stdio",
+   "tools": [],
+   "stars": 5,
+   "updated": "2026-10-18",
+   "registry": true,
+   "source": "https://github.com/mordor-forge/trident-mcp"
+  },
+  {
+   "name": "3D Texel MCP",
+   "url": "https://github.com/Gatyh/3dtexel-mcp",
+   "software": [
+    "3D Texel"
+   ],
+   "category": "AI imagery & 3D generation",
+   "maintainer": "3D Texel (Gatyh)",
+   "kind": "company",
+   "license": "MIT",
+   "language": "Node.js",
+   "description": "MCP server for 3D Texel: search and download PBR materials, HDRIs, decals and 3D assets, and generate seamless PBR materials and HDRIs.",
+   "requirements": "Node.js (npx from GitHub); 3D Texel account login",
+   "tools": [],
+   "stars": 1,
+   "updated": "2026-10-02",
+   "registry": false,
+   "source": "https://github.com/Gatyh/3dtexel-mcp"
+  },
+  {
+   "name": "Metashape MCP (jenkinsm13)",
+   "url": "https://github.com/jenkinsm13/metashape-mcp",
+   "software": [
+    "Agisoft Metashape"
+   ],
+   "category": "AI imagery & 3D generation",
+   "maintainer": "jenkinsm13",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "MCP server running inside Agisoft Metashape Professional with 106 tools (per README) for photogrammetry: alignment, dense cloud, mesh, DEM, orthomosaic and export.",
+   "requirements": "Metashape Professional 2.3+ (embedded Python 3.12)",
+   "tools": [],
+   "stars": 36,
+   "updated": "2026-05-07",
+   "registry": false,
+   "source": "https://github.com/jenkinsm13/metashape-mcp"
+  },
+  {
+   "name": "realityscan-mcp",
+   "url": "https://github.com/fkrn75/realityscan-mcp",
+   "software": [
+    "RealityScan",
+    "RealityCapture"
+   ],
+   "category": "AI imagery & 3D generation",
+   "maintainer": "fkrn75",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "MCP server automating RealityScan photogrammetry (align, mesh, texture, export) headless or via the GUI, with a 360 video to perspective-frames converter.",
+   "requirements": "Python 3.10+; RealityScan installed",
+   "tools": [
+    "check_connection",
+    "execute_cli",
+    "launch_gui",
+    "get_instance_status",
+    "new_project",
+    "add_inputs",
+    "align_images",
+    "build_model"
+   ],
+   "stars": 1,
+   "updated": "2026-07-07",
+   "registry": false,
+   "source": "https://github.com/fkrn75/realityscan-mcp"
+  },
+  {
+   "name": "Luw.ai MCP",
+   "url": "https://github.com/Luvi-io/luw-mcp",
+   "software": [
+    "Luw.ai"
+   ],
+   "category": "AI imagery & 3D generation",
+   "maintainer": "Luw.ai (Luvi)",
+   "kind": "company",
+   "license": "MIT",
+   "language": "Node.js / TypeScript",
+   "description": "Official Luw.ai MCP server for AI interior, exterior and landscape design, sketch-to-render, photoreal rendering, image editing and upscaling.",
+   "requirements": "Node.js 18+ (or .mcpb bundle); Luw.ai API key",
+   "tools": [
+    "luw_interior_design",
+    "luw_exterior_design",
+    "luw_sketch_to_render",
+    "luw_render",
+    "luw_edit_image",
+    "luw_landscape_design",
+    "luw_upscale_image",
+    "luw_remove_furniture"
+   ],
+   "stars": 0,
+   "updated": "2026-10-30",
+   "registry": false,
+   "source": "https://github.com/Luvi-io/luw-mcp"
+  },
+  {
+   "name": "ImmoStage MCP",
+   "url": "https://github.com/LarryWalkerDEV/mcp-immostage",
+   "software": [
+    "ImmoStage"
+   ],
+   "category": "AI imagery & 3D generation",
+   "maintainer": "LarryWalkerDEV",
+   "kind": "company",
+   "license": "MIT",
+   "language": null,
+   "description": "Hosted MCP server for AI virtual staging of empty rooms and floor plans plus a marketing package (posts, PDF expose, video).",
+   "requirements": "ImmoStage API key; remote MCP URL",
+   "tools": [
+    "stage_room",
+    "check_staging",
+    "generate_marketing",
+    "get_download_link"
+   ],
+   "stars": 4,
+   "updated": "2026-08-04",
+   "registry": true,
+   "source": "https://github.com/LarryWalkerDEV/mcp-immostage"
+  },
+  {
+   "name": "AI HomeDesign MCP",
+   "url": "https://github.com/AIHomeDesign/aihomedesign-mcp",
+   "software": [
+    "AI HomeDesign"
+   ],
+   "category": "AI imagery & 3D generation",
+   "maintainer": "AI HomeDesign",
+   "kind": "company",
+   "license": "MIT",
+   "language": "Python",
+   "description": "MCP server for AI virtual staging, interior design, decluttering, wall changes and day-to-dusk edits on real-estate photos.",
+   "requirements": "Python 3.12+; AI HomeDesign API key",
+   "tools": [
+    "list_capabilities",
+    "list_styles",
+    "describe_tool",
+    "virtual_staging",
+    "virtual_restaging",
+    "interior_design",
+    "enhance_image",
+    "remove_items"
+   ],
+   "stars": 0,
+   "updated": "2026-07-09",
+   "registry": true,
+   "source": "https://github.com/AIHomeDesign/aihomedesign-mcp"
+  },
+  {
+   "name": "Pedra MCP",
+   "url": "https://github.com/pedra-ai/pedra-mcp",
+   "software": [
+    "Pedra"
+   ],
+   "category": "AI imagery & 3D generation",
+   "maintainer": "Pedra",
+   "kind": "company",
+   "license": "MIT",
+   "language": "Node.js / TypeScript",
+   "description": "Official MCP server for Pedra real-estate photo editing: virtual staging, renovation, room emptying, enhancement and video, one tool per API endpoint.",
+   "requirements": "Node.js; PEDRA_API_KEY",
+   "tools": [
+    "pedra_enhance",
+    "pedra_empty_room",
+    "pedra_furnish",
+    "pedra_renovation",
+    "pedra_edit_via_prompt",
+    "pedra_sky_blue",
+    "pedra_remove_object",
+    "pedra_create_video"
+   ],
+   "stars": 1,
+   "updated": "2026-10-16",
+   "registry": true,
+   "source": "https://github.com/pedra-ai/pedra-mcp"
+  },
+  {
+   "name": "threejs-devtools-mcp",
+   "url": "https://github.com/DmitriyGolub/threejs-devtools-mcp",
+   "software": [
+    "three.js",
+    "React Three Fiber"
+   ],
+   "category": "Other",
+   "maintainer": "DmitriyGolub",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Node.js / TypeScript",
+   "description": "MCP server with 69 tools (per README) to inspect and edit live Three.js scenes, materials, shaders and lights in the browser, with no project changes.",
+   "requirements": "Node.js; browser running a three.js or R3F app",
+   "tools": [],
+   "stars": 128,
+   "updated": "2026-10-14",
+   "registry": true,
+   "source": "https://github.com/DmitriyGolub/threejs-devtools-mcp"
+  },
+  {
+   "name": "3D Visualizer (ply-visualizer)",
+   "url": "https://github.com/kleinicke/ply-visualizer",
+   "software": [
+    "Point clouds",
+    "Gaussian splats",
+    "LAS/E57"
+   ],
+   "category": "AI imagery & 3D generation",
+   "maintainer": "kleinicke",
+   "kind": "community",
+   "license": "MIT",
+   "language": null,
+   "description": "VS Code extension and web viewer for point clouds, meshes, splats and depth maps (LAS, LAZ, E57) with a local MCP server for AI agents.",
+   "requirements": "VS Code or browser; Python package for the MCP server (see MCP.md)",
+   "tools": [],
+   "stars": 22,
+   "updated": "2026-10-20",
+   "registry": true,
+   "source": "https://github.com/kleinicke/ply-visualizer"
+  },
+  {
+   "name": "MCP Three",
+   "url": "https://github.com/basementstudio/mcp-three",
+   "software": [
+    "glTF",
+    "three.js",
+    "React Three Fiber"
+   ],
+   "category": "Other",
+   "maintainer": "basement.studio",
+   "kind": "company",
+   "license": null,
+   "language": null,
+   "description": "MCP server for GLTF/GLB models: converts them to React Three Fiber components, analyzes structure and supports instancing and texture/mesh optimization.",
+   "requirements": "Node.js",
+   "tools": [],
+   "stars": 26,
+   "updated": "2025-08-13",
+   "registry": false,
+   "source": "https://github.com/basementstudio/mcp-three"
+  },
+  {
+   "name": "Mural MCP (official)",
+   "url": "https://www.mural.co/mcp",
+   "software": [
+    "Mural"
+   ],
+   "category": "Presentation & design tools",
+   "maintainer": "Mural",
+   "kind": "official",
+   "license": null,
+   "language": null,
+   "description": "Official Mural remote MCP server (listed in the MCP registry) to create and edit Mural boards from an agent; the product page labels it coming soon.",
+   "requirements": "Mural account; remote Streamable HTTP endpoint",
+   "tools": [],
+   "stars": null,
+   "updated": null,
+   "registry": true,
+   "source": "https://registry.modelcontextprotocol.io/v0/servers?search=co.mural"
+  },
+  {
+   "name": "WillItBlender",
+   "url": "https://willitblender.dev",
+   "software": [
+    "Blender"
+   ],
+   "category": "3D modeling & rendering",
+   "maintainer": "willitblender.dev",
+   "kind": "company",
+   "license": null,
+   "language": null,
+   "description": "Hosted Blender-as-a-service for agents: search a catalog of generated 3D assets, run Blender Python scripts or brief a studio agent, returning ready-to-use 3D models.",
+   "requirements": "Account on willitblender.dev; remote MCP connection",
+   "tools": [],
+   "stars": null,
+   "updated": null,
+   "registry": true,
+   "source": "https://willitblender.dev"
+  },
+  {
+   "name": "Sidekick for InDesign",
+   "url": "https://sidekick.eastpole.nl/",
+   "software": [
+    "Adobe InDesign"
+   ],
+   "category": "Presentation & design tools",
+   "maintainer": "Eastpole",
+   "kind": "company",
+   "license": null,
+   "language": null,
+   "description": "Commercial InDesign plugin plus assistant extension that exposes InDesign to Claude and other MCP clients for page layout and typography production work.",
+   "requirements": "InDesign plugin and MCP extension; macOS or Windows; 30-day trial then paid subscription",
+   "tools": [],
+   "stars": null,
+   "updated": null,
+   "registry": true,
+   "source": "https://sidekick.eastpole.nl/"
+  },
+  {
+   "name": "idfkit-mcp",
+   "url": "https://github.com/idfkit/idfkit-mcp",
+   "software": [
+    "EnergyPlus"
+   ],
+   "category": "Structural & energy analysis",
+   "maintainer": "idfkit",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "MCP server to build, edit, validate and simulate EnergyPlus models (IDF/epJSON) and search EnergyPlus docs, covering versions 8.9 to 26.2.",
+   "requirements": "Python 3.10+; local EnergyPlus install (or Docker image) to run simulations",
+   "tools": [],
+   "stars": 13,
+   "updated": "2026-10-28",
+   "registry": false,
+   "source": "https://github.com/idfkit/idfkit-mcp"
+  },
+  {
+   "name": "cloudcompare-mcp",
+   "url": "https://github.com/yufeioptimal/cloudcompare-mcp",
+   "software": [
+    "CloudCompare"
+   ],
+   "category": "Other",
+   "maintainer": "yufeioptimal",
+   "kind": "community",
+   "license": null,
+   "language": "Python",
+   "description": "Cross-platform MCP server for CloudCompare point-cloud work: inspect, render, subsample, register (ICP), compare distances and convert LAS/E57/PLY, usable on scan-to-BIM data.",
+   "requirements": "Python; CloudCompare install for most tools (two native tools need none)",
+   "tools": [
+    "read_cloud_metadata",
+    "visualize_cloud",
+    "subsample",
+    "compute_cloud_to_cloud_distances",
+    "compute_cloud_to_mesh_distances",
+    "icp_registration",
+    "convert_format",
+    "statistical_outlier_removal"
+   ],
+   "stars": 5,
+   "updated": "2026-05-02",
+   "registry": false,
+   "source": "https://github.com/yufeioptimal/cloudcompare-mcp"
+  },
+  {
+   "name": "FEA-MCP (GreatApo, superseded)",
+   "url": "https://github.com/GreatApo/FEA-MCP",
+   "software": [
+    "ETABS",
+    "LUSAS"
+   ],
+   "category": "Structural & energy analysis",
+   "maintainer": "GreatApo",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Unified MCP server for finite element modelling of frames, surfaces and solids in ETABS and LUSAS; README says it is superseded by LUSAS-MCP-Server.",
+   "requirements": "Windows with ETABS or LUSAS installed",
+   "tools": [
+    "get_units",
+    "create_objects_by_coordinates",
+    "get_all_geometries",
+    "get_points"
+   ],
+   "stars": 20,
+   "updated": "2026-10-05",
+   "registry": false,
+   "source": "https://github.com/GreatApo/FEA-MCP"
+  },
+  {
+   "name": "LUSAS MCP Server",
+   "url": "https://github.com/LUSAS-Software/LUSAS-MCP-Server",
+   "software": [
+    "LUSAS"
+   ],
+   "category": "Structural & energy analysis",
+   "maintainer": "LUSAS (Finite Element Analysis Ltd)",
+   "kind": "company",
+   "license": "Proprietary (FEA Proprietary)",
+   "language": "Python",
+   "description": "Official MCP server connecting AI assistants to LUSAS for structural FEA model inspection, library/manual search, LPython scripting and results extraction.",
+   "requirements": "Windows; LUSAS with Code Interaction enabled",
+   "tools": [],
+   "stars": 7,
+   "updated": "2026-10-05",
+   "registry": false,
+   "source": "https://github.com/LUSAS-Software/LUSAS-MCP-Server"
+  },
+  {
+   "name": "solibri-mcp-server (deprecated)",
+   "url": "https://github.com/EdvardGK/solibri-mcp-server",
+   "software": [
+    "Solibri"
+   ],
+   "category": "OpenBIM / IFC",
+   "maintainer": "EdvardGK",
+   "kind": "community",
+   "license": null,
+   "language": "JavaScript",
+   "description": "Historical MCP server for Solibri Office: run rulesets and export BCF issues, run ITO quantity takeoffs, manage SMC models; deprecated in favour of solibri-toolkit.",
+   "requirements": "Windows, Solibri Office with valid license, Node.js 18+",
+   "tools": [],
+   "stars": 4,
+   "updated": "2026-05-31",
+   "registry": false,
+   "source": "https://github.com/EdvardGK/solibri-mcp-server"
+  },
+  {
+   "name": "Land Takeoffs MCP",
+   "url": "https://github.com/landtakeoffs/land-takeoffs-mcp",
+   "software": [
+    "Civil plan sets",
+    "DWG",
+    "DXF",
+    "LandXML"
+   ],
+   "category": "Construction management",
+   "maintainer": "Land Takeoffs",
+   "kind": "company",
+   "license": "MIT",
+   "language": "Hosted service (plugin manifests)",
+   "description": "Hosted remote MCP that returns sitework quantities (storm, sewer, water, paving, cut/fill) from civil plan-set PDFs and CAD files with an Excel bid sheet.",
+   "requirements": "Land Takeoffs account; remote endpoint mcp.landtakeoffs.com",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-10-16",
+   "registry": true,
+   "source": "https://github.com/landtakeoffs/land-takeoffs-mcp"
+  },
+  {
+   "name": "Skopia floor-plan layout",
+   "url": "https://github.com/Skopia-mcp/Skopia-mcp",
+   "software": [
+    "DXF",
+    "AutoCAD",
+    "Revit"
+   ],
+   "category": "CAD / drafting",
+   "maintainer": "Datatreehaus (Skopia)",
+   "kind": "company",
+   "license": null,
+   "language": "Hosted service",
+   "description": "Hosted MCP engine that draws a floor plan in real millimetres and projects consistent sections and elevations, exporting SVG, sheets or DXF.",
+   "requirements": "Remote endpoint skopia.datatreehaus.com; API key/auth",
+   "tools": [],
+   "stars": 0,
+   "updated": "2026-09-18",
+   "registry": true,
+   "source": "https://github.com/Skopia-mcp/Skopia-mcp"
+  },
+  {
+   "name": "Catastro GPS MCP (parcelgps)",
+   "url": "https://github.com/TheHiddenPandaDev/catastro_gps_mcp",
+   "software": [
+    "Cadastre"
+   ],
+   "category": "GIS & site analysis",
+   "maintainer": "TheHiddenPandaDev (parcelgps.com)",
+   "kind": "company",
+   "license": "MIT",
+   "language": "TypeScript",
+   "description": "MCP server returning official cadastral parcels from 29 European countries by reference, coordinates or address, with relief, climate normals and solar potential.",
+   "requirements": "API key from parcelgps.com (25 free calls/month)",
+   "tools": [
+    "get_parcel",
+    "get_units",
+    "resolve_reference"
+   ],
+   "stars": 1,
+   "updated": "2026-10-29",
+   "registry": true,
+   "source": "https://github.com/TheHiddenPandaDev/catastro_gps_mcp"
+  },
+  {
+   "name": "terrain-mcp (CLIO Kit)",
+   "url": "https://github.com/iowarp/clio-kit",
+   "software": [
+    "DEM",
+    "Point cloud"
+   ],
+   "category": "GIS & site analysis",
+   "maintainer": "iowarp",
+   "kind": "community",
+   "license": "BSD-3-Clause",
+   "language": "Python",
+   "description": "Terrain server in the CLIO Kit that analyses DEMs (slope, aspect, suitability) and reads/grids terrain point clouds, usable for site topography studies.",
+   "requirements": "Python 3.10+, clio-kit (uvx / pip)",
+   "tools": [],
+   "stars": 30,
+   "updated": "2026-08-11",
+   "registry": true,
+   "source": "https://github.com/iowarp/clio-kit"
+  },
+  {
+   "name": "BumiAtlas Malaysia MCP",
+   "url": "https://github.com/BumiAtlas/malaysia-land-zoning-mcp",
+   "software": [
+    "Cadastre",
+    "Zoning"
+   ],
+   "category": "GIS & site analysis",
+   "maintainer": "BumiAtlas",
+   "kind": "company",
+   "license": null,
+   "language": "Hosted service",
+   "description": "Malaysian JUPEM land lots and PLANMalaysia local-plan zoning by UPI, lot number or coordinates, with map images.",
+   "requirements": "Hosted remote MCP; sign in with Google",
+   "tools": [
+    "MY_lot_search",
+    "MY_lot_get",
+    "MY_lot_image",
+    "MY_zoning_get"
+   ],
+   "stars": 0,
+   "updated": "2026-10-25",
+   "registry": true,
+   "source": "https://github.com/BumiAtlas/malaysia-land-zoning-mcp"
+  },
+  {
+   "name": "BumiAtlas Singapore MCP",
+   "url": "https://github.com/BumiAtlas/singapore-land-zoning-mcp",
+   "software": [
+    "Cadastre",
+    "Zoning"
+   ],
+   "category": "GIS & site analysis",
+   "maintainer": "BumiAtlas",
+   "kind": "company",
+   "license": null,
+   "language": "Hosted service",
+   "description": "Singapore SLA land lots and URA Master Plan land use by lot number or coordinates.",
+   "requirements": "Hosted remote MCP; sign in with Google",
+   "tools": [
+    "SG_lot_search",
+    "SG_lot_get",
+    "SG_lot_image",
+    "SG_land_use_get"
+   ],
+   "stars": 0,
+   "updated": "2026-10-25",
+   "registry": true,
+   "source": "https://github.com/BumiAtlas/singapore-land-zoning-mcp"
+  },
+  {
+   "name": "BumiAtlas Thailand MCP",
+   "url": "https://github.com/BumiAtlas/thailand-land-zoning-mcp",
+   "software": [
+    "Cadastre",
+    "Zoning"
+   ],
+   "category": "GIS & site analysis",
+   "maintainer": "BumiAtlas",
+   "kind": "company",
+   "license": null,
+   "language": "Hosted service",
+   "description": "Thai DOL land parcels, public land and DPT/Bangkok comprehensive-plan zoning lookup.",
+   "requirements": "Hosted remote MCP; sign in with Google",
+   "tools": [
+    "TH_parcel_search",
+    "TH_parcel_get",
+    "TH_public_land_get",
+    "TH_zoning_get"
+   ],
+   "stars": 0,
+   "updated": "2026-10-25",
+   "registry": true,
+   "source": "https://github.com/BumiAtlas/thailand-land-zoning-mcp"
+  },
+  {
+   "name": "BumiAtlas Indonesia ATR/BPN parcels MCP",
+   "url": "https://github.com/BumiAtlas/atrbpn-land-parcel-mcp",
+   "software": [
+    "Cadastre",
+    "Zoning"
+   ],
+   "category": "GIS & site analysis",
+   "maintainer": "BumiAtlas",
+   "kind": "company",
+   "license": null,
+   "language": "Hosted service",
+   "description": "Indonesian ATR/BPN land parcels by certificate number, NIB or coordinates, with overlaps and flood data.",
+   "requirements": "Hosted remote MCP; sign in with Google",
+   "tools": [
+    "Parcel_search",
+    "Parcel_get",
+    "Parcel_overlaps",
+    "Parcel_find_village",
+    "Flood_get"
+   ],
+   "stars": 0,
+   "updated": "2026-10-15",
+   "registry": true,
+   "source": "https://github.com/BumiAtlas/atrbpn-land-parcel-mcp"
+  },
+  {
+   "name": "BumiAtlas Indonesia OSS RDTR zoning MCP",
+   "url": "https://github.com/BumiAtlas/oss-rdtr-zoning-mcp",
+   "software": [
+    "Cadastre",
+    "Zoning"
+   ],
+   "category": "GIS & site analysis",
+   "maintainer": "BumiAtlas",
+   "kind": "company",
+   "license": null,
+   "language": "Hosted service",
+   "description": "Indonesian OSS RDTR detailed spatial-plan zoning at a point, with zone summaries.",
+   "requirements": "Hosted remote MCP; sign in with Google",
+   "tools": [
+    "Zoning_get",
+    "Zoning_summary",
+    "Parcel_find_village",
+    "Parcel_search"
+   ],
+   "stars": 0,
+   "updated": "2026-10-14",
+   "registry": true,
+   "source": "https://github.com/BumiAtlas/oss-rdtr-zoning-mcp"
+  },
+  {
+   "name": "mapbox-mcp-server",
+   "url": "https://github.com/mapbox/mcp-server",
+   "software": [
+    "Mapbox"
+   ],
+   "category": "GIS & site analysis",
+   "maintainer": "Mapbox",
+   "kind": "official",
+   "license": "MIT",
+   "language": "TypeScript",
+   "description": "Official Mapbox MCP server: geocoding, POI search, directions, isochrones and interactive map rendering, usable for site context and accessibility studies.",
+   "requirements": "Mapbox access token; Node.js",
+   "tools": [
+    "render_map_tool"
+   ],
+   "stars": 363,
+   "updated": "2026-10-30",
+   "registry": true,
+   "source": "https://github.com/mapbox/mcp-server"
+  },
+  {
+   "name": "AddressIntel MCP (SF Peninsula permits)",
+   "url": "https://github.com/RantumBits/addressintel-mcp",
+   "software": [
+    "Building permits",
+    "Zoning"
+   ],
+   "category": "GIS & site analysis",
+   "maintainer": "RantumBits",
+   "kind": "company",
+   "license": "MIT",
+   "language": "JavaScript",
+   "description": "Read-only MCP client for the AddressIntel API: SF Peninsula building permits and parcel buildability (SB 9, ADU, redevelopment envelope).",
+   "requirements": "AddressIntel API key",
+   "tools": [
+    "search_permits",
+    "list_sb9_inventory",
+    "list_adu_leads",
+    "list_redevelopment_leads",
+    "list_market_signals",
+    "get_property_intelligence"
+   ],
+   "stars": 0,
+   "updated": "2026-08-19",
+   "registry": true,
+   "source": "https://github.com/RantumBits/addressintel-mcp"
+  },
+  {
+   "name": "King County Permit Status",
+   "url": "https://github.com/chaoz23/king-county-permit-status",
+   "software": [
+    "Building permits"
+   ],
+   "category": "Construction management",
+   "maintainer": "chaoz23",
+   "kind": "community",
+   "license": "MIT",
+   "language": "Python",
+   "description": "Looks up building permit history and status by address, parcel or permit number across King County, WA jurisdictions, with portal links where no open feed exists.",
+   "requirements": "Python 3",
+   "tools": [],
+   "stars": 1,
+   "updated": "2026-10-26",
+   "registry": true,
+   "source": "https://github.com/chaoz23/king-county-permit-status"
+  },
+  {
+   "name": "HORIZON SHIELD",
+   "url": "https://github.com/ogasurfproject-jpg/horizon-shield",
+   "software": [
+    "Construction estimates"
+   ],
+   "category": "Construction management",
+   "maintainer": "ogasurfproject-jpg",
+   "kind": "community",
+   "license": "MIT",
+   "language": "HTML (hosted service)",
+   "description": "MCP server that audits Japanese construction or renovation estimates against open JCCDB cost data and returns a Bitcoin-timestamped verifiable result.",
+   "requirements": "None; no account or key (remote streamable-http)",
+   "tools": [],
+   "stars": 2,
+   "updated": "2026-10-30",
+   "registry": true,
+   "source": "https://github.com/ogasurfproject-jpg/horizon-shield"
+  },
+  {
+   "name": "Atlasly MCP",
+   "url": "https://atlasly.app/mcp",
+   "software": [
+    "Site analysis"
+   ],
+   "category": "GIS & site analysis",
+   "maintainer": "Atlasly",
+   "kind": "company",
+   "license": null,
+   "language": "Hosted service",
+   "description": "Hosted MCP for UK site research for architects and planners: screening, boundary checks, flood and heritage, planning sources and point elevation.",
+   "requirements": "Remote endpoint mcp.atlasly.app/mcp; account for saved operations",
+   "tools": [
+    "get_point_elevation"
+   ],
+   "stars": null,
+   "updated": null,
+   "registry": true,
+   "source": "https://atlasly.app/mcp"
+  },
+  {
+   "name": "TheNewEngineer HVAC MCP",
+   "url": "https://thenewengineer.com/ai",
+   "software": [
+    "HVAC"
+   ],
+   "category": "Structural & energy analysis",
+   "maintainer": "TheNewEngineer",
+   "kind": "company",
+   "license": null,
+   "language": "Hosted service",
+   "description": "Hosted MCP connector of HVAC calculation engines for building services (e.g. expansion vessel sizing); registry description also mentions IFC duct networks.",
+   "requirements": "Claude custom connector; endpoint thenewengineer.com/mcp",
+   "tools": [],
+   "stars": null,
+   "updated": null,
+   "registry": true,
+   "source": "https://thenewengineer.com/ai"
   }
  ]
 }
