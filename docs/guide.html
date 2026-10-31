@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Setup guide · Arch MCP Atlas</title>
+<meta name="description" content="A step-by-step beginner guide to connecting an MCP server to Claude: install Claude Desktop, add the server, switch it on in Revit, Blender or SketchUp, and check that it works.">
+<meta property="og:title" content="How to connect an MCP server to Claude (beginner guide)">
+<meta property="og:description" content="Five steps with pictures. Works for Revit, Blender, SketchUp, Rhino, AutoCAD and more.">
+<meta property="og:image" content="https://ahmakader.github.io/arch-mcp-atlas/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,4 91,27 91,73 50,96 9,73 9,27' fill='%230A0B0F' stroke='%23D3722A' stroke-width='6'/%3E%3Cg stroke='%23F4EFE8' stroke-width='8' stroke-linecap='round'%3E%3Cline x1='38' y1='66' x2='46' y2='34'/%3E%3Cline x1='50' y1='66' x2='58' y2='34'/%3E%3Cline x1='62' y1='66' x2='70' y2='34'/%3E%3C/g%3E%3C/svg%3E">
+<style>
+:root{--teal:#1F5D56;--night:#16302C;--ink:#0A0B0F;--orange:#D3722A;--glow:#F2904C;--cream:#F4EFE8;
+--bg:#0A0B0F;--bg2:#10161A;--panel:rgba(244,239,232,.055);--panel2:rgba(244,239,232,.09);--line:rgba(244,239,232,.15);--text:#F4EFE8;--muted:rgba(244,239,232,.68);--code:#050607;--radius:18px;--shadow:0 1px 0 rgba(255,255,255,.04) inset}
+:root[data-theme="light"]{--bg:#F4EFE8;--bg2:#EDE6DB;--panel:#fff;--panel2:#F8F4EE;--line:rgba(10,11,15,.14);--text:#0A0B0F;--muted:rgba(10,11,15,.66);--code:#0A0B0F;--shadow:0 1px 2px rgba(10,11,15,.06)}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]){--bg:#F4EFE8;--bg2:#EDE6DB;--panel:#fff;--panel2:#F8F4EE;--line:rgba(10,11,15,.14);--text:#0A0B0F;--muted:rgba(10,11,15,.66);--code:#0A0B0F;--shadow:0 1px 2px rgba(10,11,15,.06)}}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.65 system-ui,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--orange)}a:hover{color:var(--glow)}
+code{font-family:ui-monospace,'SF Mono',Consolas,Menlo,monospace;font-size:.88em;background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:1px 6px;word-break:break-word}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{max-width:1240px;display:flex;align-items:center;gap:18px;height:62px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--text);text-decoration:none;white-space:nowrap}
+.brand svg{width:30px;height:30px}
+.links{display:flex;gap:4px;margin-left:auto;align-items:center}
+.links a.l{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:10px;font-size:15px}
+.links a.l:hover,.links a.l.on{color:var(--text);background:var(--panel)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:12px;border:1px solid var(--line);background:var(--panel);color:var(--text);font:inherit;font-size:15px;font-weight:600;cursor:pointer;text-decoration:none}
+.btn:hover{border-color:var(--orange);color:var(--text)}
+.btn.p{background:var(--orange);border-color:var(--orange);color:#0A0B0F}.btn.p:hover{background:var(--glow);border-color:var(--glow);color:#0A0B0F}
+@media (max-width:760px){.links a.l{display:none}}
+@media (max-width:480px){nav .wrap{gap:8px}.btn{padding:8px 12px;font-size:14px}.brand{font-size:15px}}
+.hero{position:relative;overflow:hidden;color:var(--cream);background:radial-gradient(circle at 0% 35%,rgba(242,144,76,.4),transparent 46%),linear-gradient(160deg,var(--teal),var(--night) 58%,var(--ink));padding:60px 0 50px}
+.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(244,239,232,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(244,239,232,.06) 1px,transparent 1px);background-size:44px 44px;opacity:.55}
+.hero .wrap{position:relative}
+.tag{display:inline-block;border:2px solid var(--orange);border-radius:999px;padding:3px 16px;font-weight:700;letter-spacing:.14em;font-size:12px;color:var(--glow);background:rgba(10,11,15,.5)}
+h1{font-size:clamp(32px,5.6vw,56px);line-height:1.06;margin:16px 0 14px;letter-spacing:-.025em}h1 b{color:var(--orange)}
+.lead{font-size:19px;max-width:700px;color:rgba(244,239,232,.86);margin:0 0 24px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.need{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:30px}
+.need div{background:rgba(10,11,15,.46);border:1px solid rgba(244,239,232,.2);border-radius:16px;padding:14px 16px;font-size:14.5px;color:rgba(244,239,232,.8)}
+.need b{display:block;color:var(--glow);font-size:16px;margin-bottom:2px}
+.need a{color:var(--cream)}
+.toc{display:flex;flex-wrap:wrap;gap:8px;padding:18px 0}
+.toc a{border:1px solid var(--line);border-radius:999px;padding:5px 14px;text-decoration:none;color:var(--muted);font-size:14.5px;background:var(--panel)}
+.toc a:hover{border-color:var(--orange);color:var(--text)}
+section{padding:46px 0;border-top:1px solid var(--line)}
+section.first{border-top:0}
+h2{font-size:clamp(26px,3.4vw,36px);line-height:1.15;letter-spacing:-.02em;margin:0 0 10px}
+h3{font-size:21px;margin:26px 0 8px}
+.sub{color:var(--muted);max-width:760px;margin:0 0 22px}
+img.fig{display:block;width:100%;height:auto;border-radius:22px;border:1px solid var(--line);margin:18px 0 22px;box-shadow:0 18px 50px rgba(0,0,0,.28)}
+.three{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin:18px 0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.card.hi{border:2px solid var(--orange)}
+.card h4{margin:0 0 6px;font-size:18px}.card p{margin:0;color:var(--muted);font-size:15.5px}
+.card .l{display:inline-flex;width:30px;height:30px;border-radius:50%;background:var(--orange);color:#0A0B0F;font-weight:800;align-items:center;justify-content:center;margin-right:8px}
+ol.steps{list-style:none;counter-reset:s;padding:0;margin:8px 0 18px}
+ol.steps li{counter-increment:s;position:relative;padding:4px 0 10px 44px;color:var(--text)}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--orange);color:#0A0B0F;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:15px}
+.code{position:relative;margin:10px 0 18px}
+pre{background:var(--code);color:#F4EFE8;border:1px solid var(--line);border-radius:14px;padding:16px 18px;overflow:auto;margin:0;font-size:14.5px;line-height:1.55;font-family:ui-monospace,'SF Mono',Consolas,Menlo,monospace}
+.code .btn{position:absolute;top:8px;right:8px;padding:4px 12px;font-size:13px;border-radius:9px}
+pre code{background:none;border:0;padding:0;font-size:inherit;color:inherit;word-break:normal;white-space:pre}
+.call{display:flex;gap:14px;background:rgba(248,81,73,.09);border:1px solid rgba(248,81,73,.5);border-radius:var(--radius);padding:16px 18px;margin:18px 0}
+.call b{color:#f85149}
+.tip{background:var(--panel);border-left:4px solid var(--orange);border-radius:0 14px 14px 0;padding:12px 16px;margin:16px 0;color:var(--muted)}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15.5px;display:block;overflow-x:auto}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--glow);font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+.tabs{display:flex;gap:8px;margin:12px 0}
+.tab{border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:999px;padding:6px 16px;font:inherit;font-size:15px;cursor:pointer}
+.tab[aria-pressed=true]{background:var(--orange);border-color:var(--orange);color:#0A0B0F;font-weight:700}
+.pane[hidden]{display:none}
+footer{border-top:1px solid var(--line);padding:30px 0 60px;color:var(--muted);font-size:14.5px}
+footer b{color:var(--text)}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--orange);color:#0A0B0F;padding:10px 18px;border-radius:12px;font-weight:700;opacity:0;transition:.2s;z-index:60;pointer-events:none}
+.toast.on{opacity:1;transform:translateX(-50%)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand" href="index.html" aria-label="Arch MCP Atlas home">
+    <svg viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,4 91,27 91,73 50,96 9,73 9,27" fill="#0A0B0F" stroke="#D3722A" stroke-width="6"/><g stroke="#F4EFE8" stroke-width="8" stroke-linecap="round"><line x1="38" y1="66" x2="46" y2="34"/><line x1="50" y1="66" x2="58" y2="34"/><line x1="62" y1="66" x2="70" y2="34"/></g></svg>
+    Arch MCP Atlas
+  </a>
+  <div class="links">
+    <a class="l" href="index.html#directory">Directory</a><a class="l on" href="guide.html">Setup guide</a><a class="l" href="index.html#faq">FAQ</a>
+    <a class="btn" href="https://github.com/ahmakader/arch-mcp-atlas" rel="noopener">GitHub</a>
+    <button class="btn" id="theme" type="button" aria-label="Toggle light or dark theme">Theme</button>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <span class="tag">SETUP GUIDE</span>
+  <h1>Connect an MCP server to <b>Claude</b> in 10 minutes</h1>
+  <p class="lead">A step-by-step guide with pictures. No coding needed. It works the same for Revit, Blender, SketchUp, Rhino, AutoCAD and every other server in the directory.</p>
+  <div class="cta"><a class="btn p" href="#steps">Start with the five steps</a><a class="btn" href="index.html#directory">Pick a server first</a></div>
+  <div class="need">
+    <div><b>Claude Desktop</b>The app. <a href="https://claude.ai/download" rel="noopener">Download it here</a>.</div>
+    <div><b>Node.js or uv</b>Only if the server's README says so. <a href="https://nodejs.org/" rel="noopener">Node.js</a> · <a href="https://docs.astral.sh/uv/getting-started/installation/" rel="noopener">uv</a></div>
+    <div><b>Your software</b>Revit, Blender, SketchUp… sometimes with a small plugin.</div>
+    <div><b>A server</b>Choose one from the <a href="index.html#directory">directory</a>.</div>
+  </div>
+</div></header>
+
+<main class="wrap">
+  <div class="toc" role="navigation" aria-label="On this page">
+    <a href="#big">The big picture</a><a href="#pick">Pick your way in</a><a href="#steps">The five steps</a><a href="#a">Extension file</a><a href="#b">Web address</a><a href="#code">Claude Code</a><a href="#examples">Real examples</a><a href="#safe">Stay safe</a><a href="#fix">Troubleshooting</a>
+  </div>
+
+  <section id="big" class="first">
+    <h2>The big picture</h2>
+    <p class="sub">Claude is the brain. The MCP server is a small helper program that lets Claude press buttons in your software. Your software does the work. You only talk to Claude in plain words.</p>
+    <img class="fig" src="guide/01-big-picture.svg" alt="Claude talks to an MCP server, which controls your software" loading="lazy">
+  </section>
+
+  <section id="pick">
+    <h2>Pick your way in</h2>
+    <p class="sub">Open the server's README and look at its install section. It will match one of these. Not sure? Use <b>C</b>, because most architecture servers do.</p>
+    <img class="fig" src="guide/02-pick-your-way.svg" alt="Three ways to add a server: extension file, web address, or config file" loading="lazy">
+    <div class="three">
+      <div class="card"><h4><span class="l">A</span>Extension file</h4><p>You have a <code>.mcpb</code> file. <a href="#a">Jump to A</a></p></div>
+      <div class="card"><h4><span class="l">B</span>Web address</h4><p>The server is hosted online and has a URL. <a href="#b">Jump to B</a></p></div>
+      <div class="card hi"><h4><span class="l">C</span>Config file</h4><p>A JSON snippet and a command like <code>uvx</code> or <code>npx</code>. <a href="#steps">See the five steps</a></p></div>
+    </div>
+  </section>
+
+  <section id="steps">
+    <h2>Way C: the five steps</h2>
+    <p class="sub">This is the way most MCP servers for architecture software work.</p>
+
+    <h3>1 · Install Claude Desktop</h3>
+    <img class="fig" src="guide/03-download-claude.svg" alt="Download Claude Desktop from claude.ai/download" loading="lazy">
+    <p>Go to <a href="https://claude.ai/download" rel="noopener">claude.ai/download</a>, choose your computer, install it, and sign in. If the server's README asks for Node.js or uv, install that now too.</p>
+
+    <h3>2 · Open the config file</h3>
+    <img class="fig" src="guide/04-edit-config.svg" alt="Settings, Developer, Edit Config" loading="lazy">
+    <ol class="steps">
+      <li>In the <b>Claude menu at the top of your screen</b> (not the settings inside a chat), choose <b>Settings…</b></li>
+      <li>Click <b>Developer</b> in the left list.</li>
+      <li>Click <b>Edit Config</b>. A file called <code>claude_desktop_config.json</code> opens.</li>
+    </ol>
+    <p>If you need to find the file yourself:</p>
+    <ul><li><b>Mac:</b> <code>~/Library/Application Support/Claude/claude_desktop_config.json</code></li><li><b>Windows:</b> <code>%APPDATA%\Claude\claude_desktop_config.json</code></li></ul>
+
+    <h3>3 · Paste the server's snippet</h3>
+    <img class="fig" src="guide/05-paste-config.svg" alt="A config file with the server name, command and package highlighted" loading="lazy">
+    <p>Copy the snippet from the server's README and paste it in. This is the real snippet for the Blender server:</p>
+    <div class="code"><button class="btn" type="button" data-copy>Copy</button><pre><code>{
+  "mcpServers": {
+    "blender": {
+      "command": "uvx",
+      "args": ["mcp-for-blender"]
+    }
+  }
+}</code></pre></div>
+    <ol class="steps">
+      <li><code>"blender"</code> is just a name you choose. It is what you will see in Claude.</li>
+      <li><code>"uvx"</code> is the tool that starts the server. It is usually <code>uvx</code> or <code>npx</code>.</li>
+      <li><code>"mcp-for-blender"</code> is the server's package name. Always copy it from the README.</li>
+    </ol>
+    <div class="tip">If the file already lists other servers, add yours inside the same <code>"mcpServers"</code> section with a comma between them. Then <b>save the file</b>.</div>
+
+    <h3>4 · Switch it on inside your software</h3>
+    <img class="fig" src="guide/06-switch-on-in-software.svg" alt="Revit and Blender examples of enabling the plugin" loading="lazy">
+    <p>Many servers need a plugin installed in the program itself. Every server does this differently, so follow its README. The <a href="#examples">two worked examples below</a> show what it looks like.</p>
+
+    <h3>5 · Restart Claude and check</h3>
+    <img class="fig" src="guide/07-restart-and-check.svg" alt="Quit Claude fully, reopen it, and find your server under Connectors" loading="lazy">
+    <ol class="steps">
+      <li><b>Quit Claude completely.</b> Closing the window is not enough. On Mac use the Claude menu → <b>Quit</b>. On Windows right-click the tray icon → <b>Quit</b>.</li>
+      <li>Open Claude again.</li>
+      <li>In the chat box, click the <b>+</b> (the “Add files, connectors, and more” button), then <b>Connectors</b>. Your server should be in the list.</li>
+      <li>Try a first prompt: <i>“What can you do in Revit? List your tools.”</i></li>
+    </ol>
+  </section>
+
+  <section id="a">
+    <h2>Way A: a one-click extension</h2>
+    <p class="sub">For servers packaged as a <code>.mcpb</code> file. Runs on your computer and includes what it needs, so there is no config file to edit.</p>
+    <ol class="steps"><li>In Claude Desktop, open <b>Settings → Extensions</b>.</li><li>Drag the <code>.mcpb</code> file onto the page.</li><li>Check the preview, click <b>Install</b>, then confirm.</li></ol>
+    <div class="tip">Your organization can turn extensions off. If so, <b>Extensions</b> won't appear in Settings.</div>
+  </section>
+
+  <section id="b">
+    <h2>Way B: a web address (remote server)</h2>
+    <ol class="steps"><li>In Claude, go to <b>Customize → Connectors</b>.</li><li>Click <b>Add custom connector</b>.</li><li>Paste the server's URL, for example <code>https://example.com/mcp</code>.</li><li>Click <b>Add</b>, then <b>Connect</b> and sign in if it asks.</li><li>In a chat, click <b>+ → Connectors</b> to switch it on or off for that conversation.</li></ol>
+    <p class="sub">On a Free plan you can add one custom connector. On Team and Enterprise plans an organization Owner adds it first, and members then connect. If your screen differs, see Anthropic's page on <a href="https://claude.com/docs/connectors/custom" rel="noopener">adding a connector that isn't in the directory</a>.</p>
+  </section>
+
+  <section id="code">
+    <h2>Using Claude Code instead</h2>
+    <p class="sub">If you use Claude Code in a terminal, one command does the whole job. The <code>--</code> separates Claude's options from the server's own command.</p>
+    <div class="code"><button class="btn" type="button" data-copy>Copy</button><pre><code>claude mcp add my-server -- npx -y package-name</code></pre></div>
+    <p>For a server with a web address:</p>
+    <div class="code"><button class="btn" type="button" data-copy>Copy</button><pre><code>claude mcp add --transport http my-server https://example.com/mcp</code></pre></div>
+    <p>Type <code>/mcp</code> inside Claude Code to see the status. <code>claude mcp list</code> shows all servers and <code>claude mcp remove my-server</code> removes one.</p>
+  </section>
+
+  <section id="examples">
+    <h2>Two real examples</h2>
+    <p class="sub">Taken from each project's own README.</p>
+    <div class="tabs" role="group" aria-label="Choose an example"><button class="tab" type="button" data-pane="blender" aria-pressed="true">Blender</button><button class="tab" type="button" data-pane="revit" aria-pressed="false">Revit</button></div>
+    <div class="pane" id="p-blender">
+      <p><a href="https://github.com/ahujasid/blender-mcp" rel="noopener">mcp-for-blender</a>. Needs Blender 3.0 or newer.</p>
+      <ol class="steps">
+        <li><b>Install uv.</b> Mac: <code>brew install uv</code>. Windows: <code>winget install --id=astral-sh.uv -e</code>. Do <b>not</b> use <code>pip install uv</code>.</li>
+        <li><b>Add the server to Claude</b> with the snippet from step 3 above.</li>
+        <li><b>Install the Blender add-on.</b> In a terminal run <code>uvx mcp-for-blender install-addon</code>. In Blender open <b>Edit → Preferences → Add-ons</b>, search for “MCP for Blender” and enable <b>Interface: MCP for Blender</b>.</li>
+        <li><b>Connect.</b> In the 3D view press <b>N</b>, open the <b>MCP for Blender</b> tab, click <b>Start MCP Server</b> if needed, then click <b>Connect to Claude</b>.</li>
+        <li><b>Quit Claude fully and reopen it.</b></li>
+      </ol>
+    </div>
+    <div class="pane" id="p-revit" hidden>
+      <p><a href="https://github.com/mcp-servers-for-revit/mcp-servers-for-revit" rel="noopener">mcp-servers-for-revit</a>. Windows, Revit 2020 to 2026, plus Node.js.</p>
+      <ol class="steps">
+        <li><b>Install the plugin.</b> Download the ZIP for your Revit version from the project's Releases page, extract it, and copy the contents to <code>%AppData%\Autodesk\Revit\Addins\&lt;your Revit version&gt;\</code>.</li>
+        <li><b>Add the server to Claude</b> (<b>Settings → Developer → Edit Config</b>):
+          <div class="code"><button class="btn" type="button" data-copy>Copy</button><pre><code>{
+  "mcpServers": {
+    "mcp-server-for-revit": {
+      "command": "cmd",
+      "args": ["/c", "npx", "-y", "mcp-server-for-revit"]
+    }
+  }
+}</code></pre></div></li>
+        <li><b>Start Revit.</b> If it asks about an unknown add-in, click <b>Always Load</b>.</li>
+        <li>Open the <b>mcp-servers-for-revit</b> ribbon tab, click <b>Settings</b>, turn on the commands you want, and click <b>Save</b>.</li>
+        <li><b>Quit Claude fully and reopen it.</b></li>
+      </ol>
+    </div>
+    <h3>Good first prompts</h3>
+    <p>Start with questions that only <b>read</b> your model:</p>
+    <ul><li>“What tools do you have from this server?”</li><li>“List the levels in my model.”</li><li>“Describe what I am looking at in the current view.”</li><li>“Which doors have no fire rating?”</li></ul>
+  </section>
+
+  <section id="safe">
+    <h2>Stay safe</h2>
+    <div class="call"><div style="font-size:26px">⚠️</div><div><b>Be careful.</b> An MCP server can change your model, run scripts and read your files. Always work on a <b>copy</b> of the project, check what Claude plans to do before you approve it, and only install servers whose source you trust. Claude asks for your approval before using a tool, so read each request.</div></div>
+  </section>
+
+  <section id="fix">
+    <h2>If it does not work</h2>
+    <img class="fig" src="guide/08-troubleshooting.svg" alt="Six common problems and how to fix them" loading="lazy">
+    <table>
+      <thead><tr><th>Problem</th><th>Fix</th></tr></thead>
+      <tbody>
+        <tr><td>The server is missing in Claude</td><td>Quit Claude fully (not just the window) and open it again.</td></tr>
+        <tr><td><code>spawn uvx ENOENT</code> or an <code>npx</code> error</td><td>Install uv or Node.js first. If it is installed, put the full path in the config: run <code>which uvx</code> on Mac or <code>where uvx</code> on Windows and use that in <code>"command"</code>.</td></tr>
+        <tr><td>Claude says the config is invalid</td><td>Check the JSON: every quote, comma and bracket must match.</td></tr>
+        <tr><td>Claude connects but the software does nothing</td><td>Is the plugin installed, enabled and started inside your software?</td></tr>
+        <tr><td>It worked, then stopped</td><td>Run the server from one AI app at a time, for example not Claude and Cursor together.</td></tr>
+      </tbody>
+    </table>
+    <p>Still stuck? Read the log files. <b>Mac:</b> <code>~/Library/Logs/Claude</code> (<code>mcp.log</code> and <code>mcp-server-&lt;name&gt;.log</code>). <b>Windows:</b> <code>%APPDATA%\Claude\logs</code>.</p>
+  </section>
+
+  <section id="docs">
+    <h2>Official docs</h2>
+    <p class="sub">Menus change from time to time. These pages are the source of truth. This guide was checked against them on 2026-10-31.</p>
+    <ul>
+      <li><a href="https://claude.ai/download" rel="noopener">Download Claude</a></li>
+      <li><a href="https://modelcontextprotocol.io/docs/develop/connect-local-servers" rel="noopener">Connect to local MCP servers (modelcontextprotocol.io)</a></li>
+      <li><a href="https://claude.com/docs/connectors/custom" rel="noopener">Add a connector that isn't in the directory (Claude)</a></li>
+      <li><a href="https://code.claude.com/docs/en/mcp" rel="noopener">MCP in Claude Code</a></li>
+    </ul>
+    <p><a class="btn p" href="index.html#directory">Browse all the servers</a></p>
+  </section>
+</main>
+
+<footer><div class="wrap">Part of <a href="index.html">Arch MCP Atlas</a>, curated by <b>Ahmed Abdelkader Ibrahim</b>. Independent guide, not affiliated with Anthropic or any listed project. The pictures are simplified drawings, so your screen may look slightly different.</div></footer>
+<div class="toast" id="toast" role="status"></div>
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  function toast(t){var e=$('#toast');e.textContent=t;e.classList.add('on');setTimeout(function(){e.classList.remove('on')},1500)}
+  document.querySelectorAll('[data-copy]').forEach(function(b){b.onclick=function(){
+    var code=b.parentNode.querySelector('code').innerText;
+    function fallback(){try{var t=document.createElement('textarea');t.value=code;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();var ok=document.execCommand('copy');document.body.removeChild(t);toast(ok?'Copied':'Select the text and copy it')}catch(e){toast('Select the text and copy it')}}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(code).then(function(){toast('Copied')},fallback)}else{fallback()}
+  }});
+  document.querySelectorAll('.tab').forEach(function(t){t.onclick=function(){
+    document.querySelectorAll('.tab').forEach(function(x){x.setAttribute('aria-pressed',String(x===t))});
+    document.querySelectorAll('.pane').forEach(function(p){p.hidden=(p.id!=='p-'+t.dataset.pane)});
+  }});
+  $('#theme').onclick=function(){var r=document.documentElement;var dark=(r.dataset.theme?r.dataset.theme==='dark':!matchMedia('(prefers-color-scheme: light)').matches);r.dataset.theme=dark?'light':'dark'};
+})();
+</script>
+</body>
+</html>

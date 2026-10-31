@@ -136,11 +136,17 @@ def render_readme():
 **Arch MCP Atlas: a verified directory of MCP servers for architecture software.**<br>
 Let Claude and other AI assistants work inside Revit, 3ds Max, SketchUp, Rhino, AutoCAD, Archicad, Blender and more.
 
-[**Browse the searchable site →**]({META.get('site', 'docs/index.html')}) &nbsp;·&nbsp; [Add a server](CONTRIBUTING.md) &nbsp;·&nbsp; [Raw data](data/servers.json)
+[**Browse the searchable site →**]({META.get('site', 'docs/index.html')}) &nbsp;·&nbsp; [**Setup guide for beginners →**](GUIDE.md) &nbsp;·&nbsp; [Add a server](CONTRIBUTING.md) &nbsp;·&nbsp; [Raw data](data/servers.json)
 
 </div>
 
 ---
+
+## New to MCP? Start here
+
+<a href="GUIDE.md"><img src="docs/guide/02-pick-your-way.svg" alt="Three ways to connect an MCP server to Claude" width="100%"></a>
+
+**[Open the setup guide →](GUIDE.md)** Five steps with pictures: install Claude Desktop, add a server, switch it on in your software (real examples for Revit and Blender), and check that it works. No coding needed. The same guide is on the [website]({META.get('site', 'docs/index.html').rstrip('/')}/guide.html).
 
 ## What is this?
 
@@ -176,22 +182,9 @@ Software with the most servers. Each link opens that filter on the [searchable s
 Official and company servers come first, then community projects by GitHub stars. Only the top {TOP_N} per category are shown here; **everything is in the [full catalog](CATALOG.md)**.
 
 {chr(10).join(sections)}
-## Connect a server (quick start)
+## Connect a server
 
-Most servers follow the same pattern. Install the server (and its plugin or add-in inside the software if it needs one), then add it to your AI client. For example, in Claude Desktop's `claude_desktop_config.json`:
-
-```json
-{{
-  "mcpServers": {{
-    "my-server": {{
-      "command": "uvx",
-      "args": ["package-name"]
-    }}
-  }}
-}}
-```
-
-In Claude Code: `claude mcp add my-server -- uvx package-name`. Each server's own README has the exact command, the supported software versions and any plugin you must install first.
+Install the server (and the plugin inside your software, if it needs one), then add it to Claude. The [setup guide](GUIDE.md) walks through it with pictures. The short version for Claude Desktop is **Settings → Developer → Edit Config**, paste the server's snippet from its README, save, and fully restart Claude. For Claude Code the command is `claude mcp add my-server -- npx -y package-name`.
 
 ## Contributing
 
