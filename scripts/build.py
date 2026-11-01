@@ -4,7 +4,7 @@
     python3 scripts/build.py          # rewrite generated files
     python3 scripts/build.py --check  # fail if they are out of date (used in CI)
 """
-import json, sys, datetime, pathlib, re, urllib.parse
+import json, sys, datetime, pathlib, re
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA = json.loads((ROOT / "data" / "servers.json").read_text(encoding="utf-8"))
@@ -77,23 +77,33 @@ def row(s):
 TOP_N = 10
 
 
-def software_index():
-    """Coverage grid: software name, number of servers, link to the filtered site view."""
+def software_groups():
+    """Top software by server count, same selection as the coverage grid."""
     groups = {}
     for s in SERVERS:
         for sw in s.get("software") or []:
             groups.setdefault(sw, []).append(s)
-    site = META.get("site", "docs/index.html").rstrip("/")
-    cells = []
-    for sw, items in sorted(groups.items(), key=lambda kv: (-len(kv[1]), kv[0].lower())):
-        if len(items) < 3 or sw == "Other":
-            continue
-        cells.append(f"[**{esc(sw)}** · {len(items)}]({site}/?software={urllib.parse.quote(sw)})")
-    cells = cells[:24]
+    ranked = [(sw, items) for sw, items in sorted(groups.items(), key=lambda kv: (-len(kv[1]), kv[0].lower())) if len(items) >= 3 and sw != "Other"]
+    return ranked[:24]
+
+
+def software_index():
+    """Coverage grid: software name, number of servers, link to its section in BY_SOFTWARE.md."""
+    cells = [f"[**{esc(sw)}** · {len(items)}](BY_SOFTWARE.md#{slug(sw)})" for sw, items in software_groups()]
     while len(cells) % 4:
         cells.append("")
     rows = ["| " + " | ".join(cells[i:i + 4]) + " |" for i in range(0, len(cells), 4)]
     return "| | | | |\n| :-- | :-- | :-- | :-- |\n" + "\n".join(rows)
+
+
+def render_by_software():
+    ranked = software_groups()
+    toc = " · ".join(f"[{esc(sw)}](#{slug(sw)})" for sw, _ in ranked)
+    out = [f"# Servers by software\n\nEvery verified server for the {len(ranked)} most covered programs. A server that works with several programs appears under each. Verified {META['verified']}.\n\n[← Back to the README](README.md) · [Setup guide](GUIDE.md) · [Full catalog](CATALOG.md)\n\n**Jump to:** {toc}\n"]
+    for sw, items in ranked:
+        items = sorted(items, key=sort_key)
+        out.append(f"## {esc(sw)}\n\n{len(items)} servers · [↑ back to the list](#servers-by-software)\n\n| Server | Works with | Type | ★ | Updated | What it does |\n| :-- | :-- | :-- | --: | :-- | :-- |\n" + "\n".join(row(x) for x in items) + "\n")
+    return "\n".join(out)
 
 
 def render_catalog():
@@ -104,6 +114,77 @@ def render_catalog():
             continue
         out.append(f"## {e} {c} ({len(items)})\n\n| Server | Works with | Type | ★ | Updated | What it does |\n| :-- | :-- | :-- | --: | :-- | :-- |\n" + "\n".join(row(s) for s in items) + "\n")
     return "\n".join(out)
+
+
+AR_INSTALL = """<div dir="rtl">
+
+## 🇪🇬 إزاي أركّب سيرفر؟ (بالعربي، خطوة بخطوة)
+
+فيه طريقتين. ابدأ بالأولى لأنها الأسهل، ولو ما نفعتش جرّب التانية.
+
+### الطريقة 1: الأسهل، خلّي Claude يركّب لك
+
+1. افتح **Claude Code** (من الترمنال أو من تطبيق Claude). ده الأفضل لأنه يقدر يشغّل الأوامر ويعدّل الملفات على جهازك.
+2. اختار السيرفر اللي عايزه من الجداول تحت، وافتح صفحته على GitHub، وانسخ الرابط.
+3. الصق الرابط في Claude واكتب له:
+
+</div>
+
+```text
+ركّب لي الـ MCP server ده على جهازي واتبع خطوات الـ README بتاعه خطوة خطوة،
+واشرح لي أي حاجة لازم أعملها بإيدي: <الصق الرابط هنا>
+```
+
+<div dir="rtl">
+
+4. Claude هيطلب إذنك قبل أي أمر. **اقرا كل طلب** قبل ما توافق.
+5. لما يخلص، اقفل Claude تماماً وافتحه تاني، واسأله: `What tools do you have from this server?`
+
+### الطريقة 2: بإيدك، مثال على Revit
+
+هنركّب سيرفر [mcp-servers-for-revit](https://github.com/mcp-servers-for-revit/mcp-servers-for-revit). محتاج: ويندوز، Revit من 2020 لـ 2026، و[Node.js](https://nodejs.org/) (نزّل نسخة LTS).
+
+**1. نزّل Claude Desktop.** من [claude.ai/download](https://claude.ai/download)، ركّبه وسجّل دخول بحسابك.
+
+**2. ركّب الـ plugin في Revit.** افتح صفحة [Releases](https://github.com/mcp-servers-for-revit/mcp-servers-for-revit/releases) بتاعة المشروع، ونزّل ملف الـ ZIP المناسب لنسخة Revit عندك، وفكّه، وانسخ اللي جواه في الفولدر ده:
+
+</div>
+
+```text
+%AppData%\\Autodesk\\Revit\\Addins\\<نسخة Revit بتاعتك>\\
+```
+
+<div dir="rtl">
+
+**3. ضيف السيرفر في Claude.** من القايمة اللي فوق في Claude اختار **Settings** ثم **Developer** ثم **Edit Config**. هيفتح ملف، الصق فيه ده واحفظ:
+
+</div>
+
+```json
+{
+  "mcpServers": {
+    "mcp-server-for-revit": {
+      "command": "cmd",
+      "args": ["/c", "npx", "-y", "mcp-server-for-revit"]
+    }
+  }
+}
+```
+
+<div dir="rtl">
+
+لو في الملف سيرفرات تانية، ضيف ده جوه نفس الـ `"mcpServers"` وحط فاصلة بينهم.
+
+**4. شغّل Revit.** لو سألك عن add-in مش معروف اضغط **Always Load**. بعدين افتح تبويب **mcp-servers-for-revit** في الشريط اللي فوق، واضغط **Settings**، وفعّل الأوامر اللي عايزها، واضغط **Save**.
+
+**5. اقفل Claude تماماً وافتحه.** مش بس تقفل الشباك: كليك يمين على أيقونة Claude جنب الساعة واختار **Quit**، وافتحه تاني.
+
+**6. جرّب.** افتح موديل (**نسخة منه، مش الأصلي**) واكتب لـ Claude: `What can you do in Revit? List your tools.` وابدأ بأسئلة قراءة بس، زي: "اعرض لي الـ levels اللي في الموديل".
+
+لو حاجة ما اشتغلتش، بص على جدول المشاكل وحلولها في [الدليل الكامل](GUIDE.md#if-it-does-not-work) (بالإنجليزي). وبرضه لو كنت بتركّب برنامج تاني غير Revit (Blender, SketchUp, Rhino...)، الطريقة 1 هتمشي معاك على طول.
+
+</div>
+"""
 
 
 def render_readme():
@@ -148,6 +229,7 @@ Let Claude and other AI assistants work inside Revit, 3ds Max, SketchUp, Rhino, 
 
 **[Open the setup guide →](GUIDE.md)** Five steps with pictures: install Claude Desktop, add a server, switch it on in your software (real examples for Revit and Blender), and check that it works. No coding needed. The same guide is on the [website]({META.get('site', 'docs/index.html').rstrip('/')}/guide.html).
 
+{AR_INSTALL}
 ## What is this?
 
 [MCP (Model Context Protocol)](https://modelcontextprotocol.io) is an open standard, introduced by Anthropic in November 2024, that lets an AI assistant call tools in other software. An **MCP server** is the small program that sits next to your application and exposes what it can do (create walls, read parameters, render a view) to the AI.
@@ -169,7 +251,7 @@ This list collects the ones that matter for architecture and AEC work, with what
 
 ## Coverage by software
 
-Software with the most servers. Each link opens that filter on the [searchable site]({META.get("site", "docs/index.html")}).
+Software with the most servers. Each link jumps to that software's servers in [BY_SOFTWARE.md](BY_SOFTWARE.md). The [searchable site]({META.get("site", "docs/index.html")}) has more filters.
 
 {software_index()}
 
@@ -201,7 +283,7 @@ Independent list, not affiliated with Autodesk, Trimble, McNeel, Graphisoft, Ble
 def main():
     readme = render_readme()
     site = json.dumps({"meta": META, "categories": [c for c, _, _ in CATEGORIES], "servers": sorted(SERVERS, key=sort_key)}, ensure_ascii=False, indent=1)
-    targets = {ROOT / "README.md": readme, ROOT / "CATALOG.md": render_catalog() + "\n", ROOT / "docs" / "data.json": site + "\n"}
+    targets = {ROOT / "README.md": readme, ROOT / "CATALOG.md": render_catalog() + "\n", ROOT / "BY_SOFTWARE.md": render_by_software() + "\n", ROOT / "docs" / "data.json": site + "\n"}
     if "--check" in sys.argv:
         bad = [str(p.relative_to(ROOT)) for p, t in targets.items() if not p.exists() or p.read_text(encoding="utf-8") != t]
         if bad:
@@ -211,7 +293,7 @@ def main():
         return
     for p, t in targets.items():
         p.write_text(t, encoding="utf-8")
-    print(f"Wrote README.md, CATALOG.md and docs/data.json ({len(SERVERS)} servers)")
+    print(f"Wrote README.md, CATALOG.md, BY_SOFTWARE.md and docs/data.json ({len(SERVERS)} servers)")
 
 
 if __name__ == "__main__":
