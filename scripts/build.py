@@ -118,70 +118,13 @@ def render_catalog():
 
 AR_INSTALL = """<div dir="rtl">
 
-## 🇪🇬 إزاي أركّب سيرفر؟ (بالعربي، خطوة بخطوة)
+## 🇪🇬 إزاي أركّب سيرفر؟ (بالعربي)
 
-فيه طريقتين. ابدأ بالأولى لأنها الأسهل، ولو ما نفعتش جرّب التانية.
+<a href="GUIDE_AR.md"><img src="docs/guide-ar/01-two-ways.svg" alt="فيه طريقتين لتركيب أي سيرفر" width="100%"></a>
 
-### الطريقة 1: الأسهل، خلّي Claude يركّب لك
+**الأسهل:** انسخ رابط السيرفر والصقه في Claude Code واطلب منه يركّبه ويمشي على الـ README. **أو** اتبع الخطوات بإيدك، ومعاها صور وطريقة فتح الـ CMD ومثال كامل على Revit.
 
-1. افتح **Claude Code** (من الترمنال أو من تطبيق Claude). ده الأفضل لأنه يقدر يشغّل الأوامر ويعدّل الملفات على جهازك.
-2. اختار السيرفر اللي عايزه من الجداول تحت، وافتح صفحته على GitHub، وانسخ الرابط.
-3. الصق الرابط في Claude واكتب له:
-
-</div>
-
-```text
-ركّب لي الـ MCP server ده على جهازي واتبع خطوات الـ README بتاعه خطوة خطوة،
-واشرح لي أي حاجة لازم أعملها بإيدي: <الصق الرابط هنا>
-```
-
-<div dir="rtl">
-
-4. Claude هيطلب إذنك قبل أي أمر. **اقرا كل طلب** قبل ما توافق.
-5. لما يخلص، اقفل Claude تماماً وافتحه تاني، واسأله: `What tools do you have from this server?`
-
-### الطريقة 2: بإيدك، مثال على Revit
-
-هنركّب سيرفر [mcp-servers-for-revit](https://github.com/mcp-servers-for-revit/mcp-servers-for-revit). محتاج: ويندوز، Revit من 2020 لـ 2026، و[Node.js](https://nodejs.org/) (نزّل نسخة LTS).
-
-**1. نزّل Claude Desktop.** من [claude.ai/download](https://claude.ai/download)، ركّبه وسجّل دخول بحسابك.
-
-**2. ركّب الـ plugin في Revit.** افتح صفحة [Releases](https://github.com/mcp-servers-for-revit/mcp-servers-for-revit/releases) بتاعة المشروع، ونزّل ملف الـ ZIP المناسب لنسخة Revit عندك، وفكّه، وانسخ اللي جواه في الفولدر ده:
-
-</div>
-
-```text
-%AppData%\\Autodesk\\Revit\\Addins\\<نسخة Revit بتاعتك>\\
-```
-
-<div dir="rtl">
-
-**3. ضيف السيرفر في Claude.** من القايمة اللي فوق في Claude اختار **Settings** ثم **Developer** ثم **Edit Config**. هيفتح ملف، الصق فيه ده واحفظ:
-
-</div>
-
-```json
-{
-  "mcpServers": {
-    "mcp-server-for-revit": {
-      "command": "cmd",
-      "args": ["/c", "npx", "-y", "mcp-server-for-revit"]
-    }
-  }
-}
-```
-
-<div dir="rtl">
-
-لو في الملف سيرفرات تانية، ضيف ده جوه نفس الـ `"mcpServers"` وحط فاصلة بينهم.
-
-**4. شغّل Revit.** لو سألك عن add-in مش معروف اضغط **Always Load**. بعدين افتح تبويب **mcp-servers-for-revit** في الشريط اللي فوق، واضغط **Settings**، وفعّل الأوامر اللي عايزها، واضغط **Save**.
-
-**5. اقفل Claude تماماً وافتحه.** مش بس تقفل الشباك: كليك يمين على أيقونة Claude جنب الساعة واختار **Quit**، وافتحه تاني.
-
-**6. جرّب.** افتح موديل (**نسخة منه، مش الأصلي**) واكتب لـ Claude: `What can you do in Revit? List your tools.` وابدأ بأسئلة قراءة بس، زي: "اعرض لي الـ levels اللي في الموديل".
-
-لو حاجة ما اشتغلتش، بص على جدول المشاكل وحلولها في [الدليل الكامل](GUIDE.md#if-it-does-not-work) (بالإنجليزي). وبرضه لو كنت بتركّب برنامج تاني غير Revit (Blender, SketchUp, Rhino...)، الطريقة 1 هتمشي معاك على طول.
+### [افتح دليل التركيب بالعربي ←](GUIDE_AR.md)
 
 </div>
 """
@@ -217,7 +160,7 @@ def render_readme():
 **Arch MCP Atlas: a verified directory of MCP servers for architecture software.**<br>
 Let Claude and other AI assistants work inside Revit, 3ds Max, SketchUp, Rhino, AutoCAD, Archicad, Blender and more.
 
-[**Browse the searchable site →**]({META.get('site', 'docs/index.html')}) &nbsp;·&nbsp; [**Setup guide for beginners →**](GUIDE.md) &nbsp;·&nbsp; [Add a server](CONTRIBUTING.md) &nbsp;·&nbsp; [Raw data](data/servers.json)
+[**Browse the searchable site →**]({META.get('site', 'docs/index.html')}) &nbsp;·&nbsp; [**Setup guide for beginners →**](GUIDE.md) &nbsp;·&nbsp; [**🇪🇬 الدليل بالعربي →**](GUIDE_AR.md) &nbsp;·&nbsp; [Add a server](CONTRIBUTING.md) &nbsp;·&nbsp; [Raw data](data/servers.json)
 
 </div>
 
