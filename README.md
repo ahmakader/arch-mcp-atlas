@@ -23,6 +23,75 @@ Let Claude and other AI assistants work inside Revit, 3ds Max, SketchUp, Rhino, 
 
 **[Open the setup guide →](GUIDE.md)** Five steps with pictures: install Claude Desktop, add a server, switch it on in your software (real examples for Revit and Blender), and check that it works. No coding needed. The same guide is on the [website](https://ahmakader.github.io/arch-mcp-atlas/guide.html).
 
+<div dir="rtl">
+
+## 🇪🇬 إزاي أركّب سيرفر؟ (بالعربي، خطوة بخطوة)
+
+فيه طريقتين. ابدأ بالأولى لأنها الأسهل، ولو ما نفعتش جرّب التانية.
+
+### الطريقة 1: الأسهل، خلّي Claude يركّب لك
+
+1. افتح **Claude Code** (من الترمنال أو من تطبيق Claude). ده الأفضل لأنه يقدر يشغّل الأوامر ويعدّل الملفات على جهازك.
+2. اختار السيرفر اللي عايزه من الجداول تحت، وافتح صفحته على GitHub، وانسخ الرابط.
+3. الصق الرابط في Claude واكتب له:
+
+</div>
+
+```text
+ركّب لي الـ MCP server ده على جهازي واتبع خطوات الـ README بتاعه خطوة خطوة،
+واشرح لي أي حاجة لازم أعملها بإيدي: <الصق الرابط هنا>
+```
+
+<div dir="rtl">
+
+4. Claude هيطلب إذنك قبل أي أمر. **اقرا كل طلب** قبل ما توافق.
+5. لما يخلص، اقفل Claude تماماً وافتحه تاني، واسأله: `What tools do you have from this server?`
+
+### الطريقة 2: بإيدك، مثال على Revit
+
+هنركّب سيرفر [mcp-servers-for-revit](https://github.com/mcp-servers-for-revit/mcp-servers-for-revit). محتاج: ويندوز، Revit من 2020 لـ 2026، و[Node.js](https://nodejs.org/) (نزّل نسخة LTS).
+
+**1. نزّل Claude Desktop.** من [claude.ai/download](https://claude.ai/download)، ركّبه وسجّل دخول بحسابك.
+
+**2. ركّب الـ plugin في Revit.** افتح صفحة [Releases](https://github.com/mcp-servers-for-revit/mcp-servers-for-revit/releases) بتاعة المشروع، ونزّل ملف الـ ZIP المناسب لنسخة Revit عندك، وفكّه، وانسخ اللي جواه في الفولدر ده:
+
+</div>
+
+```text
+%AppData%\Autodesk\Revit\Addins\<نسخة Revit بتاعتك>\
+```
+
+<div dir="rtl">
+
+**3. ضيف السيرفر في Claude.** من القايمة اللي فوق في Claude اختار **Settings** ثم **Developer** ثم **Edit Config**. هيفتح ملف، الصق فيه ده واحفظ:
+
+</div>
+
+```json
+{
+  "mcpServers": {
+    "mcp-server-for-revit": {
+      "command": "cmd",
+      "args": ["/c", "npx", "-y", "mcp-server-for-revit"]
+    }
+  }
+}
+```
+
+<div dir="rtl">
+
+لو في الملف سيرفرات تانية، ضيف ده جوه نفس الـ `"mcpServers"` وحط فاصلة بينهم.
+
+**4. شغّل Revit.** لو سألك عن add-in مش معروف اضغط **Always Load**. بعدين افتح تبويب **mcp-servers-for-revit** في الشريط اللي فوق، واضغط **Settings**، وفعّل الأوامر اللي عايزها، واضغط **Save**.
+
+**5. اقفل Claude تماماً وافتحه.** مش بس تقفل الشباك: كليك يمين على أيقونة Claude جنب الساعة واختار **Quit**، وافتحه تاني.
+
+**6. جرّب.** افتح موديل (**نسخة منه، مش الأصلي**) واكتب لـ Claude: `What can you do in Revit? List your tools.` وابدأ بأسئلة قراءة بس، زي: "اعرض لي الـ levels اللي في الموديل".
+
+لو حاجة ما اشتغلتش، بص على جدول المشاكل وحلولها في [الدليل الكامل](GUIDE.md#if-it-does-not-work) (بالإنجليزي). وبرضه لو كنت بتركّب برنامج تاني غير Revit (Blender, SketchUp, Rhino...)، الطريقة 1 هتمشي معاك على طول.
+
+</div>
+
 ## What is this?
 
 [MCP (Model Context Protocol)](https://modelcontextprotocol.io) is an open standard, introduced by Anthropic in November 2024, that lets an AI assistant call tools in other software. An **MCP server** is the small program that sits next to your application and exposes what it can do (create walls, read parameters, render a view) to the AI.
@@ -44,16 +113,16 @@ This list collects the ones that matter for architecture and AEC work, with what
 
 ## Coverage by software
 
-Software with the most servers. Each link opens that filter on the [searchable site](https://ahmakader.github.io/arch-mcp-atlas/).
+Software with the most servers. Each link jumps to that software's servers in [BY_SOFTWARE.md](BY_SOFTWARE.md). The [searchable site](https://ahmakader.github.io/arch-mcp-atlas/) has more filters.
 
 | | | | |
 | :-- | :-- | :-- | :-- |
-| [**Revit** · 45](https://ahmakader.github.io/arch-mcp-atlas/?software=Revit) | [**AutoCAD** · 35](https://ahmakader.github.io/arch-mcp-atlas/?software=AutoCAD) | [**Blender** · 31](https://ahmakader.github.io/arch-mcp-atlas/?software=Blender) | [**SketchUp** · 23](https://ahmakader.github.io/arch-mcp-atlas/?software=SketchUp) |
-| [**Rhino** · 20](https://ahmakader.github.io/arch-mcp-atlas/?software=Rhino) | [**Fusion** · 18](https://ahmakader.github.io/arch-mcp-atlas/?software=Fusion) | [**Grasshopper** · 18](https://ahmakader.github.io/arch-mcp-atlas/?software=Grasshopper) | [**IFC** · 18](https://ahmakader.github.io/arch-mcp-atlas/?software=IFC) |
-| [**Civil 3D** · 15](https://ahmakader.github.io/arch-mcp-atlas/?software=Civil%203D) | [**FreeCAD** · 15](https://ahmakader.github.io/arch-mcp-atlas/?software=FreeCAD) | [**Maya** · 15](https://ahmakader.github.io/arch-mcp-atlas/?software=Maya) | [**DXF** · 14](https://ahmakader.github.io/arch-mcp-atlas/?software=DXF) |
-| [**Navisworks** · 14](https://ahmakader.github.io/arch-mcp-atlas/?software=Navisworks) | [**IfcOpenShell** · 12](https://ahmakader.github.io/arch-mcp-atlas/?software=IfcOpenShell) | [**ZWCAD** · 12](https://ahmakader.github.io/arch-mcp-atlas/?software=ZWCAD) | [**Autodesk Construction Cloud** · 11](https://ahmakader.github.io/arch-mcp-atlas/?software=Autodesk%20Construction%20Cloud) |
-| [**3ds Max** · 10](https://ahmakader.github.io/arch-mcp-atlas/?software=3ds%20Max) | [**Inventor** · 10](https://ahmakader.github.io/arch-mcp-atlas/?software=Inventor) | [**Onshape** · 9](https://ahmakader.github.io/arch-mcp-atlas/?software=Onshape) | [**DWG** · 8](https://ahmakader.github.io/arch-mcp-atlas/?software=DWG) |
-| [**QGIS** · 8](https://ahmakader.github.io/arch-mcp-atlas/?software=QGIS) | [**Unity** · 8](https://ahmakader.github.io/arch-mcp-atlas/?software=Unity) | [**Unreal Engine** · 8](https://ahmakader.github.io/arch-mcp-atlas/?software=Unreal%20Engine) | [**Figma** · 7](https://ahmakader.github.io/arch-mcp-atlas/?software=Figma) |
+| [**Revit** · 45](BY_SOFTWARE.md#revit) | [**AutoCAD** · 35](BY_SOFTWARE.md#autocad) | [**Blender** · 31](BY_SOFTWARE.md#blender) | [**SketchUp** · 23](BY_SOFTWARE.md#sketchup) |
+| [**Rhino** · 20](BY_SOFTWARE.md#rhino) | [**Fusion** · 18](BY_SOFTWARE.md#fusion) | [**Grasshopper** · 18](BY_SOFTWARE.md#grasshopper) | [**IFC** · 18](BY_SOFTWARE.md#ifc) |
+| [**Civil 3D** · 15](BY_SOFTWARE.md#civil-3d) | [**FreeCAD** · 15](BY_SOFTWARE.md#freecad) | [**Maya** · 15](BY_SOFTWARE.md#maya) | [**DXF** · 14](BY_SOFTWARE.md#dxf) |
+| [**Navisworks** · 14](BY_SOFTWARE.md#navisworks) | [**IfcOpenShell** · 12](BY_SOFTWARE.md#ifcopenshell) | [**ZWCAD** · 12](BY_SOFTWARE.md#zwcad) | [**Autodesk Construction Cloud** · 11](BY_SOFTWARE.md#autodesk-construction-cloud) |
+| [**3ds Max** · 10](BY_SOFTWARE.md#3ds-max) | [**Inventor** · 10](BY_SOFTWARE.md#inventor) | [**Onshape** · 9](BY_SOFTWARE.md#onshape) | [**DWG** · 8](BY_SOFTWARE.md#dwg) |
+| [**QGIS** · 8](BY_SOFTWARE.md#qgis) | [**Unity** · 8](BY_SOFTWARE.md#unity) | [**Unreal Engine** · 8](BY_SOFTWARE.md#unreal-engine) | [**Figma** · 7](BY_SOFTWARE.md#figma) |
 
 ## Contents
 
