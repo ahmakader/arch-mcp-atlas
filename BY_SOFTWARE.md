@@ -4,7 +4,7 @@ Every verified server for the 24 most covered programs. A server that works with
 
 [← Back to the README](README.md) · [Setup guide](GUIDE.md) · [Full catalog](CATALOG.md)
 
-**Jump to:** [Revit](#revit) · [AutoCAD](#autocad) · [Blender](#blender) · [SketchUp](#sketchup) · [Rhino](#rhino) · [Fusion](#fusion) · [Grasshopper](#grasshopper) · [IFC](#ifc) · [Civil 3D](#civil-3d) · [FreeCAD](#freecad) · [Maya](#maya) · [DXF](#dxf) · [Navisworks](#navisworks) · [IfcOpenShell](#ifcopenshell) · [ZWCAD](#zwcad) · [Autodesk Construction Cloud](#autodesk-construction-cloud) · [3ds Max](#3ds-max) · [Inventor](#inventor) · [Onshape](#onshape) · [DWG](#dwg) · [QGIS](#qgis) · [Unity](#unity) · [Unreal Engine](#unreal-engine) · [Figma](#figma)
+**Jump to:** [Revit](#revit) · [AutoCAD](#autocad) · [Blender](#blender) · [SketchUp](#sketchup) · [Rhino](#rhino) · [Fusion](#fusion) · [Grasshopper](#grasshopper) · [IFC](#ifc) · [Civil 3D](#civil-3d) · [FreeCAD](#freecad) · [Maya](#maya) · [DXF](#dxf) · [Navisworks](#navisworks) · [IfcOpenShell](#ifcopenshell) · [ZWCAD](#zwcad) · [Autodesk Construction Cloud](#autodesk-construction-cloud) · [Inventor](#inventor) · [3ds Max](#3ds-max) · [Onshape](#onshape) · [DWG](#dwg) · [QGIS](#qgis) · [Unity](#unity) · [Unreal Engine](#unreal-engine) · [Figma](#figma)
 
 ## Revit
 
@@ -18,7 +18,7 @@ Every verified server for the 24 most covered programs. A server that works with
 | [Horizun Revit MCP](https://github.com/HorizunGroup/horizun-revit-mcp) | Revit | 🟧 Company | 65 | 🟢 2026-10-22 | Free open-source Windows MCP server and Revit add-in for typed BIM edits, families, drawings, CAD-to-BIM, audits, quantities, Excel, Power BI and exports; README states 125 tools and 481 named suboperations. |
 | [AI Connector for Revit (NonicaTab)](https://github.com/NonicaTeam/AI-Connector-for-Revit) | Revit | 🟧 Company | 19 | 🟢 2026-10-07 | Commercial NonicaTab feature that connects Claude, Cursor or Copilot to Revit through 50+ predefined tools to inspect, select, edit and document elements; the GitHub repo only tracks issues and releases. |
 | [ScanBIM MCP (AI Hub for AEC)](https://github.com/ScanBIM-Labs/scanbim-mcp) | Revit, Navisworks, Autodesk Construction Cloud, Autodesk Platform Services, Twinmotion | 🟧 Company | 6 | 🟢 2026-04-21 | Hosted Cloudflare Workers hub of MCP servers for AEC; README describes 46 tools across 5 workers covering model upload/viewing, clashes, ACC, Revit, XR and RFIs. |
-| [AEC Pilot MCP](https://github.com/hmertkaramann/aec-pilot-mcp) | Revit, AutoCAD, Civil 3D, Navisworks, 3ds Max | 🟧 Company | 2 | 🟢 2026-10-15 | Commercial local MCP server running inside each Autodesk app (Revit, AutoCAD, Civil 3D, Navisworks and more); README states 480+ actions. |
+| [AEC Pilot MCP](https://github.com/hmertkaramann/aec-pilot-mcp) | Revit, AutoCAD, Civil 3D, Advance Steel, Navisworks, Inventor, Fusion, 3ds Max, Robot Structural Analysis | 🟧 Company | 2 | 🟢 2026-11-05 | Commercial local MCP server running inside nine Autodesk apps (Revit, AutoCAD, Civil 3D, Navisworks, Fusion and more); README states 550+ actions. |
 | [Revit Converter MCP (Labs Future)](https://github.com/labsfuture/revit-converter-remote-mcp-release) | Revit | 🟧 Company | 1 | 🟢 2026-05-26 | Remote MCP server that converts uploaded .rvt files to XKT, IFC or DWG and answers natural-language BIM queries about the stored models. |
 | [vn-revit-mcp (InnoPro)](https://github.com/Innoprovn/vn-revit-mcp) | Revit | 🟧 Company | 1 | 🟢 2026-10-15 | Open-source MCP server and Revit add-in (Vietnamese-language docs) with in-Revit chat, commands writable as single .cs files, undoable model edits and a Revit API lookup skill. |
 | [Revit MCP by ArchBench](https://github.com/3d-mcp/revit-mcp) | Revit | 🟧 Company | 0 | 🟢 2026-09-13 | Independent experimental Revit connector using pyRevit, with read-only or write bridge modes and an opt-in code-execution tool; alpha release. |
@@ -66,7 +66,7 @@ Every verified server for the 24 most covered programs. A server that works with
 | :-- | :-- | :-- | --: | :-- | :-- |
 | [Autodesk AutoCAD and Civil 3D MCP Server (Tech Preview)](https://help.autodesk.com/view/ADSKMCP/ENU/) | AutoCAD, Civil 3D | 🟦 Official | – | ⚪ – | Autodesk's local MCP server (Tech Preview / public beta) that runs inside AutoCAD or Civil 3D (AutoCAD 2027 era, Windows) so AI assistants can query, analyze, navigate and modify objects in the open drawing, check… |
 | [Autodesk Product Help MCP](https://github.com/Autodesk/ai-integrations/tree/main/product-help/remote-mcp-server) | AutoCAD, Revit, Civil 3D, Maya, Fusion, Inventor | 🟦 Official | 0 | 🟢 2026-10-29 | Autodesk-hosted, read-only remote MCP server (Streamable HTTP, no authentication) that searches official Autodesk Help and Support documentation for 110+ products. |
-| [AEC Pilot MCP](https://github.com/hmertkaramann/aec-pilot-mcp) | Revit, AutoCAD, Civil 3D, Navisworks, 3ds Max | 🟧 Company | 2 | 🟢 2026-10-15 | Commercial local MCP server running inside each Autodesk app (Revit, AutoCAD, Civil 3D, Navisworks and more); README states 480+ actions. |
+| [AEC Pilot MCP](https://github.com/hmertkaramann/aec-pilot-mcp) | Revit, AutoCAD, Civil 3D, Advance Steel, Navisworks, Inventor, Fusion, 3ds Max, Robot Structural Analysis | 🟧 Company | 2 | 🟢 2026-11-05 | Commercial local MCP server running inside nine Autodesk apps (Revit, AutoCAD, Civil 3D, Navisworks, Fusion and more); README states 550+ actions. |
 | [Skopia floor-plan layout](https://github.com/Skopia-mcp/Skopia-mcp) | DXF, AutoCAD, Revit | 🟧 Company | 0 | 🟢 2026-09-18 | Hosted MCP engine that draws a floor plan in real millimetres and projects consistent sections and elevations, exporting SVG, sheets or DXF. |
 | [CAD-MCP (daobataotie)](https://github.com/daobataotie/CAD-MCP) | AutoCAD, GstarCAD, ZWCAD | ⬜ Community | 654 | 🟢 2026-10-27 | MCP server controlling AutoCAD and other CAD programs through natural language; v2.0 README states 35 tools covering query, editing, layers, blocks and command passthrough. |
 | [autocad-mcp (puran-water, AutoCAD LT)](https://github.com/puran-water/autocad-mcp) | AutoCAD LT, AutoCAD | ⬜ Community | 606 | 🟡 2026-02-20 | MCP server for AutoCAD LT with freehand AutoLISP via file IPC, plus a headless ezdxf backend for DXF generation on any OS. |
@@ -197,13 +197,14 @@ Every verified server for the 24 most covered programs. A server that works with
 
 ## Fusion
 
-18 servers · [↑ back to the list](#servers-by-software)
+19 servers · [↑ back to the list](#servers-by-software)
 
 | Server | Works with | Type | ★ | Updated | What it does |
 | :-- | :-- | :-- | --: | :-- | :-- |
 | [Autodesk Fusion MCP](https://github.com/Autodesk/ai-integrations/tree/main/fusion/local-mcp-server) | Fusion | 🟦 Official | 0 | 🟢 2026-10-29 | Thin stdio bridge (MCPB bundle for Claude Desktop, or direct URL for Cursor) to the MCP server built into the Autodesk Fusion desktop app, for creating, modifying and inspecting geometry in a running Fusion session. |
 | [Autodesk Product Help MCP](https://github.com/Autodesk/ai-integrations/tree/main/product-help/remote-mcp-server) | AutoCAD, Revit, Civil 3D, Maya, Fusion, Inventor | 🟦 Official | 0 | 🟢 2026-10-29 | Autodesk-hosted, read-only remote MCP server (Streamable HTTP, no authentication) that searches official Autodesk Help and Support documentation for 110+ products. |
 | [Fusion-360-MCP-Server (AuraFriday)](https://github.com/AuraFriday/Fusion-360-MCP-Server) | Fusion | 🟧 Company | 127 | 🟡 2026-01-28 | Fusion add-in (listed on Autodesk App Store) connecting Fusion to the Aura Friday MCP-Link server so AI agents can drive it. |
+| [AEC Pilot MCP](https://github.com/hmertkaramann/aec-pilot-mcp) | Revit, AutoCAD, Civil 3D, Advance Steel, Navisworks, Inventor, Fusion, 3ds Max, Robot Structural Analysis | 🟧 Company | 2 | 🟢 2026-11-05 | Commercial local MCP server running inside nine Autodesk apps (Revit, AutoCAD, Civil 3D, Navisworks, Fusion and more); README states 550+ actions. |
 | [fusion360-mcp-server (faust-machines)](https://github.com/faust-machines/fusion360-mcp-server) | Fusion | ⬜ Community | 138 | 🟢 2026-10-06 | Beta MCP server that forwards commands over TCP to a Fusion 360 add-in for CAD automation; on PyPI. |
 | [fusion-mcp-server (Joe-Spencer)](https://github.com/Joe-Spencer/fusion-mcp-server) | Fusion | ⬜ Community | 50 | 🔴 2025-04-22 | Fusion 360 add-in implementing an MCP server with resources, tools and prompts for Claude. |
 | [Fusion-MCP-Server (Joelalbon)](https://github.com/Joelalbon/Fusion-MCP-Server) | Fusion | ⬜ Community | 41 | 🔴 2025-06-12 | Client-server remote control for Fusion 360 with a Python MCP server, JSON socket communication and a Fusion add-in; last commit June 2025. |
@@ -278,7 +279,7 @@ Every verified server for the 24 most covered programs. A server that works with
 | :-- | :-- | :-- | --: | :-- | :-- |
 | [Autodesk AutoCAD and Civil 3D MCP Server (Tech Preview)](https://help.autodesk.com/view/ADSKMCP/ENU/) | AutoCAD, Civil 3D | 🟦 Official | – | ⚪ – | Autodesk's local MCP server (Tech Preview / public beta) that runs inside AutoCAD or Civil 3D (AutoCAD 2027 era, Windows) so AI assistants can query, analyze, navigate and modify objects in the open drawing, check… |
 | [Autodesk Product Help MCP](https://github.com/Autodesk/ai-integrations/tree/main/product-help/remote-mcp-server) | AutoCAD, Revit, Civil 3D, Maya, Fusion, Inventor | 🟦 Official | 0 | 🟢 2026-10-29 | Autodesk-hosted, read-only remote MCP server (Streamable HTTP, no authentication) that searches official Autodesk Help and Support documentation for 110+ products. |
-| [AEC Pilot MCP](https://github.com/hmertkaramann/aec-pilot-mcp) | Revit, AutoCAD, Civil 3D, Navisworks, 3ds Max | 🟧 Company | 2 | 🟢 2026-10-15 | Commercial local MCP server running inside each Autodesk app (Revit, AutoCAD, Civil 3D, Navisworks and more); README states 480+ actions. |
+| [AEC Pilot MCP](https://github.com/hmertkaramann/aec-pilot-mcp) | Revit, AutoCAD, Civil 3D, Advance Steel, Navisworks, Inventor, Fusion, 3ds Max, Robot Structural Analysis | 🟧 Company | 2 | 🟢 2026-11-05 | Commercial local MCP server running inside nine Autodesk apps (Revit, AutoCAD, Civil 3D, Navisworks, Fusion and more); README states 550+ actions. |
 | [Civil3D-mcp (Sacred-G)](https://github.com/Sacred-G/Civil3D-mcp) | Civil 3D | ⬜ Community | 57 | 🟢 2026-08-16 | Node.js MCP server plus native Civil 3D plugin connecting AI clients to a live drawing, with workflow automation for grading, hydrology, plan production and QC; origin of several Civil3D-mcp forks. |
 | [Civil 3D MCP (barbosaihan)](https://github.com/barbosaihan/civil3d-mcp) | Civil 3D | ⬜ Community | 46 | 🟢 2026-05-15 | MCP server plus Civil 3D plugin that lets the AI write and execute C# via a Roslyn engine through three meta-tools. |
 | [civil3d-mcp (Python COM)](https://github.com/antonhofstader/Civil3D-mcp-python-COM) | Civil 3D | ⬜ Community | 10 | 🟢 2026-04-08 | FastMCP server that drives a running Civil 3D through Windows COM plus pythonnet, with no companion plugin; labelled research and not an Autodesk product. |
@@ -365,7 +366,7 @@ Every verified server for the 24 most covered programs. A server that works with
 | :-- | :-- | :-- | --: | :-- | :-- |
 | [NavisCoord](https://github.com/HorizunGroup/naviscoord-mcp) | Navisworks | 🟧 Company | 20 | 🟢 2026-10-20 | Open-source MCP server and Navisworks add-in for clash coordination that works with ChatGPT Desktop, Claude Desktop, Claude Code and Codex. |
 | [ScanBIM MCP (AI Hub for AEC)](https://github.com/ScanBIM-Labs/scanbim-mcp) | Revit, Navisworks, Autodesk Construction Cloud, Autodesk Platform Services, Twinmotion | 🟧 Company | 6 | 🟢 2026-04-21 | Hosted Cloudflare Workers hub of MCP servers for AEC; README describes 46 tools across 5 workers covering model upload/viewing, clashes, ACC, Revit, XR and RFIs. |
-| [AEC Pilot MCP](https://github.com/hmertkaramann/aec-pilot-mcp) | Revit, AutoCAD, Civil 3D, Navisworks, 3ds Max | 🟧 Company | 2 | 🟢 2026-10-15 | Commercial local MCP server running inside each Autodesk app (Revit, AutoCAD, Civil 3D, Navisworks and more); README states 480+ actions. |
+| [AEC Pilot MCP](https://github.com/hmertkaramann/aec-pilot-mcp) | Revit, AutoCAD, Civil 3D, Advance Steel, Navisworks, Inventor, Fusion, 3ds Max, Robot Structural Analysis | 🟧 Company | 2 | 🟢 2026-11-05 | Commercial local MCP server running inside nine Autodesk apps (Revit, AutoCAD, Civil 3D, Navisworks, Fusion and more); README states 550+ actions. |
 | [Navisworks MCP (ScanBIM Labs)](https://github.com/ScanBIM-Labs/navisworks-mcp) | Navisworks, Autodesk Platform Services | 🟧 Company | 0 | 🟢 2026-04-21 | MCP worker for multi-file coordination, clash detection and viewpoints via APS (repo About text). |
 | [Navisworks_MCP (Aitology)](https://github.com/Aitology/Navisworks_MCP) | Navisworks | ⬜ Community | 17 | 🟢 2026-05-13 | Two-part bridge (.NET add-in with local HTTP server plus Python MCP server) for clash detection, clash grouping, selection/search sets, viewpoints and color overrides; README cites 30+ operations. |
 | [MCP-Add-in Navisworks Manage 2026 (PoC)](https://github.com/kikki/MCP-Add-in-Autodesk_Navisworks_Manage_2026) | Navisworks | ⬜ Community | 16 | 🔴 2025-09-22 | Proof-of-concept MCP add-in evaluating how an MCP interface can be built for Navisworks Manage 2026, demonstrated with Claude; basis for later Navisworks forks. |
@@ -434,30 +435,14 @@ Every verified server for the 24 most covered programs. A server that works with
 | [APS-ACC-MCP-server (pranjalbishtadsk)](https://github.com/pranjalbishtadsk/APS-ACC-MCP-server) | Autodesk Construction Cloud | ⬜ Community | 1 | 🟡 2026-01-14 | Derivative of the Autodesk sample server that lets assistants query ACC projects, browse files and analyze issues. |
 | [forma-mcp](https://github.com/nhantruong96/forma-mcp) | Autodesk Construction Cloud, Autodesk Forma | ⬜ Community | 1 | 🟢 2026-10-22 | MCP server for managing an ISO 19650 / TCVN 14177 Common Data Environment on ACC: projects, folder trees, permissions, files, naming compliance and the Content Catalog; formerly acc-mcp. |
 
-## 3ds Max
-
-10 servers · [↑ back to the list](#servers-by-software)
-
-| Server | Works with | Type | ★ | Updated | What it does |
-| :-- | :-- | :-- | --: | :-- | :-- |
-| [AEC Pilot MCP](https://github.com/hmertkaramann/aec-pilot-mcp) | Revit, AutoCAD, Civil 3D, Navisworks, 3ds Max | 🟧 Company | 2 | 🟢 2026-10-15 | Commercial local MCP server running inside each Autodesk app (Revit, AutoCAD, Civil 3D, Navisworks and more); README states 480+ actions. |
-| [3dsmax-mcp (cl0nazepamm)](https://github.com/cl0nazepamm/3dsmax-mcp) | 3ds Max | ⬜ Community | 352 | 🟢 2026-10-21 | MCP server with a native bridge for 3ds Max; README states 161 tools for scene reads, modeling, materials, modifiers, controllers, viewport capture and procedural graphs. |
-| [3dsMaxMCP (317431629)](https://github.com/317431629/3dsMaxMCP) | 3ds Max | ⬜ Community | 18 | 🟡 2026-03-12 | Chinese-language MCP server bridging Claude Desktop/Cursor to 3ds Max over a TCP socket listener script. |
-| [dcc-mcp-3dsmax](https://github.com/dcc-mcp/dcc-mcp-3dsmax) | 3ds Max | ⬜ Community | 9 | 🟢 2026-10-29 | 3ds Max adapter in the DCC-MCP ecosystem (48 host adapters), with a host-side bridge and sidecar support. |
-| [Codex_MCP_3DSMAX](https://github.com/Zhangyoupeng1996/Codex_MCP_3DSMAX) | 3ds Max | ⬜ Community | 1 | 🟢 2026-06-01 | 3ds Max MCP with installer for Cursor, Claude, Codex and Gemini; README states 115 tools (79 in the core profile) and a native bridge for 2023-2027. |
-| [3dsmax-mcp (Geddart)](https://github.com/Geddart/3dsmax-mcp) | 3ds Max | ⬜ Community | 0 | 🟢 2026-04-17 | Fork of cl0nazepamm/3dsmax-mcp adding a native C++ GUP-plugin bridge (76 handlers per README), multi-view capture and controller/wiring tools. |
-| [3dsmax-mcp (vino3dx)](https://github.com/vino3dx/3dsmax-mcp) | 3ds Max | ⬜ Community | 0 | 🟢 2026-10-20 | Chinese-language stdlib-only Python MCP server for 3ds Max over local TCP and MAXScript; README states 384 tools. |
-| [3dsmax-mcp-LxX](https://github.com/LxXStudio2025/3dsmax-mcp-LxX) | 3ds Max | ⬜ Community | 0 | 🟢 2026-10-29 | MCP server plus CLI for a running 3ds Max (2016 onward, tested on 2016 and 2025) using a pure-MAXScript bridge with no pymxs or PySide dependency. |
-| [max-mcp (Kafkavari)](https://github.com/Kafkavari/max-mcp) | 3ds Max | ⬜ Community | 0 | 🟢 2026-10-27 | MCP server for a live 3ds Max session where every request is logged, each scene change is a named undo record and the AI can undo only its own steps; runs MAXScript or pymxs. |
-| [MAX_MCP](https://github.com/sinushawa/MAX_MCP) | 3ds Max | ⬜ Community | 0 | 🟢 2026-09-12 | Personal fork of cl0nazepamm/3dsmax-mcp adding a per-module tool filter with an in-Max settings window, a MAXScript docs search tool and a V-Ray 7 reference. |
-
 ## Inventor
 
-10 servers · [↑ back to the list](#servers-by-software)
+11 servers · [↑ back to the list](#servers-by-software)
 
 | Server | Works with | Type | ★ | Updated | What it does |
 | :-- | :-- | :-- | --: | :-- | :-- |
 | [Autodesk Product Help MCP](https://github.com/Autodesk/ai-integrations/tree/main/product-help/remote-mcp-server) | AutoCAD, Revit, Civil 3D, Maya, Fusion, Inventor | 🟦 Official | 0 | 🟢 2026-10-29 | Autodesk-hosted, read-only remote MCP server (Streamable HTTP, no authentication) that searches official Autodesk Help and Support documentation for 110+ products. |
+| [AEC Pilot MCP](https://github.com/hmertkaramann/aec-pilot-mcp) | Revit, AutoCAD, Civil 3D, Advance Steel, Navisworks, Inventor, Fusion, 3ds Max, Robot Structural Analysis | 🟧 Company | 2 | 🟢 2026-11-05 | Commercial local MCP server running inside nine Autodesk apps (Revit, AutoCAD, Civil 3D, Navisworks, Fusion and more); README states 550+ actions. |
 | [inventor-mcp (NeonGlay)](https://github.com/NeonGlay/inventor-mcp) | Inventor | ⬜ Community | 50 | 🟢 2026-06-10 | MCP server wrapping Inventor's COM API with millimeter-based high-level tools for parametric parts and sheet metal; original of the cenitu continuation, no activity since June 2026. |
 | [ipt-mcp](https://github.com/bimwright/ipt-mcp) | Inventor | ⬜ Community | 17 | 🟢 2026-10-05 | Apache-2.0 MCP gateway for Inventor 2022-2027 covering parts, sketches, features, parameters, iProperties and export via a per-version in-process add-in. |
 | [inventor-mcp (hsavas)](https://github.com/hsavas/inventor-mcp) | Inventor | ⬜ Community | 7 | 🟢 2026-10-20 | COM-automation MCP server for Inventor covering sketches, part features, assemblies, drawings and document control. |
@@ -467,6 +452,23 @@ Every verified server for the 24 most covered programs. A server that works with
 | [inventor-mcp](https://github.com/effectustasi/autodesk-inventor-mcp) | Inventor | ⬜ Community | 0 | 🟢 2026-10-03 | MCP server giving agents a live COM connection to a running Autodesk Inventor, including a PowerShell script tool. |
 | [inventor-mcp (allen2123231)](https://github.com/allen2123231/inventor-mcp) | Inventor | ⬜ Community | 0 | 🟢 2026-09-16 | Inventor MCP with 36 tools (README) for parametric parts, sketches, holes and sheet metal plus modeling skills and API notes; Traditional Chinese docs. |
 | [inventor-mcp-server (cenitu)](https://github.com/cenitu/inventor-mcp-server) | Inventor | ⬜ Community | 0 | 🟢 2026-10-27 | Maintained continuation of NeonGlay/inventor-mcp with MCP SDK 2.x support, Inventor 2027 and assembly features. |
+
+## 3ds Max
+
+10 servers · [↑ back to the list](#servers-by-software)
+
+| Server | Works with | Type | ★ | Updated | What it does |
+| :-- | :-- | :-- | --: | :-- | :-- |
+| [AEC Pilot MCP](https://github.com/hmertkaramann/aec-pilot-mcp) | Revit, AutoCAD, Civil 3D, Advance Steel, Navisworks, Inventor, Fusion, 3ds Max, Robot Structural Analysis | 🟧 Company | 2 | 🟢 2026-11-05 | Commercial local MCP server running inside nine Autodesk apps (Revit, AutoCAD, Civil 3D, Navisworks, Fusion and more); README states 550+ actions. |
+| [3dsmax-mcp (cl0nazepamm)](https://github.com/cl0nazepamm/3dsmax-mcp) | 3ds Max | ⬜ Community | 352 | 🟢 2026-10-21 | MCP server with a native bridge for 3ds Max; README states 161 tools for scene reads, modeling, materials, modifiers, controllers, viewport capture and procedural graphs. |
+| [3dsMaxMCP (317431629)](https://github.com/317431629/3dsMaxMCP) | 3ds Max | ⬜ Community | 18 | 🟡 2026-03-12 | Chinese-language MCP server bridging Claude Desktop/Cursor to 3ds Max over a TCP socket listener script. |
+| [dcc-mcp-3dsmax](https://github.com/dcc-mcp/dcc-mcp-3dsmax) | 3ds Max | ⬜ Community | 9 | 🟢 2026-10-29 | 3ds Max adapter in the DCC-MCP ecosystem (48 host adapters), with a host-side bridge and sidecar support. |
+| [Codex_MCP_3DSMAX](https://github.com/Zhangyoupeng1996/Codex_MCP_3DSMAX) | 3ds Max | ⬜ Community | 1 | 🟢 2026-06-01 | 3ds Max MCP with installer for Cursor, Claude, Codex and Gemini; README states 115 tools (79 in the core profile) and a native bridge for 2023-2027. |
+| [3dsmax-mcp (Geddart)](https://github.com/Geddart/3dsmax-mcp) | 3ds Max | ⬜ Community | 0 | 🟢 2026-04-17 | Fork of cl0nazepamm/3dsmax-mcp adding a native C++ GUP-plugin bridge (76 handlers per README), multi-view capture and controller/wiring tools. |
+| [3dsmax-mcp (vino3dx)](https://github.com/vino3dx/3dsmax-mcp) | 3ds Max | ⬜ Community | 0 | 🟢 2026-10-20 | Chinese-language stdlib-only Python MCP server for 3ds Max over local TCP and MAXScript; README states 384 tools. |
+| [3dsmax-mcp-LxX](https://github.com/LxXStudio2025/3dsmax-mcp-LxX) | 3ds Max | ⬜ Community | 0 | 🟢 2026-10-29 | MCP server plus CLI for a running 3ds Max (2016 onward, tested on 2016 and 2025) using a pure-MAXScript bridge with no pymxs or PySide dependency. |
+| [max-mcp (Kafkavari)](https://github.com/Kafkavari/max-mcp) | 3ds Max | ⬜ Community | 0 | 🟢 2026-10-27 | MCP server for a live 3ds Max session where every request is logged, each scene change is a named undo record and the AI can undo only its own steps; runs MAXScript or pymxs. |
+| [MAX_MCP](https://github.com/sinushawa/MAX_MCP) | 3ds Max | ⬜ Community | 0 | 🟢 2026-09-12 | Personal fork of cl0nazepamm/3dsmax-mcp adding a per-module tool filter with an in-Max settings window, a MAXScript docs search tool and a V-Ray 7 reference. |
 
 ## Onshape
 
