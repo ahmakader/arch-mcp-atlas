@@ -72,10 +72,10 @@ Software with the most servers. Each link jumps to that software's servers in [B
 | | | | |
 | :-- | :-- | :-- | :-- |
 | [**Revit** · 45](BY_SOFTWARE.md#revit) | [**AutoCAD** · 35](BY_SOFTWARE.md#autocad) | [**Blender** · 31](BY_SOFTWARE.md#blender) | [**SketchUp** · 23](BY_SOFTWARE.md#sketchup) |
-| [**Rhino** · 20](BY_SOFTWARE.md#rhino) | [**Fusion** · 18](BY_SOFTWARE.md#fusion) | [**Grasshopper** · 18](BY_SOFTWARE.md#grasshopper) | [**IFC** · 18](BY_SOFTWARE.md#ifc) |
+| [**Rhino** · 20](BY_SOFTWARE.md#rhino) | [**Fusion** · 19](BY_SOFTWARE.md#fusion) | [**Grasshopper** · 18](BY_SOFTWARE.md#grasshopper) | [**IFC** · 18](BY_SOFTWARE.md#ifc) |
 | [**Civil 3D** · 15](BY_SOFTWARE.md#civil-3d) | [**FreeCAD** · 15](BY_SOFTWARE.md#freecad) | [**Maya** · 15](BY_SOFTWARE.md#maya) | [**DXF** · 14](BY_SOFTWARE.md#dxf) |
 | [**Navisworks** · 14](BY_SOFTWARE.md#navisworks) | [**IfcOpenShell** · 12](BY_SOFTWARE.md#ifcopenshell) | [**ZWCAD** · 12](BY_SOFTWARE.md#zwcad) | [**Autodesk Construction Cloud** · 11](BY_SOFTWARE.md#autodesk-construction-cloud) |
-| [**3ds Max** · 10](BY_SOFTWARE.md#3ds-max) | [**Inventor** · 10](BY_SOFTWARE.md#inventor) | [**Onshape** · 9](BY_SOFTWARE.md#onshape) | [**DWG** · 8](BY_SOFTWARE.md#dwg) |
+| [**Inventor** · 11](BY_SOFTWARE.md#inventor) | [**3ds Max** · 10](BY_SOFTWARE.md#3ds-max) | [**Onshape** · 9](BY_SOFTWARE.md#onshape) | [**DWG** · 8](BY_SOFTWARE.md#dwg) |
 | [**QGIS** · 8](BY_SOFTWARE.md#qgis) | [**Unity** · 8](BY_SOFTWARE.md#unity) | [**Unreal Engine** · 8](BY_SOFTWARE.md#unreal-engine) | [**Figma** · 7](BY_SOFTWARE.md#figma) |
 
 ## Contents
@@ -107,7 +107,7 @@ Official and company servers come first, then community projects by GitHub stars
 | [Horizun Revit MCP](https://github.com/HorizunGroup/horizun-revit-mcp) | Revit | 🟧 Company | 65 | 🟢 2026-10-22 | Free open-source Windows MCP server and Revit add-in for typed BIM edits, families, drawings, CAD-to-BIM, audits, quantities, Excel, Power BI and exports; README states 125 tools and 481 named suboperations. |
 | [NavisCoord](https://github.com/HorizunGroup/naviscoord-mcp) | Navisworks | 🟧 Company | 20 | 🟢 2026-10-20 | Open-source MCP server and Navisworks add-in for clash coordination that works with ChatGPT Desktop, Claude Desktop, Claude Code and Codex. |
 | [AI Connector for Revit (NonicaTab)](https://github.com/NonicaTeam/AI-Connector-for-Revit) | Revit | 🟧 Company | 19 | 🟢 2026-10-07 | Commercial NonicaTab feature that connects Claude, Cursor or Copilot to Revit through 50+ predefined tools to inspect, select, edit and document elements; the GitHub repo only tracks issues and releases. |
-| [AEC Pilot MCP](https://github.com/hmertkaramann/aec-pilot-mcp) | Revit, AutoCAD, Civil 3D, Navisworks, 3ds Max | 🟧 Company | 2 | 🟢 2026-10-15 | Commercial local MCP server running inside each Autodesk app (Revit, AutoCAD, Civil 3D, Navisworks and more); README states 480+ actions. |
+| [AEC Pilot MCP](https://github.com/hmertkaramann/aec-pilot-mcp) | Revit, AutoCAD, Civil 3D, Advance Steel, Navisworks, Inventor, Fusion, 3ds Max, Robot Structural Analysis | 🟧 Company | 2 | 🟢 2026-11-05 | Commercial local MCP server running inside nine Autodesk apps (Revit, AutoCAD, Civil 3D, Navisworks, Fusion and more); README states 550+ actions. |
 | [Revit Converter MCP (Labs Future)](https://github.com/labsfuture/revit-converter-remote-mcp-release) | Revit | 🟧 Company | 1 | 🟢 2026-05-26 | Remote MCP server that converts uploaded .rvt files to XKT, IFC or DWG and answers natural-language BIM queries about the stored models. |
 | [vn-revit-mcp (InnoPro)](https://github.com/Innoprovn/vn-revit-mcp) | Revit | 🟧 Company | 1 | 🟢 2026-10-15 | Open-source MCP server and Revit add-in (Vietnamese-language docs) with in-Revit chat, commands writable as single .cs files, undoable model edits and a Revit API lookup skill. |
 | [Revit MCP by ArchBench](https://github.com/3d-mcp/revit-mcp) | Revit | 🟧 Company | 0 | 🟢 2026-09-13 | Independent experimental Revit connector using pyRevit, with read-only or write bridge modes and an opt-in code-execution tool; alpha release. |
